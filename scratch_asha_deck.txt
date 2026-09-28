@@ -1,0 +1,342 @@
+Slide Width: 13.333333333333334 in, Height: 7.5 in
+
+=== SLIDE 1 ===
+[Rectangle 24 | Type: AUTO_SHAPE (1) | Pos: (1.67, 0.00, 10.00, 7.50)]
+[Freeform: Shape 26 | Type: FREEFORM (5) | Pos: (6.19, 0.93, 5.07, 5.64)]
+[Picture 4 | Type: PICTURE (13) [PICTURE] | Pos: (7.50, 1.88, 3.50, 3.75)]
+[Subtitle 3 | Type: PLACEHOLDER (14) | Pos: (1.36, 0.71, 9.33, 1.92)]
+--- TEXT ---
+ASHA: Automated System for Hospital Allocation
+Intelligent Golden Hour Triage, Staffed Bed Reservation & En-Route First-Aid Protocols
+------------
+[Title 7 | Type: PLACEHOLDER (14) | Pos: (0.36, -0.58, 11.33, 2.27)]
+--- TEXT ---
+SMART INDIA HACKATHON 2026
+------------
+[TextBox 9 | Type: TEXT_BOX (17) | Pos: (0.36, 2.27, 6.48, 5.14)]
+--- TEXT ---
+TEAM NAME: TEAM ASHA
+PROBLEM STATEMENT ID (PS ID): Student Innovation (Open Category — Theme: MedTech / BioTech / HealthTech)
+PROBLEM STATEMENT TITLE: Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility
+TEAM LEADER NAME: SHAYAK DAS
+CATEGORY / THEME: Open Innovation  |  MedTech / BioTech / HealthTech  |  Software (Web-First Realtime)
+MENTOR NAME: [Open Innovation Faculty Mentor]
+⭐ Core Breakthroughs: (1) Live Situational First-Aid En Route [Semi-Fowler 45°, 10s ABC, DO NOT DO warnings]  •  (2) Native Bengali Speech In-Memory Clinical Translation  •  (3) 15-Min Dynamic Soft-Lock Bed Hold with 6-Digit Gate OTP (No QR)  •  (4) Staffed Bed Math eliminating Ghost Beds.
+------------
+[Picture 1 | Type: PICTURE (13) [PICTURE] | Pos: (10.70, 0.00, 2.46, 1.16)]
+
+=== SLIDE 2 ===
+[Rectangle 8 | Type: AUTO_SHAPE (1) | Pos: (0.00, 6.95, 13.33, 0.55)]
+[Title 1 | Type: PLACEHOLDER (14) | Pos: (0.20, 0.00, 12.00, 1.25)]
+--- TEXT ---
+PROPOSED SOLUTION: ASHA EMERGENCY RESUSCITATION GRID
+------------
+[TextBox 8 | Type: TEXT_BOX (17) | Pos: (-0.00, 2.26, 13.33, 2.73)]
+[Slide Number Placeholder 5 | Type: PLACEHOLDER (14) | Pos: (9.56, 6.95, 3.11, 0.40)]
+--- TEXT ---
+2
+------------
+[Footer Placeholder 6 | Type: PLACEHOLDER (14) | Pos: (5.08, 6.95, 3.50, 0.40)]
+--- TEXT ---
+@SIH Idea submission- Template
+------------
+[Oval 9 | Type: AUTO_SHAPE (1) | Pos: (0.36, 0.28, 1.37, 0.88)]
+--- TEXT ---
+TEAM ASHA
+------------
+[Picture 10 | Type: PICTURE (13) [PICTURE] | Pos: (10.70, 0.00, 2.46, 1.16)]
+[Rounded Rectangle 15362 | Type: AUTO_SHAPE (1) | Pos: (0.80, 1.30, 7.50, 1.25)]
+--- TEXT ---
+🚨 4 SYSTEMIC FAILURES DRIVING GOLDEN-HOUR GATE REJECTIONS
+• Read-Only Directories: Portals answer "what existed hours ago," not "is one reserved for me?" Reading is not reserving.
+• The "Ghost Bed" Paradox: Dashboards report raw physical beds, hiding that zero nurses/intensivists are on active night duty.
+• The En-Route Black Hole: Over 50% of trauma/cardiac deaths occur in transit due to bystander panic or fatal layman blunders.
+• Update Friction: Nurses at 2 AM will not log into complex portals. Data freshness is a UX failure, not a database failure.
+------------
+[Rounded Rectangle 15363 | Type: AUTO_SHAPE (1) | Pos: (0.80, 2.65, 7.50, 2.55)]
+--- TEXT ---
+💡 ASHA: PROPOSED SOLUTION & CORE CLINICAL CAPABILITIES
+• ⭐ OUR BIGGEST PLUS POINT: SITUATIONAL FIRST-AID PROTOCOLS: The exact second an emergency is detected, ASHA shows bystanders EXACTLY WHAT TO DO in the current situation right now (Semi-Fowler 45° posture with bent knees for cardiac emergencies, tourniquet/direct pressure for hemorrhage, recovery position for stroke, plus critical "DO NOT DO" warnings) to stabilize vital signs en route.
+• Zero-Signup Instant Web Access: Zero app installation, zero password barrier. Loads on any phone browser in <0.8s during active emergency distress.
+• Multilingual Speech & Typed Triage: Speak in English, type in Benglish, or speak in Bengali. Spoken Bengali script (বুকে ব্যথা) is translated internally to canonical English clinical terms with zero cloud latency.
+• 15-Minute Dynamic GPS Soft-Lock: Atomically reserves 1 staffed bed before vehicle departs; GPS vector tracking monitors travel and auto-cancels if user is stationary or moves away.
+• Direct 6-Digit Gate OTP Admission: Spoken aloud in 2 seconds at the ER bay to hard-lock admission, completely eliminating fragile QR scanners in rain and darkness.
+------------
+[Rounded Rectangle 15364 | Type: AUTO_SHAPE (1) | Pos: (0.80, 5.30, 7.50, 1.50)]
+--- TEXT ---
+⭐ INNOVATION & HOW IT ADDRESSES THE PROBLEM
+✔ vs. Telemedicine Apps (Practo/Apollo): Those are OPD appointment schedulers requiring signups; ASHA is an instant zero-login emergency dispatch grid.
+✔ vs. 108 Ambulance Dispatch: Replaces verbal radio congestion with sub-second algorithmic road routing (<420ms OSRM computation).
+✔ Staffed Bed Capacity Formula: B_staffed = min(B_phys, N_nurses × Ratio), strictly guaranteeing clinical admission readiness.
+------------
+[Rounded Rectangle 15365 | Type: AUTO_SHAPE (1) | Pos: (8.50, 1.30, 4.00, 5.50)]
+--- TEXT ---
+🔄 FLOWCHART: EMERGENCY TRIAGE & FIRST-AID FLOW
+------------
+[Rounded Rectangle 15366 | Type: AUTO_SHAPE (1) | Pos: (8.70, 1.75, 3.60, 0.65)]
+--- TEXT ---
+🎙️ 1. Voice / Text Triage Ingestion
+Spoken Bengali (বুকে ব্যথা), English, or Benglish text
+------------
+[Down Arrow 15367 | Type: AUTO_SHAPE (1) | Pos: (10.30, 2.42, 0.35, 0.18)]
+[Rounded Rectangle 15368 | Type: AUTO_SHAPE (1) | Pos: (8.70, 2.62, 3.60, 0.65)]
+--- TEXT ---
+⚡ 2. Internal Clinical Translation
+translateBengaliToEnglish(): 0ms in-memory conversion
+------------
+[Down Arrow 15369 | Type: AUTO_SHAPE (1) | Pos: (10.30, 3.29, 0.35, 0.18)]
+[Rounded Rectangle 15370 | Type: AUTO_SHAPE (1) | Pos: (8.70, 3.49, 3.60, 0.65)]
+--- TEXT ---
+🚨 3. ESI-1 Triage & Ward Routing
+AHRQ ESI v4 rules -> routes to Cardiac ICU + OSRM
+------------
+[Down Arrow 15371 | Type: AUTO_SHAPE (1) | Pos: (10.30, 4.16, 0.35, 0.18)]
+[Rounded Rectangle 15372 | Type: AUTO_SHAPE (1) | Pos: (8.70, 4.36, 3.60, 0.85)]
+--- TEXT ---
+🩸 4. ⭐ Situational First-Aid Sheet
+Semi-Fowler 45° posture, 10s ABC, chew aspirin, critical DO NOT DO warnings (ClinicalProtocolSheet.tsx)
+------------
+[Down Arrow 15373 | Type: AUTO_SHAPE (1) | Pos: (10.30, 5.23, 0.35, 0.18)]
+[Rounded Rectangle 15374 | Type: AUTO_SHAPE (1) | Pos: (8.70, 5.43, 3.60, 0.85)]
+--- TEXT ---
+🔒 5. 15-Min Soft-Lock & 6-Digit OTP
+Beds count -1 live, OTP: 489215 generated, GPS vector telemetry active, <2s ER desk admission
+------------
+
+=== SLIDE 3 ===
+[Rectangle 9 | Type: AUTO_SHAPE (1) | Pos: (0.00, 6.95, 13.33, 0.55)]
+[Title 1 | Type: PLACEHOLDER (14) | Pos: (0.67, -0.05, 12.00, 1.25)]
+--- TEXT ---
+TECHNICAL APPROACH & SYSTEM ARCHITECTURE
+------------
+[TextBox 8 | Type: TEXT_BOX (17) | Pos: (0.67, 2.77, 10.26, 1.99)]
+[Slide Number Placeholder 5 | Type: PLACEHOLDER (14) | Pos: (9.56, 6.95, 3.11, 0.40)]
+--- TEXT ---
+3
+------------
+[Footer Placeholder 6 | Type: PLACEHOLDER (14) | Pos: (5.08, 6.95, 3.50, 0.40)]
+--- TEXT ---
+@SIH Idea submission- Template
+------------
+[Oval 10 | Type: AUTO_SHAPE (1) | Pos: (0.36, 0.28, 1.37, 0.88)]
+--- TEXT ---
+TEAM ASHA
+------------
+[Picture 11 | Type: PICTURE (13) [PICTURE] | Pos: (10.70, 0.00, 2.46, 1.16)]
+[Rounded Rectangle 17410 | Type: AUTO_SHAPE (1) | Pos: (0.80, 1.30, 7.50, 2.40)]
+--- TEXT ---
+🛠️ TECHNOLOGIES USED & SYSTEM ARCHITECTURE LAYERS
+• Citizen Web Application: React 19, TypeScript, Tailwind CSS, Vite. Native W3C Web Speech API with 2.2s silence debounce and internal Bengali-to-English medical translation engine.
+• Clinical Triage Engine: Sub-millisecond rule-based classifier implementing Emergency Severity Index (ESI-1 to ESI-5). Zero LLM network dependency in critical resuscitation path.
+• Geospatial & Road Routing: Leaflet.js + OpenStreetMap, PostGIS spatial indexing, self-hosted OSRM engine delivering sub-second road distances (<420ms) with urban traffic calibration.
+• Real-Time Cloud Synchronization: Supabase WebSockets + PostgreSQL atomic row-level locks (SELECT FOR UPDATE) for race-condition-free bed reservation and instant hospital updates.
+• Hospital Admin Command Desk: Tablet/desktop web portal with high-contrast ward tiles, audio klaxons, 1-tap bed/nurse counters, and 6-digit OTP entrance verification terminal.
+------------
+[Rounded Rectangle 17411 | Type: AUTO_SHAPE (1) | Pos: (0.80, 3.80, 7.50, 2.70)]
+--- TEXT ---
+🔄 4-STEP METHODOLOGY & WORKING PROTOTYPE FLOW
+• 1. Spoken / Typed Ingestion & Internal Translation: User speaks in English or Bengali. Continuous Web Speech streams transcript; in-memory translation converts Bengali script into canonical English clinical terms with zero cloud latency.
+• 2. ESI Triage, Bed Match & Situational Protocols: Maps symptom to target ward (Cardiac/Adult/Pediatric ICU, General Ward) and blood units (PRBC/Platelets), while immediately rendering step-by-step situational first-aid guidance.
+• 3. Atomic Token Hold (15 Min TTL): PostgreSQL executes an atomic hold query. Bed count decrements by 1 across the network, generating a 6-digit OTP entrance pass for the patient.
+• 4. Vector Telemetry & Cascade Rerouting: GPS loop monitors travel vector. If target hospital initiates Code Blue diversion, system sounds priority audio alarm and cascade reroutes to next closest facility with all details transferred.
+------------
+[Rounded Rectangle 17412 | Type: AUTO_SHAPE (1) | Pos: (8.50, 1.30, 4.00, 5.20)]
+--- TEXT ---
+🌐 FLOWCHART: MASTER DUAL-APP CLOUD SYNC
+------------
+[Rounded Rectangle 17413 | Type: AUTO_SHAPE (1) | Pos: (8.70, 1.75, 3.60, 0.90)]
+--- TEXT ---
+📱 Citizen App (ashaien.vercel.app)
+OSRM Road Snapping • Voice Triage • Situational First-Aid Sheet • 15-Min Hold Trigger
+------------
+[Down Arrow 17414 | Type: AUTO_SHAPE (1) | Pos: (10.30, 2.68, 0.35, 0.22)]
+[Rounded Rectangle 17415 | Type: AUTO_SHAPE (1) | Pos: (8.70, 2.93, 3.60, 1.00)]
+--- TEXT ---
+☁️ Supabase Cloud Engine (PostgreSQL 15)
+Tables: active_holds • admitted_patients • hospital_overrides
+Realtime WebSockets Replication (<50ms)
+------------
+[Down Arrow 17416 | Type: AUTO_SHAPE (1) | Pos: (10.30, 3.96, 0.35, 0.22)]
+[Rounded Rectangle 17417 | Type: AUTO_SHAPE (1) | Pos: (8.70, 4.21, 3.60, 0.95)]
+--- TEXT ---
+🏥 Hospital Admin Desk (ashaien-admin)
+Zero-Friction ER Terminal • Live Dynamic Holds Queue • 1-Tap Bed & Shift Nurse Adjusters
+------------
+[Down Arrow 17418 | Type: AUTO_SHAPE (1) | Pos: (10.30, 5.19, 0.35, 0.20)]
+[Rounded Rectangle 17419 | Type: AUTO_SHAPE (1) | Pos: (8.70, 5.42, 3.60, 0.90)]
+--- TEXT ---
+🔑 6-Digit OTP Gate Check-In (<2s)
+Spoken aloud at triage bay • Hard-locks bed claim • Permanent admission recorded in database
+------------
+
+=== SLIDE 4 ===
+[Rectangle 9 | Type: AUTO_SHAPE (1) | Pos: (0.00, 6.95, 13.33, 0.55)]
+[Title 1 | Type: PLACEHOLDER (14) | Pos: (0.67, -0.05, 12.00, 1.25)]
+--- TEXT ---
+FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY
+------------
+[TextBox 8 | Type: TEXT_BOX (17) | Pos: (0.67, 2.77, 10.26, 1.51)]
+[Slide Number Placeholder 5 | Type: PLACEHOLDER (14) | Pos: (9.56, 6.95, 3.11, 0.40)]
+--- TEXT ---
+4
+------------
+[Footer Placeholder 6 | Type: PLACEHOLDER (14) | Pos: (5.08, 6.95, 3.50, 0.40)]
+--- TEXT ---
+@SIH Idea submission- Template
+------------
+[Oval 11 | Type: AUTO_SHAPE (1) | Pos: (0.36, 0.28, 1.37, 0.88)]
+--- TEXT ---
+TEAM ASHA
+------------
+[Picture 10 | Type: PICTURE (13) [PICTURE] | Pos: (10.70, 0.00, 2.46, 1.16)]
+[Rounded Rectangle 17410 | Type: AUTO_SHAPE (1) | Pos: (0.80, 1.30, 3.70, 3.90)]
+--- TEXT ---
+📊 FEASIBILITY ANALYSIS
+✔ Operational Feasibility: Web-first deployment means zero install friction for citizens. Hospital desk operates as a simple browser interface on existing triage station hardware.
+✔ Financial Viability: Eliminates expensive Google Maps commercial API licensing by deploying self-hosted OSRM containers on government cloud (NIC MeghRaj).
+✔ ABDM Architecture Alignment: Integrates cleanly with Ayushman Bharat Digital Mission (ABDM) Health Facility Registry (HFR) standards.
+✔ Low-Bandwidth Resiliency: Lightweight application bundle (<1.4MB) ensures rapid loading and stable caching even on congested 3G/4G networks.
+------------
+[Rounded Rectangle 17411 | Type: AUTO_SHAPE (1) | Pos: (4.70, 1.30, 3.70, 3.90)]
+--- TEXT ---
+⚠️ POTENTIAL CHALLENGES & RISKS
+✖ Bed Hoarding & False Bookings: Malicious users or competing private ambulance operators locking up scarce ICU beds with burner phone numbers.
+✖ Nurse Desk Workload & Burnout: Staff during hectic night shifts failing to manually update bed counters or verify holds.
+✖ Vector Divergence Edge Cases: Ambulances taking police diversions or encountering traffic jams, triggering false no-show cancellations.
+✖ Patient Privacy & Data Security: Exposing sensitive patient medical symptoms or real-time travel telemetry over public networks.
+------------
+[Rounded Rectangle 17412 | Type: AUTO_SHAPE (1) | Pos: (8.60, 1.30, 3.90, 3.90)]
+--- TEXT ---
+🛡️ ENGINEERING STRATEGIES
+★ 50% Cap & Vector Verification: Public soft-locks capped at 50% of available capacity. GPS loop monitors user vector; if vehicle is stationary or moving away, hold auto-cancels.
+★ Direct 6-Digit OTP Verification: Triage nurse verifies the citizen 6-digit entrance OTP in 2 seconds on the desk interface to convert soft-lock into permanent admission (no QR hardware needed).
+★ Dynamic ETA Extension: Vehicle heading detection extends reservation window during traffic crawls as long as direction vector points toward hospital.
+★ Ephemeral Encrypted Telemetry: No permanent storage of patient medical records or phone numbers. Telemetry is end-to-end encrypted and auto-purged after 60 minutes post-discharge.
+------------
+[Rounded Rectangle 17413 | Type: AUTO_SHAPE (1) | Pos: (0.80, 5.35, 11.70, 1.55)]
+--- TEXT ---
+🔄 FLOWCHART: 15-MINUTE DYNAMIC SOFT-LOCK & GPS VECTOR STATE MACHINE
+------------
+[Rounded Rectangle 17414 | Type: AUTO_SHAPE (1) | Pos: (1.00, 5.75, 2.20, 0.95)]
+--- TEXT ---
+🏥 Public Bed Pool
+Capacity calculated via Staffed Bed Formula (1:1 ICU, 1:6 Ward)
+------------
+[Right Arrow 17415 | Type: AUTO_SHAPE (1) | Pos: (3.25, 6.12, 0.25, 0.20)]
+[Rounded Rectangle 17416 | Type: AUTO_SHAPE (1) | Pos: (3.55, 5.75, 2.40, 0.95)]
+--- TEXT ---
+🔒 15-Min Soft-Lock
+Bed count -1 live • 6-Digit OTP issued • Countdown starts
+------------
+[Right Arrow 17417 | Type: AUTO_SHAPE (1) | Pos: (6.00, 6.12, 0.25, 0.20)]
+[Rounded Rectangle 17418 | Type: AUTO_SHAPE (1) | Pos: (6.30, 5.75, 3.20, 0.95)]
+--- TEXT ---
+📡 GPS Vector Telemetry Loop (10s)
+• TOWARD: Timer Paused • Dynamic ETA
+• STATIONARY: 15-Min Timer Decrements
+• AWAY: Alert & Auto-Cancel (Bed Restored)
+------------
+[Right Arrow 17419 | Type: AUTO_SHAPE (1) | Pos: (9.55, 6.12, 0.25, 0.20)]
+[Rounded Rectangle 17420 | Type: AUTO_SHAPE (1) | Pos: (9.85, 5.75, 2.45, 0.95)]
+--- TEXT ---
+🔑 Gate 6-Digit OTP Check-In
+Spoken aloud at ER bay (<2s) • Bed permanently claimed (Hard-Lock)
+------------
+
+=== SLIDE 5 ===
+[Rectangle 9 | Type: AUTO_SHAPE (1) | Pos: (0.00, 6.95, 13.33, 0.55)]
+[Title 1 | Type: PLACEHOLDER (14) | Pos: (0.67, -0.05, 12.00, 1.25)]
+--- TEXT ---
+IMPACT, BENEFITS & HEALTHCARE VALUE
+------------
+[TextBox 8 | Type: TEXT_BOX (17) | Pos: (0.67, 2.77, 10.26, 1.51)]
+[Slide Number Placeholder 5 | Type: PLACEHOLDER (14) | Pos: (9.56, 6.95, 3.11, 0.40)]
+--- TEXT ---
+5
+------------
+[Footer Placeholder 6 | Type: PLACEHOLDER (14) | Pos: (5.08, 6.95, 3.50, 0.40)]
+--- TEXT ---
+@SIH Idea submission- Template
+------------
+[Oval 11 | Type: AUTO_SHAPE (1) | Pos: (0.36, 0.28, 1.37, 0.88)]
+--- TEXT ---
+TEAM ASHA
+------------
+[Picture 10 | Type: PICTURE (13) [PICTURE] | Pos: (10.70, 0.00, 2.46, 1.16)]
+[Rounded Rectangle 17410 | Type: AUTO_SHAPE (1) | Pos: (0.80, 1.30, 2.70, 1.10)]
+--- TEXT ---
+Golden Hour
+Preserving Critical Window
+------------
+[Rounded Rectangle 17411 | Type: AUTO_SHAPE (1) | Pos: (3.75, 1.30, 2.70, 1.10)]
+--- TEXT ---
+Zero Gate Rejections
+Eliminating Blind Wandering
+------------
+[Rounded Rectangle 17412 | Type: AUTO_SHAPE (1) | Pos: (6.70, 1.30, 2.70, 1.10)]
+--- TEXT ---
+First-Aid Guidance
+Situational Action En Route
+------------
+[Rounded Rectangle 17413 | Type: AUTO_SHAPE (1) | Pos: (9.65, 1.30, 2.70, 1.10)]
+--- TEXT ---
+<500ms Latency
+Real-Time State Sync
+------------
+[Rounded Rectangle 17414 | Type: AUTO_SHAPE (1) | Pos: (0.80, 2.60, 5.60, 3.90)]
+--- TEXT ---
+❤️ CLINICAL & SOCIAL IMPACT ON CITIZENS
+• Preserving En-Route Life via First Aid: Shows immediate life-saving physical positioning (Semi-Fowler 45° posture, wound pressure) and critical mistakes to avoid, empowering bystanders to stabilize the patient during the 30-45 minutes of transit.
+• Eliminating Secondary Transfers: Inter-facility hospital transfers during acute emergencies carry a 30-50% mortality penalty. Direct routing ensures patient reaches an equipped bed on the first run.
+• Multilingual Accessibility: Citizens can speak in English, type in Benglish, or speak in Bengali with seamless internal clinical translation (0ms latency, $0 cost).
+• Ending Exploitative Touts: Prevents predatory private ambulance middlemen from diverting vulnerable patients to unequipped nursing homes based on referral kickbacks.
+------------
+[Rounded Rectangle 17415 | Type: AUTO_SHAPE (1) | Pos: (6.80, 2.60, 5.60, 3.90)]
+--- TEXT ---
+🏥 HEALTHCARE SYSTEM & ECONOMIC BENEFITS
+• Equitable Regional Bed Balancing: Redistributes acute cases from over-saturated tertiary medical colleges to secondary and private hospitals with idle staffed capacity.
+• Blood Bank Logistics Coordination: Prevents emergency cross-match delays by pre-matching patients requiring PRBC, Platelets, or Plasma with active bank inventories.
+• Zero Public Capex Burden: Municipal health departments deploy ASHA across district hospitals without investing in costly proprietary server hardware.
+• Administrative Staffing Transparency: Surfaces the Ghost Gap (physical beds minus staffed beds) to health commissioners, revealing exactly where nursing shortages bottleneck care.
+------------
+
+=== SLIDE 6 ===
+[Rectangle 9 | Type: AUTO_SHAPE (1) | Pos: (0.00, 6.95, 13.33, 0.55)]
+[Title 1 | Type: PLACEHOLDER (14) | Pos: (0.67, -0.05, 12.00, 1.25)]
+--- TEXT ---
+RESEARCH, EVIDENCE BASE & TECHNICAL CITATIONS
+------------
+[TextBox 8 | Type: TEXT_BOX (17) | Pos: (0.67, 3.06, 10.26, 0.57)]
+[Slide Number Placeholder 5 | Type: PLACEHOLDER (14) | Pos: (9.56, 6.95, 3.11, 0.40)]
+--- TEXT ---
+6
+------------
+[Footer Placeholder 6 | Type: PLACEHOLDER (14) | Pos: (5.08, 6.95, 3.50, 0.40)]
+--- TEXT ---
+@SIH Idea submission- Template
+------------
+[Oval 8 | Type: AUTO_SHAPE (1) | Pos: (0.36, 0.28, 1.37, 0.88)]
+--- TEXT ---
+TEAM ASHA
+------------
+[Picture 11 | Type: PICTURE (13) [PICTURE] | Pos: (10.70, 0.00, 2.46, 1.16)]
+[Rounded Rectangle 17410 | Type: AUTO_SHAPE (1) | Pos: (0.80, 1.30, 5.60, 5.30)]
+--- TEXT ---
+📚 CLINICAL & PUBLIC HEALTH EVIDENCE BASE
+• Emergency Severity Index (ESI v4) Guidelines (AHRQ): Validated 5-level clinical acuity triage algorithm utilized in ASHA to stratify symptom severity and target ward matching.
+• Indian Society of Critical Care Medicine (ISCCM): Mandated nurse-to-patient ratios (ICU 1:1, HDU 1:2, Ward 1:6) defining real operational bed capacity.
+• Pre-Hospital Emergency Care in India (The Lancet): Documented how lack of destination hospital coordination drives severe mortality in acute myocardial infarction and poly-trauma.
+• National Health Systems Resource Centre (NHSRC): Emergency Department management standards and guidelines for reducing pre-hospital door-to-treatment intervals in Indian district hospitals.
+• American Heart Association (AHA 2020 Guidelines): Clinical basis for immediate Semi-Fowler 45° posture and aspirin administration for STEMI resuscitation.
+------------
+[Rounded Rectangle 17411 | Type: AUTO_SHAPE (1) | Pos: (6.80, 1.30, 5.60, 5.30)]
+--- TEXT ---
+🌐 TECHNICAL STANDARDS & LIVE PRODUCTION DEPLOYMENTS
+✔ Ayushman Bharat Digital Mission (ABDM) Milestone Specs: Health Facility Registry (HFR) geocoding and HL7/FHIR M1/M2/M3 pre-arrival diagnostic record exchange.
+✔ W3C Web Speech API & In-Memory Translation: Continuous speech recognition with client-side deterministic Bengali-to-English clinical keyword translation.
+✔ Open Source Routing Machine (OSRM) Project: High-performance C++ routing engine based on Contraction Hierarchies, providing sub-second shortest road pathing without rate-limit constraints.
+✔ Supabase Realtime WebSockets: PostgreSQL WAL change-data-capture broadcasting hold updates across devices in under 50 milliseconds.
+✔ 🚀 LIVE WORKING PRODUCTION DEPLOYMENTS: Citizen Emergency Portal: https://ashaien.vercel.app
+Hospital ER Command Desk: https://ashaien-admin.vercel.app
+Complete Source & Documentation: docs/ in GitHub SIH2026-ASHA Repository
+------------

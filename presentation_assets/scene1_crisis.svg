@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .skin-dadi { fill: #F0C4A4; }
+      .skin-shadow-dadi { fill: #DFAB88; }
+      .hair-dadi { fill: #94A3B8; }
+      .saree-maroon { fill: #800020; }
+      .saree-gold { fill: #D4AF37; }
+      .blouse-cream { fill: #F5F5DC; }
+      .skin-maa { fill: #E8BA96; }
+      .hair-maa { fill: #1E293B; }
+      .kurta-mustard { fill: #EAB308; }
+      .dupatta-teal { fill: #0D9488; }
+      .chair { fill: #334155; }
+      .chair-accent { fill: #1E293B; }
+      .bubble-bg { fill: #FFFFFF; stroke: #E11D48; stroke-width: 2.5; filter: drop-shadow(0 4px 12px rgba(225,29,72,0.12)); }
+      .badge-bg { fill: #FFF1F2; stroke: #F43F5E; stroke-width: 1.5; }
+      .text-title { font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif; font-weight: 700; }
+      .text-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Pure White Background -->
+  <rect width="1000" height="1000" class="bg" />
+
+  <!-- Top Telemetry Pill -->
+  <g transform="translate(60, 45)">
+    <rect width="460" height="42" rx="21" class="badge-bg" />
+    <circle cx="24" cy="21" r="7" fill="#E11D48" />
+    <text x="42" y="27" font-size="16" class="text-title" fill="#9F1239">⏱️ 01:15 AM • GOLDEN HOUR CLOCK STARTS</text>
+  </g>
+
+  <!-- Scene Subtitle / Clinical Tag -->
+  <g transform="translate(60, 105)">
+    <rect width="210" height="28" rx="6" fill="#FEE2E2" />
+    <text x="12" y="19" font-size="13" class="text-title" fill="#B91C1C">ESI-1 IMMEDIATE RESUSCITATION</text>
+  </g>
+
+  <!-- Armchair Base -->
+  <g id="armchair">
+    <rect x="220" y="380" width="380" height="480" rx="36" class="chair" />
+    <rect x="190" y="460" width="80" height="340" rx="24" class="chair-accent" />
+    <rect x="550" y="460" width="80" height="340" rx="24" class="chair-accent" />
+    <rect x="250" y="700" width="320" height="160" rx="16" class="chair-accent" />
+    <rect x="240" y="860" width="32" height="60" rx="8" fill="#0F172A" />
+    <rect x="548" y="860" width="32" height="60" rx="8" fill="#0F172A" />
+  </g>
+
+  <!-- Grandmother (Dadi / Bani Devi, 70) -->
+  <g id="grandmother" transform="translate(50, 0)">
+    <path d="M 280 480 Q 360 440 440 480 L 490 780 L 230 780 Z" class="saree-maroon" />
+    <path d="M 330 460 Q 360 620 370 780" stroke="#D4AF37" stroke-width="6" fill="none" />
+    <path d="M 380 460 Q 400 620 420 780" stroke="#D4AF37" stroke-width="4" fill="none" />
+    <polygon points="260,760 480,760 490,780 250,780" class="saree-gold" />
+
+    <path d="M 290 440 Q 360 420 430 440 L 440 520 L 280 520 Z" class="blouse-cream" />
+    <path d="M 290 440 L 400 580 L 370 600 L 270 470 Z" class="saree-maroon" />
+    <path d="M 290 440 L 400 580" stroke="#D4AF37" stroke-width="5" />
+
+    <rect x="335" y="380" width="50" height="55" rx="10" class="skin-dadi" />
+    <path d="M 345 410 Q 360 415 375 410" stroke="#DFAB88" stroke-width="2" fill="none" />
+
+    <circle cx="360" cy="310" r="70" class="skin-dadi" />
+    <circle cx="290" cy="330" r="38" class="hair-dadi" />
+    <path d="M 300 255 Q 360 230 420 270 Q 390 320 360 320 Q 320 310 300 255 Z" class="hair-dadi" />
+
+    <path d="M 330 295 Q 342 305 350 295" stroke="#1E293B" stroke-width="4" fill="none" stroke-linecap="round" />
+    <path d="M 370 295 Q 380 305 390 295" stroke="#1E293B" stroke-width="4" fill="none" stroke-linecap="round" />
+    <path d="M 324 290 Q 320 295 324 300" stroke="#DFAB88" stroke-width="2" fill="none" />
+    <path d="M 396 290 Q 400 295 396 300" stroke="#DFAB88" stroke-width="2" fill="none" />
+
+    <path d="M 326 282 L 352 290" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+    <path d="M 388 282 L 368 290" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+
+    <path d="M 360 292 L 356 316 L 366 316" stroke="#DFAB88" stroke-width="3" fill="none" />
+    <circle cx="360" cy="272" r="5" fill="#800020" />
+
+    <rect x="325" y="285" width="28" height="22" rx="6" fill="none" stroke="#64748B" stroke-width="2.5" />
+    <rect x="367" y="285" width="28" height="22" rx="6" fill="none" stroke="#64748B" stroke-width="2.5" />
+    <line x1="353" y1="295" x2="367" y2="295" stroke="#64748B" stroke-width="2.5" />
+
+    <ellipse cx="360" cy="340" rx="14" ry="10" fill="#881337" />
+    <path d="M 350 334 Q 360 330 370 334" stroke="#FFF" stroke-width="2" fill="none" />
+
+    <path d="M 270 480 Q 300 520 345 530" stroke="#800020" stroke-width="42" stroke-linecap="round" fill="none" />
+    <circle cx="355" cy="530" r="22" class="skin-dadi" />
+    <path d="M 345 520 Q 360 520 365 530 Q 355 545 345 540" fill="#DFAB88" />
+    <circle cx="325" cy="520" r="16" fill="none" stroke="#F59E0B" stroke-width="4" />
+    <circle cx="320" cy="517" r="16" fill="none" stroke="#F59E0B" stroke-width="3" />
+
+    <path d="M 440 480 Q 480 540 520 560" stroke="#800020" stroke-width="38" stroke-linecap="round" fill="none" />
+    <circle cx="530" cy="565" r="18" class="skin-dadi" />
+  </g>
+
+  <!-- Mother (Maa / Ananya, 42) Rushing in with Water Glass -->
+  <g id="mother" transform="translate(560, 160)">
+    <path d="M 120 320 Q 180 290 230 320 L 250 640 L 90 640 Z" class="kurta-mustard" />
+    <path d="M 160 310 L 175 360 L 190 310" stroke="#FFFFFF" stroke-width="4" fill="none" />
+
+    <path d="M 120 320 Q 100 450 110 580 Q 130 580 140 450 Z" class="dupatta-teal" />
+
+    <circle cx="175" cy="180" r="60" class="skin-maa" />
+    <path d="M 120 180 Q 130 110 200 130 Q 230 160 235 220 Q 200 170 150 190 Z" class="hair-maa" />
+    <ellipse cx="235" cy="225" rx="18" ry="32" class="hair-maa" />
+    <circle cx="175" cy="155" r="4" fill="#E11D48" />
+
+    <ellipse cx="155" cy="175" rx="10" ry="12" fill="#FFFFFF" />
+    <circle cx="157" cy="175" r="5" fill="#0F172A" />
+    <ellipse cx="195" cy="175" rx="10" ry="12" fill="#FFFFFF" />
+    <circle cx="193" cy="175" r="5" fill="#0F172A" />
+
+    <path d="M 145 160 Q 155 150 168 158" stroke="#0F172A" stroke-width="3" fill="none" />
+    <path d="M 182 158 Q 195 150 205 160" stroke="#0F172A" stroke-width="3" fill="none" />
+
+    <ellipse cx="175" cy="210" rx="12" ry="14" fill="#881337" />
+
+    <path d="M 130 330 Q 80 370 60 410" stroke="#EAB308" stroke-width="30" stroke-linecap="round" fill="none" />
+    <circle cx="55" cy="415" r="16" class="skin-maa" />
+    <polygon points="35,395 75,395 70,445 40,445" fill="#E0F2FE" stroke="#38BDF8" stroke-width="2" opacity="0.9" />
+    <path d="M 40,415 Q 55,405 70,420" fill="#38BDF8" opacity="0.6" />
+    <circle cx="48" cy="385" r="3" fill="#38BDF8" />
+    <circle cx="68" cy="390" r="2.5" fill="#38BDF8" />
+
+    <g transform="translate(-10, 460)">
+      <rect width="130" height="26" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.2" />
+      <text x="8" y="17" font-size="11" class="text-title" fill="#B91C1C">⚠️ DO NOT GIVE WATER</text>
+    </g>
+  </g>
+
+  <!-- Simplified Emotionally Resonant Dialogue Bubble (Dadi - Pain) -->
+  <g transform="translate(180, 160)">
+    <path d="M 0,0 L 360,0 Q 380,0 380,20 L 380,90 Q 380,110 360,110 L 140,110 L 100,140 L 110,110 L 20,110 Q 0,110 0,90 Z" class="bubble-bg" />
+    <text x="24" y="42" font-size="18" class="text-title" fill="#0F172A">Dadi (70):</text>
+    <text x="24" y="74" font-size="18" class="text-title" fill="#E11D48">"My chest feels crushed...</text>
+    <text x="24" y="98" font-size="18" class="text-title" fill="#E11D48"> I can't catch my breath!"</text>
+  </g>
+
+  <!-- Bottom Context Banner -->
+  <g transform="translate(60, 920)">
+    <rect width="880" height="45" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" />
+    <text x="25" y="28" font-size="14" class="text-body" fill="#475569">
+      <tspan font-weight="700" fill="#0F172A">Scene 1 • Acute Angina Onset:</tspan> Transmural myocardial ischemia (STEMI). Levine's sign clutched fist indicates severe occlusion.
+    </text>
+  </g>
+</svg>

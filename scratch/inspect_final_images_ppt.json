@@ -1,0 +1,2276 @@
+[
+  {
+    "slide_num": 1,
+    "shapes": [
+      {
+        "id": 73,
+        "name": "Oval 72",
+        "left": 4813344,
+        "top": 113159,
+        "width": 1207488,
+        "height": 695788,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TEAM HOPE"
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Rounded Rectangle 29",
+        "left": 365722,
+        "top": 1352727,
+        "width": 7351814,
+        "height": 2292111,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TEAM REGISTRATION & NATIONAL CRISIS BRIEF",
+          "TEAM NAME: TEAM HOPE",
+          "PROBLEM STATEMENT ID: Student Innovation (Open Category — Theme: MedTech / BioTech / HealthTech)",
+          "PROBLEM STATEMENT TITLE: Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility",
+          "TEAM LEADER NAME: SHAYAK DAS",
+          "CATEGORY / THEME: Open Innovation | MedTech / BioTech / HealthTech | Software (Web-First Realtime)"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Rectangle 5",
+        "left": 0,
+        "top": 0,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 7,
+        "name": "Rectangle 6",
+        "left": 0,
+        "top": 6821424,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 10,
+        "name": "Oval 9",
+        "left": 548640,
+        "top": 1463040,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 11,
+        "name": "Oval 10",
+        "left": 713232,
+        "top": 1463040,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 12,
+        "name": "Oval 11",
+        "left": 877824,
+        "top": 1463040,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 13,
+        "name": "Oval 12",
+        "left": 1042416,
+        "top": 1463040,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 14,
+        "name": "Oval 13",
+        "left": 1207007,
+        "top": 1463040,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 15,
+        "name": "Oval 14",
+        "left": 1371600,
+        "top": 1463040,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 17,
+        "name": "Oval 16",
+        "left": 548640,
+        "top": 808947,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 18,
+        "name": "Oval 17",
+        "left": 713232,
+        "top": 808947,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 19,
+        "name": "Oval 18",
+        "left": 877824,
+        "top": 808947,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 20,
+        "name": "Oval 19",
+        "left": 1042415,
+        "top": 808947,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 21,
+        "name": "Oval 20",
+        "left": 1207008,
+        "top": 808947,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 23,
+        "name": "Oval 22",
+        "left": 548640,
+        "top": 918675,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 24,
+        "name": "Oval 23",
+        "left": 713232,
+        "top": 918675,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 25,
+        "name": "Oval 24",
+        "left": 877824,
+        "top": 918675,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 26,
+        "name": "Oval 25",
+        "left": 1042415,
+        "top": 918675,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 27,
+        "name": "Oval 26",
+        "left": 1207008,
+        "top": 918675,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 5,
+        "name": "Picture 4",
+        "left": 8888862,
+        "top": 1063837,
+        "width": 2425314,
+        "height": 2603646,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 2,
+        "name": "Picture 1",
+        "left": 9780086,
+        "top": 1500,
+        "width": 2249850,
+        "height": 1062337,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 29,
+        "name": "TextBox 28",
+        "left": 531876,
+        "top": 409141,
+        "width": 9144000,
+        "height": 669414,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "SMART INDIA HACKATHON 2026",
+          "ASHA: Automated System for Hospital Allocation"
+        ]
+      },
+      {
+        "id": 31,
+        "name": "Rounded Rectangle 30",
+        "left": 515874,
+        "top": 1582382,
+        "width": 64770,
+        "height": 1624650,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 54,
+        "name": "Picture 53",
+        "left": 9426291,
+        "top": 3942115,
+        "width": 2603645,
+        "height": 2603645,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 58,
+        "name": "Straight Arrow Connector 57",
+        "left": 9063228,
+        "top": 6263494,
+        "width": 558800,
+        "height": 0,
+        "has_text": false,
+        "has_image": false
+      },
+      {
+        "id": 62,
+        "name": "Picture 61",
+        "left": 6419121,
+        "top": 3791542,
+        "width": 2685152,
+        "height": 2685152,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 64,
+        "name": "Picture 63",
+        "left": 219484,
+        "top": 3795184,
+        "width": 2685152,
+        "height": 2685152,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 66,
+        "name": "Picture 65",
+        "left": 3359420,
+        "top": 3801702,
+        "width": 2674112,
+        "height": 2674112,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 56,
+        "name": "Straight Arrow Connector 55",
+        "left": 3155303,
+        "top": 6159268,
+        "width": 558800,
+        "height": 0,
+        "has_text": false,
+        "has_image": false
+      },
+      {
+        "id": 67,
+        "name": "Rectangle 66",
+        "left": 1,
+        "top": 6484799,
+        "width": 12191999,
+        "height": 387043,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 68,
+        "name": "Rectangle 67",
+        "left": 0,
+        "top": 6812281,
+        "width": 12191695,
+        "height": 45719,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 70,
+        "name": "Footer Placeholder 6",
+        "left": 4513536,
+        "top": 6538413,
+        "width": 3204000,
+        "height": 280820,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "@SIH Idea submission- Template"
+        ]
+      },
+      {
+        "id": 57,
+        "name": "Straight Arrow Connector 56",
+        "left": 5663162,
+        "top": 6133722,
+        "width": 755959,
+        "height": 0,
+        "has_text": false,
+        "has_image": false
+      }
+    ]
+  },
+  {
+    "slide_num": 2,
+    "shapes": [
+      {
+        "id": 6,
+        "name": "Rectangle 5",
+        "left": 1,
+        "top": 6368605,
+        "width": 12191999,
+        "height": 503238,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 11,
+        "name": "Picture 10",
+        "left": 9780086,
+        "top": 1500,
+        "width": 2249850,
+        "height": 1062337,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 12,
+        "name": "Rectangle 11",
+        "left": 0,
+        "top": 0,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 13,
+        "name": "Rectangle 12",
+        "left": 0,
+        "top": 6821424,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 14,
+        "name": "Oval 13",
+        "left": 7132320,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 15,
+        "name": "Oval 14",
+        "left": 7278624,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 16,
+        "name": "Oval 15",
+        "left": 7424927,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 17,
+        "name": "Oval 16",
+        "left": 7571231,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 18,
+        "name": "Oval 17",
+        "left": 7717536,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 19,
+        "name": "Oval 18",
+        "left": 7132320,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 20,
+        "name": "Oval 19",
+        "left": 7278624,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 21,
+        "name": "Oval 20",
+        "left": 7424927,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 22,
+        "name": "Oval 21",
+        "left": 7571231,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 23,
+        "name": "Oval 22",
+        "left": 7717536,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 24,
+        "name": "Rounded Rectangle 23",
+        "left": 457200,
+        "top": 109728,
+        "width": 2286000,
+        "height": 219456,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "⚡ PROBLEM & SOLUTION"
+        ]
+      },
+      {
+        "id": 25,
+        "name": "TextBox 24",
+        "left": 457200,
+        "top": 347472,
+        "width": 8961120,
+        "height": 479618,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "PROPOSED SOLUTION: ASHA EMERGENCY RESUSCITATION GRID",
+          "Solving India's 1-in-5 Golden Hour Survival Crisis • Helping families save  their loved ones."
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Rounded Rectangle 25",
+        "left": 162064,
+        "top": 1051560,
+        "width": 8413726,
+        "height": 1353312,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "THE MASSIVE CRISIS: ONLY 1 IN 5 VICTIMS REACH CARE IN THE GOLDEN HOUR",
+          "• Blind Transit & Delays: Over 150,000 annual ambulance deaths occur due to uncoordinated hospital selection and fatal admission delays. \u000b• Read-Only Static Portals: Current state dashboards show what existed hours ago — reading a portal is NOT reserving a bed.\u000b • Ghost Bed Paradox: Portals display raw physical frames while hiding that zero on-duty nurses are present to staff ICU beds."
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Rounded Rectangle 26",
+        "left": 300226,
+        "top": 1137986,
+        "width": 64008,
+        "height": 1207009,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 28,
+        "name": "Rounded Rectangle 27",
+        "left": 170651,
+        "top": 2582739,
+        "width": 8367776,
+        "height": 1565909,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "OUR SOLUTION\u000b• Situational First-Aid: Gives bystanders live, step-by-step guidance (Semi-Fowler 45°, 300mg aspirin) en route to halt early collapse. \u000b• Route to nearest hospital: Our app shows you the nearest hospital with specific beds or blood and helps reserve bed/blood for You.\u000b• Zero-Signup Instant Access: Web PWA loads in <0.8s on any smartphone browser with zero app download or password barrier. • Staffed Bed Reservation: Strictly computes usable beds as Staffed Beds = min(Physical Beds, Nurses × Ratio) with dynamic GPS lock\u000b. • Instant Vernacular Triage: Categorizes acuity (ESI-1 to ESI-5) via voice in Bengali, Hinglish, or English with zero cloud latency."
+        ]
+      },
+      {
+        "id": 29,
+        "name": "Rounded Rectangle 28",
+        "left": 254507,
+        "top": 2768301,
+        "width": 77723,
+        "height": 1194784,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 30,
+        "name": "Rounded Rectangle 29",
+        "left": 123202,
+        "top": 4336847,
+        "width": 8303768,
+        "height": 1912886,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Competitor Research and Uniqueness\u000b• vs. State Portals (e-RaktKosh ): They show static unverified \"Ghost Beds\" with no booking lock. ASHA executes atomic row-level bed locks. \u000b• vs. AI Chatbots (XparkAI / iRelief): Chatbots suffer high LLM latency and clinical errors. ASHA provides deterministic <0.8s instant routing.\u000b • vs. 108 Telephonic Dispatch: Call centers suffer 1-5 minute phone queues. ASHA automates sub-second routing with live WebSocket ER sync."
+        ]
+      },
+      {
+        "id": 31,
+        "name": "Rounded Rectangle 30",
+        "left": 216848,
+        "top": 4530089,
+        "width": 115382,
+        "height": 1414515,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 32,
+        "name": "Rounded Rectangle 31",
+        "left": 8685518,
+        "top": 1051560,
+        "width": 3383280,
+        "height": 5532120,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 33,
+        "name": "Rounded Rectangle 32",
+        "left": 8795246,
+        "top": 1179576,
+        "width": 3163824,
+        "height": 5276088,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 34,
+        "name": "Rounded Rectangle 33",
+        "left": 9897098,
+        "top": 1252728,
+        "width": 960120,
+        "height": 164592,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 38,
+        "name": "Rounded Rectangle 37",
+        "left": 9851378,
+        "top": 6364224,
+        "width": 1051560,
+        "height": 41148,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 8,
+        "name": "Footer Placeholder 6",
+        "left": 4513536,
+        "top": 6454108,
+        "width": 3204000,
+        "height": 365125,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "@SIH Idea submission- Template"
+        ]
+      },
+      {
+        "id": 39,
+        "name": "Oval 38",
+        "left": 5615291,
+        "top": 113159,
+        "width": 1207488,
+        "height": 695788,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TEAM HOPE"
+        ]
+      }
+    ]
+  },
+  {
+    "slide_num": 3,
+    "shapes": [
+      {
+        "id": 10,
+        "name": "Rounded Rectangle 26",
+        "left": 1089762,
+        "top": 3831335,
+        "width": 6847548,
+        "height": 2574037,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 2,
+        "name": "Rectangle 1",
+        "left": 2,
+        "top": 6528815,
+        "width": 12191694,
+        "height": 343027,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 3,
+        "name": "Rectangle 2",
+        "left": 1,
+        "top": 6812281,
+        "width": 12191390,
+        "height": 45719,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 4,
+        "name": "Rounded Rectangle 37",
+        "left": 9851378,
+        "top": 6359653,
+        "width": 1051534,
+        "height": 45719,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 5,
+        "name": "Footer Placeholder 6",
+        "left": 4513536,
+        "top": 6570349,
+        "width": 3203920,
+        "height": 248884,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "@SIH Idea submission- Template"
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Picture 11",
+        "left": 9780086,
+        "top": 1500,
+        "width": 2249850,
+        "height": 1062337,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 13,
+        "name": "Rectangle 12",
+        "left": 0,
+        "top": 0,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 14,
+        "name": "Rectangle 13",
+        "left": 0,
+        "top": 6821424,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 15,
+        "name": "Oval 14",
+        "left": 7132320,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 16,
+        "name": "Oval 15",
+        "left": 7278624,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 17,
+        "name": "Oval 16",
+        "left": 7424927,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 18,
+        "name": "Oval 17",
+        "left": 7571231,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 19,
+        "name": "Oval 18",
+        "left": 7717536,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 20,
+        "name": "Oval 19",
+        "left": 7132320,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 21,
+        "name": "Oval 20",
+        "left": 7278624,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 22,
+        "name": "Oval 21",
+        "left": 7424927,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 23,
+        "name": "Oval 22",
+        "left": 7571231,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 24,
+        "name": "Oval 23",
+        "left": 7717536,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 25,
+        "name": "Rounded Rectangle 24",
+        "left": 457200,
+        "top": 109728,
+        "width": 2286000,
+        "height": 219456,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "⚡ TECHNICAL PIPELINE"
+        ]
+      },
+      {
+        "id": 26,
+        "name": "TextBox 25",
+        "left": 457200,
+        "top": 347472,
+        "width": 8961120,
+        "height": 658368,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TECHNICAL APPROACH & SYSTEM ARCHITECTURE",
+          "Sub-Second Resuscitation Pipeline • WebSockets & Road Snapping with Zero Cloud AI Latency"
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Rounded Rectangle 26",
+        "left": 457200,
+        "top": 1124712,
+        "width": 7635240,
+        "height": 2651760,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "SYSTEM ARCHITECTURE LAYERS & CORE TECHNOLOGIES",
+          "▪ Citizen Web Client: React 19, TypeScript, Tailwind CSS, Vite. Zero-install responsive PWA optimized for low-end smartphones. Native W3C Web Speech API with 2.2s silence debounce.",
+          "▪ In-Memory Bengali Medical Engine: Client-side deterministic tokenizer mapping 150+ Bengali phrases to English clinical terms in 0ms without external LLM API costs or cloud latency.",
+          "▪ Triage Acuity Detection Engine: Standardized ESI-1 to ESI-5 triage detection system. Does not diagnose or medically judge patients; strictly categorizes resource acuity to route to equipped wards without LLM hallucinations.",
+          "▪ Open Source Routing Machine (OSRM): Self-hosted C++ routing engine with 1.35x Indian road winding factor, sub-second route calculation (<420ms), bypassing Google Maps API fees.",
+          "▪ Real-Time Cloud Synchronization: Supabase PostgreSQL WAL change-data-capture broadcasting live hold events across citizen and ER desk in <50 milliseconds over WebSockets."
+        ]
+      },
+      {
+        "id": 28,
+        "name": "Rounded Rectangle 27",
+        "left": 623824,
+        "top": 1252728,
+        "width": 64008,
+        "height": 2368296,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 31,
+        "name": "Rounded Rectangle 30",
+        "left": 8321040,
+        "top": 1051560,
+        "width": 3383280,
+        "height": 5532120,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 32,
+        "name": "Rounded Rectangle 31",
+        "left": 8430768,
+        "top": 1179576,
+        "width": 3163824,
+        "height": 5276088,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 33,
+        "name": "Rounded Rectangle 32",
+        "left": 9532620,
+        "top": 1252728,
+        "width": 960120,
+        "height": 164592,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 37,
+        "name": "Rounded Rectangle 36",
+        "left": 9486900,
+        "top": 6364224,
+        "width": 1051560,
+        "height": 41148,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 7,
+        "name": "Oval 6",
+        "left": 4813344,
+        "top": 113159,
+        "width": 1207488,
+        "height": 695788,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TEAM HOPE"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Picture 7",
+        "left": 1310957,
+        "top": 4193002,
+        "width": 593755,
+        "height": 593755,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 34,
+        "name": "Picture 33",
+        "left": 2386619,
+        "top": 4149912,
+        "width": 593755,
+        "height": 593755,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 36,
+        "name": "Picture 35",
+        "left": 3628348,
+        "top": 4059938,
+        "width": 694584,
+        "height": 694584,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 39,
+        "name": "Picture 38",
+        "left": 6343775,
+        "top": 4743572,
+        "width": 788545,
+        "height": 788545,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 41,
+        "name": "Picture 40",
+        "left": 4835639,
+        "top": 4149865,
+        "width": 520556,
+        "height": 520556,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 43,
+        "name": "Picture 42",
+        "left": 6464438,
+        "top": 4094928,
+        "width": 581502,
+        "height": 581502,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 45,
+        "name": "Picture 44",
+        "left": 5836302,
+        "top": 5666401,
+        "width": 1912979,
+        "height": 506939,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 47,
+        "name": "Picture 46",
+        "left": 4784524,
+        "top": 4670421,
+        "width": 788545,
+        "height": 788545,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 49,
+        "name": "Picture 48",
+        "left": 4835639,
+        "top": 5569060,
+        "width": 737430,
+        "height": 737430,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 51,
+        "name": "Picture 50",
+        "left": 3716139,
+        "top": 5587340,
+        "width": 788811,
+        "height": 788811,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 53,
+        "name": "Picture 52",
+        "left": 3602372,
+        "top": 4654200,
+        "width": 881062,
+        "height": 881062,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 55,
+        "name": "Picture 54",
+        "left": 2154551,
+        "top": 5446073,
+        "width": 899862,
+        "height": 899862,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 57,
+        "name": "Picture 56",
+        "left": 1201229,
+        "top": 5505658,
+        "width": 757981,
+        "height": 757981,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 59,
+        "name": "Picture 58",
+        "left": 2316503,
+        "top": 4766331,
+        "width": 663871,
+        "height": 663871,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 61,
+        "name": "Picture 60",
+        "left": 1309566,
+        "top": 4800599,
+        "width": 575863,
+        "height": 575863,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 62,
+        "name": "Rectangle 61",
+        "left": 2797093,
+        "top": 3743574,
+        "width": 3790520,
+        "height": 400110,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TECH STACK"
+        ]
+      }
+    ]
+  },
+  {
+    "slide_num": 4,
+    "shapes": [
+      {
+        "id": 11,
+        "name": "Picture 10",
+        "left": 9780086,
+        "top": 1500,
+        "width": 2249850,
+        "height": 1062337,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 12,
+        "name": "Rectangle 11",
+        "left": 0,
+        "top": 0,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 13,
+        "name": "Rectangle 12",
+        "left": 0,
+        "top": 6821424,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 14,
+        "name": "Oval 13",
+        "left": 7132320,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 15,
+        "name": "Oval 14",
+        "left": 7278624,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 16,
+        "name": "Oval 15",
+        "left": 7424927,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 17,
+        "name": "Oval 16",
+        "left": 7571231,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 18,
+        "name": "Oval 17",
+        "left": 7717536,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 19,
+        "name": "Oval 18",
+        "left": 7132320,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 20,
+        "name": "Oval 19",
+        "left": 7278624,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 21,
+        "name": "Oval 20",
+        "left": 7424927,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 22,
+        "name": "Oval 21",
+        "left": 7571231,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 23,
+        "name": "Oval 22",
+        "left": 7717536,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 24,
+        "name": "Rounded Rectangle 23",
+        "left": 457200,
+        "top": 109728,
+        "width": 2286000,
+        "height": 219456,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "⚡ DEFENSIVE SECURITY GRID"
+        ]
+      },
+      {
+        "id": 25,
+        "name": "TextBox 24",
+        "left": 457200,
+        "top": 347472,
+        "width": 8961120,
+        "height": 658368,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY",
+          "100m Geofence Hard-Lock Gate • IP/Device Multi-Factor Risk Scoring (0-100) • High-Certainty Gate Verification"
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Rounded Rectangle 25",
+        "left": 295440,
+        "top": 960121,
+        "width": 3648573,
+        "height": 3351783,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "✔ Operational Feasibility: Zero-install web PWA for citizens; hospital desk runs on existing ER computers with zero new hardware costs. ✔ Financial Viability: Self-hosted OSRM on NIC MeghRaj cloud eliminates map API fees; zero cloud AI costs in the emergency loop. ✔ Low-Bandwidth Resiliency: Lightweight <1.4MB bundle with offline caching loads instantly even on congested 3G/4G networks. ✔ ABDM Compliance: Native integration with Ayushman Bharat Health Facility Registry (HFR) and HL7/FHIR clinical handoffs."
+        ]
+      },
+      {
+        "id": 28,
+        "name": "Rounded Rectangle 27",
+        "left": 4012280,
+        "top": 1037843,
+        "width": 3742547,
+        "height": 3241549,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "FOUR-TIER OPERATIONAL RISKS",
+          "• Bed Hoarding by Touts: Solved by 50% public hold cap, client risk engine, and 100m physical geofence gate.\u000b • Night Nurse Fatigue: Solved by 1-tap adjusters that dynamically recompute beds and activate ICU surge limits. \u000b• Traffic Jams & Expirations: Solved by live GPS vector tracking that pauses the countdown while moving toward the ER. \u000b• Patient Data Privacy: Solved by ephemeral encrypted telemetry with automatic purge 60 minutes post-admission."
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Rounded Rectangle 29",
+        "left": 7904988,
+        "top": 973329,
+        "width": 4193214,
+        "height": 3351783,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "S"
+        ]
+      },
+      {
+        "id": 35,
+        "name": "Rounded Rectangle 34",
+        "left": 365760,
+        "top": 4489704,
+        "width": 11490960,
+        "height": 1794204,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 36,
+        "name": "TextBox 35",
+        "left": 3944013,
+        "top": 4564888,
+        "width": 3707746,
+        "height": 215444,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "15-Minute Dynamic Soft-Lock & Anti-Hoarding State Machine"
+        ]
+      },
+      {
+        "id": 37,
+        "name": "Rounded Rectangle 36",
+        "left": 467486,
+        "top": 4750308,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 1: Public Staffed Bed Pool (50% Hold Cap)",
+          "Beds verified via on-duty nurse ratio; 50% pool reserved for direct ambulance drive-ups."
+        ]
+      },
+      {
+        "id": 38,
+        "name": "Right Arrow 37",
+        "left": 3135248,
+        "top": 5381244,
+        "width": 109728,
+        "height": 128016,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 39,
+        "name": "Rounded Rectangle 38",
+        "left": 3290696,
+        "top": 4814316,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 2: 15-Min Dynamic Soft-Lock (4-Digit OTP Issued)",
+          "Bed count decrements by 1; secure 4-digit OTP generated for 2-second gate check-in."
+        ]
+      },
+      {
+        "id": 40,
+        "name": "Right Arrow 39",
+        "left": 5958458,
+        "top": 5381244,
+        "width": 109728,
+        "height": 128016,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 41,
+        "name": "Rounded Rectangle 40",
+        "left": 6113906,
+        "top": 4814316,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 3: 10s GPS Vector Loop: TOWARD / AWAY Heartbeat",
+          "• TOWARD: Countdown paused, live ETA shown\n• AWAY: Alert & auto-cancellation"
+        ]
+      },
+      {
+        "id": 42,
+        "name": "Right Arrow 41",
+        "left": 8781668,
+        "top": 5381244,
+        "width": 109728,
+        "height": 128016,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 43,
+        "name": "Rounded Rectangle 42",
+        "left": 8937116,
+        "top": 4814316,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 4: Gate 4-Digit Check-In (100m Hard-Lock Gate)",
+          "Spoken 4-digit OTP entered into ER Desk converts soft-lock to permanent admission (<2s)."
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Rectangle 8",
+        "left": 1,
+        "top": 6454107,
+        "width": 12191999,
+        "height": 417735,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 10,
+        "name": "Rectangle 9",
+        "left": 0,
+        "top": 6812281,
+        "width": 12191695,
+        "height": 45719,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 44,
+        "name": "Rounded Rectangle 37",
+        "left": 9851378,
+        "top": 6359653,
+        "width": 1051560,
+        "height": 45719,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 45,
+        "name": "Footer Placeholder 6",
+        "left": 4513536,
+        "top": 6516145,
+        "width": 3204000,
+        "height": 303088,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "@SIH Idea submission- Template"
+        ]
+      },
+      {
+        "id": 47,
+        "name": "Oval 46",
+        "left": 5839989,
+        "top": 104454,
+        "width": 1207488,
+        "height": 695788,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TEAM HOPE"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Picture 2",
+        "left": 1609626,
+        "top": 5994545,
+        "width": 8039797,
+        "height": 472481,
+        "has_text": false,
+        "has_image": true
+      }
+    ]
+  },
+  {
+    "slide_num": 5,
+    "shapes": [
+      {
+        "id": 2,
+        "name": "Rectangle 1",
+        "left": 1,
+        "top": 6368605,
+        "width": 12191999,
+        "height": 503238,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 3,
+        "name": "Rectangle 2",
+        "left": 0,
+        "top": 6821424,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 4,
+        "name": "Rounded Rectangle 37",
+        "left": 9851378,
+        "top": 6364224,
+        "width": 1051560,
+        "height": 41148,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 5,
+        "name": "Footer Placeholder 6",
+        "left": 4513536,
+        "top": 6454108,
+        "width": 3204000,
+        "height": 365125,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "@SIH Idea submission- Template"
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Picture 10",
+        "left": 10635624,
+        "top": 1501,
+        "width": 1394312,
+        "height": 658368,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 12,
+        "name": "Rectangle 11",
+        "left": 0,
+        "top": 0,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 13,
+        "name": "Rectangle 12",
+        "left": 0,
+        "top": 6821424,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 14,
+        "name": "Oval 13",
+        "left": 7132320,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 15,
+        "name": "Oval 14",
+        "left": 7278624,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 16,
+        "name": "Oval 15",
+        "left": 7424927,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 17,
+        "name": "Oval 16",
+        "left": 7571231,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 18,
+        "name": "Oval 17",
+        "left": 7717536,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 19,
+        "name": "Oval 18",
+        "left": 7132320,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 20,
+        "name": "Oval 19",
+        "left": 7278624,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 21,
+        "name": "Oval 20",
+        "left": 7424927,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 22,
+        "name": "Oval 21",
+        "left": 7571231,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 23,
+        "name": "Oval 22",
+        "left": 7717536,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 24,
+        "name": "Rounded Rectangle 23",
+        "left": 457200,
+        "top": 109728,
+        "width": 2286000,
+        "height": 219456,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "⚡ HEALTHCARE IMPACT"
+        ]
+      },
+      {
+        "id": 25,
+        "name": "TextBox 24",
+        "left": 457200,
+        "top": 347472,
+        "width": 8961120,
+        "height": 658368,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "IMPACT, HEALTHCARE VALUE & REAL-TIME SYNC ADMIN PANEL",
+          "Saving 15,000+ Golden Hour Lives Annually • Live ER Desk with 10 Emergency Hospitals"
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Rounded Rectangle 25",
+        "left": 457200,
+        "top": 1078992,
+        "width": 7635240,
+        "height": 2103120,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "CLINICAL & SOCIAL IMPACT: SAVING 15,000+ LIVES ANNUALLY",
+          "▪ Transforming 1-in-5 Golden Hour Survival: Currently only 1 in 5 Indian emergency victims reach care in time. ASHA eliminates blind emergency turnaways, giving families the highest probability of securing an available bed on their first run.",
+          "▪ Bridging the En-Route Care Void: Empowers families with AIIMS/ERC-validated first-aid steps, actively preserving cerebral and cardiac perfusion before hospital arrival.",
+          "▪ Ending Predatory Ambulance Touts: Prevents middlemen from diverting patients to unequipped nursing homes based on referral kickbacks.",
+          "▪ Equitable Regional Bed Balancing: Diverts cases from saturated medical colleges (140% load) to secondary hospitals with idle staffed beds."
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Rounded Rectangle 26",
+        "left": 585215,
+        "top": 1243584,
+        "width": 45719,
+        "height": 1761744,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 28,
+        "name": "Rounded Rectangle 27",
+        "left": 457200,
+        "top": 3291840,
+        "width": 6999731,
+        "height": 2395537,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "HOSPITAL ER COMMAND DESK: REAL-TIME SYNC ACROSS 10 HOSPITALS",
+          "✔ Live WebSocket Queue (<50ms Latency): Supabase PostgreSQL WAL broadcasts incoming holds instantly with audio klaxon siren and flashing visual banner.",
+          "✔ 1-Tap Nurse Shift Counter & Dynamic Allocation: Nurses tap +/- on active nurses; beds dynamically recompute (normal beds shed first, 1:2 ICU stretch active in low staff).",
+          "✔ 100m Geofenced 4-Digit OTP Admission (<2s): Triage nurse inputs citizen's 4-digit OTP; backend strictly validates that patient's phone is within 100m of ER gate before converting to permanent hard-lock!",
+          "✔ Automated Cancellation & Re-Routing: If an ER bed becomes compromised, 1-tap admin cancel instantly re-routes patient to next optimal hospital, auto-updating citizen banner with new hospital address and fresh 4-digit OTP."
+        ]
+      },
+      {
+        "id": 29,
+        "name": "Rounded Rectangle 28",
+        "left": 585213,
+        "top": 3515678,
+        "width": 45719,
+        "height": 1883663,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 30,
+        "name": "Rounded Rectangle 29",
+        "left": 8321040,
+        "top": 659869,
+        "width": 3383280,
+        "height": 5923811,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 31,
+        "name": "Rounded Rectangle 30",
+        "left": 8430768,
+        "top": 816077,
+        "width": 3163824,
+        "height": 5639587,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 36,
+        "name": "Rounded Rectangle 35",
+        "left": 9486900,
+        "top": 6364224,
+        "width": 1051560,
+        "height": 41148,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 7,
+        "name": "Oval 6",
+        "left": 5499395,
+        "top": 135894,
+        "width": 1207488,
+        "height": 695788,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TEAM HOPE"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "TextBox 5",
+        "left": 620008,
+        "top": 5673701,
+        "width": 6999731,
+        "height": 646331,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Main Website currently live in : https://ashaien.vercel.app\u000bHospital pannel currently Live in : https://ashaien-admin.vercel.app"
+        ]
+      }
+    ]
+  },
+  {
+    "slide_num": 6,
+    "shapes": [
+      {
+        "id": 12,
+        "name": "Picture 11",
+        "left": 9780086,
+        "top": 1500,
+        "width": 2249850,
+        "height": 1062337,
+        "has_text": false,
+        "has_image": true
+      },
+      {
+        "id": 13,
+        "name": "Rectangle 12",
+        "left": 0,
+        "top": 0,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 14,
+        "name": "Rectangle 13",
+        "left": 0,
+        "top": 6821424,
+        "width": 12191695,
+        "height": 36576,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 15,
+        "name": "Oval 14",
+        "left": 7132320,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 16,
+        "name": "Oval 15",
+        "left": 7278624,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 17,
+        "name": "Oval 16",
+        "left": 7424927,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 18,
+        "name": "Oval 17",
+        "left": 7571231,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 19,
+        "name": "Oval 18",
+        "left": 7717536,
+        "top": 292608,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 20,
+        "name": "Oval 19",
+        "left": 7132320,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 21,
+        "name": "Oval 20",
+        "left": 7278624,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 22,
+        "name": "Oval 21",
+        "left": 7424927,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 23,
+        "name": "Oval 22",
+        "left": 7571231,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 24,
+        "name": "Oval 23",
+        "left": 7717536,
+        "top": 420624,
+        "width": 32004,
+        "height": 32004,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 25,
+        "name": "Rounded Rectangle 24",
+        "left": 457200,
+        "top": 109728,
+        "width": 2286000,
+        "height": 219456,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "⚡ RESEARCH & SCALE"
+        ]
+      },
+      {
+        "id": 26,
+        "name": "TextBox 25",
+        "left": 457200,
+        "top": 347472,
+        "width": 8961120,
+        "height": 658368,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "CLINICAL RESEARCH DATA ORIGIN & NATIONAL SCALABILITY",
+          "Evidence-Based Protocol Lineage • Zero-Capex Architecture for 10,000 Hospitals Nationwide"
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Rounded Rectangle 26",
+        "left": 457200,
+        "top": 1078993,
+        "width": 5522976,
+        "height": 3557016,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Data Research Origin",
+          "• AHRQ ESI v4 & AIIMS Clinical Triage: Validated 5-level acuity framework instantly matches acute symptoms (cardiac, stroke, trauma) to equipped wards with zero diagnostic latency.",
+          "• ERC & AHA Situational First-Aid: Evidence-backed pre-hospital actions (Semi-Fowler 45° posture, hands-only CPR, 300mg chewable aspirin) to stabilize patients during the fatal transit void.",
+          "• ISCCM Staffing Law (No Ghost Beds): Enforces statutory nurse-to-patient ratios: Staffed Beds = min(Physical Beds, Nurses × Ratio) across ICU (1:1), HDU (1:2), and General Wards (1:6).",
+          "• MeghRaj Government Cloud Grid: Self-hosted OSRM routing on NIC national infrastructure eliminates recurring commercial map API fees while delivering sub-420ms calibrated paths.",
+          "• Zero-Capex Scalability & ABDM Sync: Onboards any district hospital in 15 minutes using existing ER web browsers ($0 new hardware), fully aligned with Ayushman Bharat HFR registries."
+        ]
+      },
+      {
+        "id": 28,
+        "name": "Rounded Rectangle 27",
+        "left": 694944,
+        "top": 1406653,
+        "width": 82296,
+        "height": 2932175,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 29,
+        "name": "Rounded Rectangle 28",
+        "left": 6149340,
+        "top": 1019556,
+        "width": 5582412,
+        "height": 3689605,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 31,
+        "name": "Rounded Rectangle 30",
+        "left": 512064,
+        "top": 4882896,
+        "width": 11274552,
+        "height": 1554480,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 32,
+        "name": "TextBox 31",
+        "left": 5107784,
+        "top": 4900169,
+        "width": 2683427,
+        "height": 215444,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Nationwide Geospatial Scaling Architecture"
+        ]
+      },
+      {
+        "id": 33,
+        "name": "Rounded Rectangle 32",
+        "left": 603504,
+        "top": 5120640,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 1: 10,000 National Hospital Nodes Onboarded",
+          "State health departments register hospital ward beds & blood banks via ABDM HFR."
+        ]
+      },
+      {
+        "id": 34,
+        "name": "Right Arrow 33",
+        "left": 3271266,
+        "top": 5687568,
+        "width": 109728,
+        "height": 128016,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 35,
+        "name": "Rounded Rectangle 34",
+        "left": 3426714,
+        "top": 5120640,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 2: PostGIS Geospatial Partitioning & MeghRaj OSRM Grid",
+          "Regional routing microservices hosted on NIC MeghRaj deliver <420ms paths at $0 cost."
+        ]
+      },
+      {
+        "id": 36,
+        "name": "Right Arrow 35",
+        "left": 6094476,
+        "top": 5687568,
+        "width": 109728,
+        "height": 128016,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 37,
+        "name": "Rounded Rectangle 36",
+        "left": 6249924,
+        "top": 5120640,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 3: Redis TTL Keyspace Event Sharding",
+          "Manages 100,000+ concurrent 15-min soft-locks with automatic millisecond expiry."
+        ]
+      },
+      {
+        "id": 38,
+        "name": "Right Arrow 37",
+        "left": 8917686,
+        "top": 5687568,
+        "width": 109728,
+        "height": 128016,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 39,
+        "name": "Rounded Rectangle 38",
+        "left": 9073134,
+        "top": 5120640,
+        "width": 2622042,
+        "height": 1261872,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "Step 4: National 108 Ambulance Dispatch Sync",
+          "Integrates with state 108 computer-aided dispatch and citizen mobile emergency grid."
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Rectangle 2",
+        "left": 0,
+        "top": 6565391,
+        "width": 12191999,
+        "height": 306483,
+        "has_text": true,
+        "has_image": false,
+        "text": []
+      },
+      {
+        "id": 5,
+        "name": "Oval 4",
+        "left": 5348470,
+        "top": 59436,
+        "width": 1207488,
+        "height": 695788,
+        "has_text": true,
+        "has_image": false,
+        "text": [
+          "TEAM HOPE"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,813 @@
+================================================================================
+DECK: d:/HACKATHON/SIH2026-ASHA-Presentation-Ready.pptx
+================================================================================
+
+--- SLIDE 1 (Word Count: 131, Images: 2) ---
+
+ASHA: Automated System for Hospital Allocation
+Intelligent Golden Hour Triage, Staffed Bed Reservation & En-Route First-Aid Protocols
+SMART INDIA HACKATHON 2026
+TEAM NAME: TEAM ASHA
+PROBLEM STATEMENT ID (PS ID): Student Innovation (Open Category — Theme: MedTech / BioTech / HealthTech)
+PROBLEM STATEMENT TITLE: Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility
+TEAM LEADER NAME: SHAYAK DAS
+CATEGORY / THEME: Open Innovation  |  MedTech / BioTech / HealthTech  |  Software (Web-First Realtime)
+MENTOR NAME: [Open Innovation Faculty Mentor]
+⭐ Core Breakthroughs: (1) Live Situational First-Aid En Route [Semi-Fowler 45°, 10s ABC, DO NOT DO warnings]  •  (2) Native Bengali Speech In-Memory Clinical Translation  •  (3) 15-Min Dynamic Soft-Lock Bed Hold with 6-Digit Gate OTP (No QR)  •  (4) Staffed Bed Math eliminating Ghost Beds.
+
+--- SLIDE 2 (Word Count: 429, Images: 1) ---
+
+PROPOSED SOLUTION: ASHA EMERGENCY RESUSCITATION GRID
+2
+@SIH Idea submission- Template
+TEAM ASHA
+🚨 4 SYSTEMIC FAILURES DRIVING GOLDEN-HOUR GATE REJECTIONS
+• Read-Only Directories: Portals answer "what existed hours ago," not "is one reserved for me?" Reading is not reserving.
+• The "Ghost Bed" Paradox: Dashboards report raw physical beds, hiding that zero nurses/intensivists are on active night duty.
+• The En-Route Black Hole: Over 50% of trauma/cardiac deaths occur in transit due to bystander panic or fatal layman blunders.
+• Update Friction: Nurses at 2 AM will not log into complex portals. Data freshness is a UX failure, not a database failure.
+💡 ASHA: PROPOSED SOLUTION & CORE CLINICAL CAPABILITIES
+• ⭐ OUR BIGGEST PLUS POINT: SITUATIONAL FIRST-AID PROTOCOLS: The exact second an emergency is detected, ASHA shows bystanders EXACTLY WHAT TO DO in the current situation right now (Semi-Fowler 45° posture with bent knees for cardiac emergencies, tourniquet/direct pressure for hemorrhage, recovery position for stroke, plus critical "DO NOT DO" warnings) to stabilize vital signs en route.
+• Zero-Signup Instant Web Access: Zero app installation, zero password barrier. Loads on any phone browser in <0.8s during active emergency distress.
+• Multilingual Speech & Typed Triage: Speak in English, type in Benglish, or speak in Bengali. Spoken Bengali script (বুকে ব্যথা) is translated internally to canonical English clinical terms with zero cloud latency.
+• 15-Minute Dynamic GPS Soft-Lock: Atomically reserves 1 staffed bed before vehicle departs; GPS vector tracking monitors travel and auto-cancels if user is stationary or moves away.
+• Direct 6-Digit Gate OTP Admission: Spoken aloud in 2 seconds at the ER bay to hard-lock admission, completely eliminating fragile QR scanners in rain and darkness.
+⭐ INNOVATION & HOW IT ADDRESSES THE PROBLEM
+✔ vs. Telemedicine Apps (Practo/Apollo): Those are OPD appointment schedulers requiring signups; ASHA is an instant zero-login emergency dispatch grid.
+✔ vs. 108 Ambulance Dispatch: Replaces verbal radio congestion with sub-second algorithmic road routing (<420ms OSRM computation).
+✔ Staffed Bed Capacity Formula: B_staffed = min(B_phys, N_nurses × Ratio), strictly guaranteeing clinical admission readiness.
+🔄 FLOWCHART: EMERGENCY TRIAGE & FIRST-AID FLOW
+🎙️ 1. Voice / Text Triage Ingestion
+Spoken Bengali (বুকে ব্যথা), English, or Benglish text
+⚡ 2. Internal Clinical Translation
+translateBengaliToEnglish(): 0ms in-memory conversion
+🚨 3. ESI-1 Triage & Ward Routing
+AHRQ ESI v4 rules -> routes to Cardiac ICU + OSRM
+🩸 4. ⭐ Situational First-Aid Sheet
+Semi-Fowler 45° posture, 10s ABC, chew aspirin, critical DO NOT DO warnings (ClinicalProtocolSheet.tsx)
+🔒 5. 15-Min Soft-Lock & 6-Digit OTP
+Beds count -1 live, OTP: 489215 generated, GPS vector telemetry active, <2s ER desk admission
+
+--- SLIDE 3 (Word Count: 351, Images: 1) ---
+
+TECHNICAL APPROACH & SYSTEM ARCHITECTURE
+3
+@SIH Idea submission- Template
+TEAM ASHA
+🛠️ TECHNOLOGIES USED & SYSTEM ARCHITECTURE LAYERS
+• Citizen Web Application: React 19, TypeScript, Tailwind CSS, Vite. Native W3C Web Speech API with 2.2s silence debounce and internal Bengali-to-English medical translation engine.
+• Clinical Triage Engine: Sub-millisecond rule-based classifier implementing Emergency Severity Index (ESI-1 to ESI-5). Zero LLM network dependency in critical resuscitation path.
+• Geospatial & Road Routing: Leaflet.js + OpenStreetMap, PostGIS spatial indexing, self-hosted OSRM engine delivering sub-second road distances (<420ms) with urban traffic calibration.
+• Real-Time Cloud Synchronization: Supabase WebSockets + PostgreSQL atomic row-level locks (SELECT FOR UPDATE) for race-condition-free bed reservation and instant hospital updates.
+• Hospital Admin Command Desk: Tablet/desktop web portal with high-contrast ward tiles, audio klaxons, 1-tap bed/nurse counters, and 6-digit OTP entrance verification terminal.
+🔄 4-STEP METHODOLOGY & WORKING PROTOTYPE FLOW
+• 1. Spoken / Typed Ingestion & Internal Translation: User speaks in English or Bengali. Continuous Web Speech streams transcript; in-memory translation converts Bengali script into canonical English clinical terms with zero cloud latency.
+• 2. ESI Triage, Bed Match & Situational Protocols: Maps symptom to target ward (Cardiac/Adult/Pediatric ICU, General Ward) and blood units (PRBC/Platelets), while immediately rendering step-by-step situational first-aid guidance.
+• 3. Atomic Token Hold (15 Min TTL): PostgreSQL executes an atomic hold query. Bed count decrements by 1 across the network, generating a 6-digit OTP entrance pass for the patient.
+• 4. Vector Telemetry & Cascade Rerouting: GPS loop monitors travel vector. If target hospital initiates Code Blue diversion, system sounds priority audio alarm and cascade reroutes to next closest facility with all details transferred.
+🌐 FLOWCHART: MASTER DUAL-APP CLOUD SYNC
+📱 Citizen App (ashaien.vercel.app)
+OSRM Road Snapping • Voice Triage • Situational First-Aid Sheet • 15-Min Hold Trigger
+☁️ Supabase Cloud Engine (PostgreSQL 15)
+Tables: active_holds • admitted_patients • hospital_overrides
+Realtime WebSockets Replication (<50ms)
+🏥 Hospital Admin Desk (ashaien-admin)
+Zero-Friction ER Terminal • Live Dynamic Holds Queue • 1-Tap Bed & Shift Nurse Adjusters
+🔑 6-Digit OTP Gate Check-In (<2s)
+Spoken aloud at triage bay • Hard-locks bed claim • Permanent admission recorded in database
+
+--- SLIDE 4 (Word Count: 361, Images: 1) ---
+
+FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY
+4
+@SIH Idea submission- Template
+TEAM ASHA
+📊 FEASIBILITY ANALYSIS
+✔ Operational Feasibility: Web-first deployment means zero install friction for citizens. Hospital desk operates as a simple browser interface on existing triage station hardware.
+✔ Financial Viability: Eliminates expensive Google Maps commercial API licensing by deploying self-hosted OSRM containers on government cloud (NIC MeghRaj).
+✔ ABDM Architecture Alignment: Integrates cleanly with Ayushman Bharat Digital Mission (ABDM) Health Facility Registry (HFR) standards.
+✔ Low-Bandwidth Resiliency: Lightweight application bundle (<1.4MB) ensures rapid loading and stable caching even on congested 3G/4G networks.
+⚠️ POTENTIAL CHALLENGES & RISKS
+✖ Bed Hoarding & False Bookings: Malicious users or competing private ambulance operators locking up scarce ICU beds with burner phone numbers.
+✖ Nurse Desk Workload & Burnout: Staff during hectic night shifts failing to manually update bed counters or verify holds.
+✖ Vector Divergence Edge Cases: Ambulances taking police diversions or encountering traffic jams, triggering false no-show cancellations.
+✖ Patient Privacy & Data Security: Exposing sensitive patient medical symptoms or real-time travel telemetry over public networks.
+🛡️ ENGINEERING STRATEGIES
+★ 50% Cap & Vector Verification: Public soft-locks capped at 50% of available capacity. GPS loop monitors user vector; if vehicle is stationary or moving away, hold auto-cancels.
+★ Direct 6-Digit OTP Verification: Triage nurse verifies the citizen 6-digit entrance OTP in 2 seconds on the desk interface to convert soft-lock into permanent admission (no QR hardware needed).
+★ Dynamic ETA Extension: Vehicle heading detection extends reservation window during traffic crawls as long as direction vector points toward hospital.
+★ Ephemeral Encrypted Telemetry: No permanent storage of patient medical records or phone numbers. Telemetry is end-to-end encrypted and auto-purged after 60 minutes post-discharge.
+🔄 FLOWCHART: 15-MINUTE DYNAMIC SOFT-LOCK & GPS VECTOR STATE MACHINE
+🏥 Public Bed Pool
+Capacity calculated via Staffed Bed Formula (1:1 ICU, 1:6 Ward)
+🔒 15-Min Soft-Lock
+Bed count -1 live • 6-Digit OTP issued • Countdown starts
+📡 GPS Vector Telemetry Loop (10s)
+• TOWARD: Timer Paused • Dynamic ETA
+• STATIONARY: 15-Min Timer Decrements
+• AWAY: Alert & Auto-Cancel (Bed Restored)
+🔑 Gate 6-Digit OTP Check-In
+Spoken aloud at ER bay (<2s) • Bed permanently claimed (Hard-Lock)
+
+--- SLIDE 5 (Word Count: 239, Images: 1) ---
+
+IMPACT, BENEFITS & HEALTHCARE VALUE
+5
+@SIH Idea submission- Template
+TEAM ASHA
+Golden Hour
+Preserving Critical Window
+Zero Gate Rejections
+Eliminating Blind Wandering
+First-Aid Guidance
+Situational Action En Route
+<500ms Latency
+Real-Time State Sync
+❤️ CLINICAL & SOCIAL IMPACT ON CITIZENS
+• Preserving En-Route Life via First Aid: Shows immediate life-saving physical positioning (Semi-Fowler 45° posture, wound pressure) and critical mistakes to avoid, empowering bystanders to stabilize the patient during the 30-45 minutes of transit.
+• Eliminating Secondary Transfers: Inter-facility hospital transfers during acute emergencies carry a 30-50% mortality penalty. Direct routing ensures patient reaches an equipped bed on the first run.
+• Multilingual Accessibility: Citizens can speak in English, type in Benglish, or speak in Bengali with seamless internal clinical translation (0ms latency, $0 cost).
+• Ending Exploitative Touts: Prevents predatory private ambulance middlemen from diverting vulnerable patients to unequipped nursing homes based on referral kickbacks.
+🏥 HEALTHCARE SYSTEM & ECONOMIC BENEFITS
+• Equitable Regional Bed Balancing: Redistributes acute cases from over-saturated tertiary medical colleges to secondary and private hospitals with idle staffed capacity.
+• Blood Bank Logistics Coordination: Prevents emergency cross-match delays by pre-matching patients requiring PRBC, Platelets, or Plasma with active bank inventories.
+• Zero Public Capex Burden: Municipal health departments deploy ASHA across district hospitals without investing in costly proprietary server hardware.
+• Administrative Staffing Transparency: Surfaces the Ghost Gap (physical beds minus staffed beds) to health commissioners, revealing exactly where nursing shortages bottleneck care.
+
+--- SLIDE 6 (Word Count: 241, Images: 1) ---
+
+RESEARCH, EVIDENCE BASE & TECHNICAL CITATIONS
+6
+@SIH Idea submission- Template
+TEAM ASHA
+📚 CLINICAL & PUBLIC HEALTH EVIDENCE BASE
+• Emergency Severity Index (ESI v4) Guidelines (AHRQ): Validated 5-level clinical acuity triage algorithm utilized in ASHA to stratify symptom severity and target ward matching.
+• Indian Society of Critical Care Medicine (ISCCM): Mandated nurse-to-patient ratios (ICU 1:1, HDU 1:2, Ward 1:6) defining real operational bed capacity.
+• Pre-Hospital Emergency Care in India (The Lancet): Documented how lack of destination hospital coordination drives severe mortality in acute myocardial infarction and poly-trauma.
+• National Health Systems Resource Centre (NHSRC): Emergency Department management standards and guidelines for reducing pre-hospital door-to-treatment intervals in Indian district hospitals.
+• American Heart Association (AHA 2020 Guidelines): Clinical basis for immediate Semi-Fowler 45° posture and aspirin administration for STEMI resuscitation.
+🌐 TECHNICAL STANDARDS & LIVE PRODUCTION DEPLOYMENTS
+✔ Ayushman Bharat Digital Mission (ABDM) Milestone Specs: Health Facility Registry (HFR) geocoding and HL7/FHIR M1/M2/M3 pre-arrival diagnostic record exchange.
+✔ W3C Web Speech API & In-Memory Translation: Continuous speech recognition with client-side deterministic Bengali-to-English clinical keyword translation.
+✔ Open Source Routing Machine (OSRM) Project: High-performance C++ routing engine based on Contraction Hierarchies, providing sub-second shortest road pathing without rate-limit constraints.
+✔ Supabase Realtime WebSockets: PostgreSQL WAL change-data-capture broadcasting hold updates across devices in under 50 milliseconds.
+✔ 🚀 LIVE WORKING PRODUCTION DEPLOYMENTS: Citizen Emergency Portal: https://ashaien.vercel.app
+Hospital ER Command Desk: https://ashaien-admin.vercel.app
+Complete Source & Documentation: docs/ in GitHub SIH2026-ASHA Repository
+
+TOTAL WORDS IN DECK: 1752
+
+================================================================================
+DECK: d:/HACKATHON/SIH2026-IDEA-Presentation-Format.pptx
+================================================================================
+
+--- SLIDE 1 (Word Count: 131, Images: 2) ---
+
+ASHA: Automated System for Hospital Allocation
+Intelligent Golden Hour Triage, Staffed Bed Reservation & En-Route First-Aid Protocols
+SMART INDIA HACKATHON 2026
+TEAM NAME: TEAM ASHA
+PROBLEM STATEMENT ID (PS ID): Student Innovation (Open Category — Theme: MedTech / BioTech / HealthTech)
+PROBLEM STATEMENT TITLE: Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility
+TEAM LEADER NAME: SHAYAK DAS
+CATEGORY / THEME: Open Innovation  |  MedTech / BioTech / HealthTech  |  Software (Web-First Realtime)
+MENTOR NAME: [Open Innovation Faculty Mentor]
+⭐ Core Breakthroughs: (1) Live Situational First-Aid En Route [Semi-Fowler 45°, 10s ABC, DO NOT DO warnings]  •  (2) Native Bengali Speech In-Memory Clinical Translation  •  (3) 15-Min Dynamic Soft-Lock Bed Hold with 6-Digit Gate OTP (No QR)  •  (4) Staffed Bed Math eliminating Ghost Beds.
+
+--- SLIDE 2 (Word Count: 429, Images: 1) ---
+
+PROPOSED SOLUTION: ASHA EMERGENCY RESUSCITATION GRID
+2
+@SIH Idea submission- Template
+TEAM ASHA
+🚨 4 SYSTEMIC FAILURES DRIVING GOLDEN-HOUR GATE REJECTIONS
+• Read-Only Directories: Portals answer "what existed hours ago," not "is one reserved for me?" Reading is not reserving.
+• The "Ghost Bed" Paradox: Dashboards report raw physical beds, hiding that zero nurses/intensivists are on active night duty.
+• The En-Route Black Hole: Over 50% of trauma/cardiac deaths occur in transit due to bystander panic or fatal layman blunders.
+• Update Friction: Nurses at 2 AM will not log into complex portals. Data freshness is a UX failure, not a database failure.
+💡 ASHA: PROPOSED SOLUTION & CORE CLINICAL CAPABILITIES
+• ⭐ OUR BIGGEST PLUS POINT: SITUATIONAL FIRST-AID PROTOCOLS: The exact second an emergency is detected, ASHA shows bystanders EXACTLY WHAT TO DO in the current situation right now (Semi-Fowler 45° posture with bent knees for cardiac emergencies, tourniquet/direct pressure for hemorrhage, recovery position for stroke, plus critical "DO NOT DO" warnings) to stabilize vital signs en route.
+• Zero-Signup Instant Web Access: Zero app installation, zero password barrier. Loads on any phone browser in <0.8s during active emergency distress.
+• Multilingual Speech & Typed Triage: Speak in English, type in Benglish, or speak in Bengali. Spoken Bengali script (বুকে ব্যথা) is translated internally to canonical English clinical terms with zero cloud latency.
+• 15-Minute Dynamic GPS Soft-Lock: Atomically reserves 1 staffed bed before vehicle departs; GPS vector tracking monitors travel and auto-cancels if user is stationary or moves away.
+• Direct 6-Digit Gate OTP Admission: Spoken aloud in 2 seconds at the ER bay to hard-lock admission, completely eliminating fragile QR scanners in rain and darkness.
+⭐ INNOVATION & HOW IT ADDRESSES THE PROBLEM
+✔ vs. Telemedicine Apps (Practo/Apollo): Those are OPD appointment schedulers requiring signups; ASHA is an instant zero-login emergency dispatch grid.
+✔ vs. 108 Ambulance Dispatch: Replaces verbal radio congestion with sub-second algorithmic road routing (<420ms OSRM computation).
+✔ Staffed Bed Capacity Formula: B_staffed = min(B_phys, N_nurses × Ratio), strictly guaranteeing clinical admission readiness.
+🔄 FLOWCHART: EMERGENCY TRIAGE & FIRST-AID FLOW
+🎙️ 1. Voice / Text Triage Ingestion
+Spoken Bengali (বুকে ব্যথা), English, or Benglish text
+⚡ 2. Internal Clinical Translation
+translateBengaliToEnglish(): 0ms in-memory conversion
+🚨 3. ESI-1 Triage & Ward Routing
+AHRQ ESI v4 rules -> routes to Cardiac ICU + OSRM
+🩸 4. ⭐ Situational First-Aid Sheet
+Semi-Fowler 45° posture, 10s ABC, chew aspirin, critical DO NOT DO warnings (ClinicalProtocolSheet.tsx)
+🔒 5. 15-Min Soft-Lock & 6-Digit OTP
+Beds count -1 live, OTP: 489215 generated, GPS vector telemetry active, <2s ER desk admission
+
+--- SLIDE 3 (Word Count: 351, Images: 1) ---
+
+TECHNICAL APPROACH & SYSTEM ARCHITECTURE
+3
+@SIH Idea submission- Template
+TEAM ASHA
+🛠️ TECHNOLOGIES USED & SYSTEM ARCHITECTURE LAYERS
+• Citizen Web Application: React 19, TypeScript, Tailwind CSS, Vite. Native W3C Web Speech API with 2.2s silence debounce and internal Bengali-to-English medical translation engine.
+• Clinical Triage Engine: Sub-millisecond rule-based classifier implementing Emergency Severity Index (ESI-1 to ESI-5). Zero LLM network dependency in critical resuscitation path.
+• Geospatial & Road Routing: Leaflet.js + OpenStreetMap, PostGIS spatial indexing, self-hosted OSRM engine delivering sub-second road distances (<420ms) with urban traffic calibration.
+• Real-Time Cloud Synchronization: Supabase WebSockets + PostgreSQL atomic row-level locks (SELECT FOR UPDATE) for race-condition-free bed reservation and instant hospital updates.
+• Hospital Admin Command Desk: Tablet/desktop web portal with high-contrast ward tiles, audio klaxons, 1-tap bed/nurse counters, and 6-digit OTP entrance verification terminal.
+🔄 4-STEP METHODOLOGY & WORKING PROTOTYPE FLOW
+• 1. Spoken / Typed Ingestion & Internal Translation: User speaks in English or Bengali. Continuous Web Speech streams transcript; in-memory translation converts Bengali script into canonical English clinical terms with zero cloud latency.
+• 2. ESI Triage, Bed Match & Situational Protocols: Maps symptom to target ward (Cardiac/Adult/Pediatric ICU, General Ward) and blood units (PRBC/Platelets), while immediately rendering step-by-step situational first-aid guidance.
+• 3. Atomic Token Hold (15 Min TTL): PostgreSQL executes an atomic hold query. Bed count decrements by 1 across the network, generating a 6-digit OTP entrance pass for the patient.
+• 4. Vector Telemetry & Cascade Rerouting: GPS loop monitors travel vector. If target hospital initiates Code Blue diversion, system sounds priority audio alarm and cascade reroutes to next closest facility with all details transferred.
+🌐 FLOWCHART: MASTER DUAL-APP CLOUD SYNC
+📱 Citizen App (ashaien.vercel.app)
+OSRM Road Snapping • Voice Triage • Situational First-Aid Sheet • 15-Min Hold Trigger
+☁️ Supabase Cloud Engine (PostgreSQL 15)
+Tables: active_holds • admitted_patients • hospital_overrides
+Realtime WebSockets Replication (<50ms)
+🏥 Hospital Admin Desk (ashaien-admin)
+Zero-Friction ER Terminal • Live Dynamic Holds Queue • 1-Tap Bed & Shift Nurse Adjusters
+🔑 6-Digit OTP Gate Check-In (<2s)
+Spoken aloud at triage bay • Hard-locks bed claim • Permanent admission recorded in database
+
+--- SLIDE 4 (Word Count: 361, Images: 1) ---
+
+FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY
+4
+@SIH Idea submission- Template
+TEAM ASHA
+📊 FEASIBILITY ANALYSIS
+✔ Operational Feasibility: Web-first deployment means zero install friction for citizens. Hospital desk operates as a simple browser interface on existing triage station hardware.
+✔ Financial Viability: Eliminates expensive Google Maps commercial API licensing by deploying self-hosted OSRM containers on government cloud (NIC MeghRaj).
+✔ ABDM Architecture Alignment: Integrates cleanly with Ayushman Bharat Digital Mission (ABDM) Health Facility Registry (HFR) standards.
+✔ Low-Bandwidth Resiliency: Lightweight application bundle (<1.4MB) ensures rapid loading and stable caching even on congested 3G/4G networks.
+⚠️ POTENTIAL CHALLENGES & RISKS
+✖ Bed Hoarding & False Bookings: Malicious users or competing private ambulance operators locking up scarce ICU beds with burner phone numbers.
+✖ Nurse Desk Workload & Burnout: Staff during hectic night shifts failing to manually update bed counters or verify holds.
+✖ Vector Divergence Edge Cases: Ambulances taking police diversions or encountering traffic jams, triggering false no-show cancellations.
+✖ Patient Privacy & Data Security: Exposing sensitive patient medical symptoms or real-time travel telemetry over public networks.
+🛡️ ENGINEERING STRATEGIES
+★ 50% Cap & Vector Verification: Public soft-locks capped at 50% of available capacity. GPS loop monitors user vector; if vehicle is stationary or moving away, hold auto-cancels.
+★ Direct 6-Digit OTP Verification: Triage nurse verifies the citizen 6-digit entrance OTP in 2 seconds on the desk interface to convert soft-lock into permanent admission (no QR hardware needed).
+★ Dynamic ETA Extension: Vehicle heading detection extends reservation window during traffic crawls as long as direction vector points toward hospital.
+★ Ephemeral Encrypted Telemetry: No permanent storage of patient medical records or phone numbers. Telemetry is end-to-end encrypted and auto-purged after 60 minutes post-discharge.
+🔄 FLOWCHART: 15-MINUTE DYNAMIC SOFT-LOCK & GPS VECTOR STATE MACHINE
+🏥 Public Bed Pool
+Capacity calculated via Staffed Bed Formula (1:1 ICU, 1:6 Ward)
+🔒 15-Min Soft-Lock
+Bed count -1 live • 6-Digit OTP issued • Countdown starts
+📡 GPS Vector Telemetry Loop (10s)
+• TOWARD: Timer Paused • Dynamic ETA
+• STATIONARY: 15-Min Timer Decrements
+• AWAY: Alert & Auto-Cancel (Bed Restored)
+🔑 Gate 6-Digit OTP Check-In
+Spoken aloud at ER bay (<2s) • Bed permanently claimed (Hard-Lock)
+
+--- SLIDE 5 (Word Count: 239, Images: 1) ---
+
+IMPACT, BENEFITS & HEALTHCARE VALUE
+5
+@SIH Idea submission- Template
+TEAM ASHA
+Golden Hour
+Preserving Critical Window
+Zero Gate Rejections
+Eliminating Blind Wandering
+First-Aid Guidance
+Situational Action En Route
+<500ms Latency
+Real-Time State Sync
+❤️ CLINICAL & SOCIAL IMPACT ON CITIZENS
+• Preserving En-Route Life via First Aid: Shows immediate life-saving physical positioning (Semi-Fowler 45° posture, wound pressure) and critical mistakes to avoid, empowering bystanders to stabilize the patient during the 30-45 minutes of transit.
+• Eliminating Secondary Transfers: Inter-facility hospital transfers during acute emergencies carry a 30-50% mortality penalty. Direct routing ensures patient reaches an equipped bed on the first run.
+• Multilingual Accessibility: Citizens can speak in English, type in Benglish, or speak in Bengali with seamless internal clinical translation (0ms latency, $0 cost).
+• Ending Exploitative Touts: Prevents predatory private ambulance middlemen from diverting vulnerable patients to unequipped nursing homes based on referral kickbacks.
+🏥 HEALTHCARE SYSTEM & ECONOMIC BENEFITS
+• Equitable Regional Bed Balancing: Redistributes acute cases from over-saturated tertiary medical colleges to secondary and private hospitals with idle staffed capacity.
+• Blood Bank Logistics Coordination: Prevents emergency cross-match delays by pre-matching patients requiring PRBC, Platelets, or Plasma with active bank inventories.
+• Zero Public Capex Burden: Municipal health departments deploy ASHA across district hospitals without investing in costly proprietary server hardware.
+• Administrative Staffing Transparency: Surfaces the Ghost Gap (physical beds minus staffed beds) to health commissioners, revealing exactly where nursing shortages bottleneck care.
+
+--- SLIDE 6 (Word Count: 241, Images: 1) ---
+
+RESEARCH, EVIDENCE BASE & TECHNICAL CITATIONS
+6
+@SIH Idea submission- Template
+TEAM ASHA
+📚 CLINICAL & PUBLIC HEALTH EVIDENCE BASE
+• Emergency Severity Index (ESI v4) Guidelines (AHRQ): Validated 5-level clinical acuity triage algorithm utilized in ASHA to stratify symptom severity and target ward matching.
+• Indian Society of Critical Care Medicine (ISCCM): Mandated nurse-to-patient ratios (ICU 1:1, HDU 1:2, Ward 1:6) defining real operational bed capacity.
+• Pre-Hospital Emergency Care in India (The Lancet): Documented how lack of destination hospital coordination drives severe mortality in acute myocardial infarction and poly-trauma.
+• National Health Systems Resource Centre (NHSRC): Emergency Department management standards and guidelines for reducing pre-hospital door-to-treatment intervals in Indian district hospitals.
+• American Heart Association (AHA 2020 Guidelines): Clinical basis for immediate Semi-Fowler 45° posture and aspirin administration for STEMI resuscitation.
+🌐 TECHNICAL STANDARDS & LIVE PRODUCTION DEPLOYMENTS
+✔ Ayushman Bharat Digital Mission (ABDM) Milestone Specs: Health Facility Registry (HFR) geocoding and HL7/FHIR M1/M2/M3 pre-arrival diagnostic record exchange.
+✔ W3C Web Speech API & In-Memory Translation: Continuous speech recognition with client-side deterministic Bengali-to-English clinical keyword translation.
+✔ Open Source Routing Machine (OSRM) Project: High-performance C++ routing engine based on Contraction Hierarchies, providing sub-second shortest road pathing without rate-limit constraints.
+✔ Supabase Realtime WebSockets: PostgreSQL WAL change-data-capture broadcasting hold updates across devices in under 50 milliseconds.
+✔ 🚀 LIVE WORKING PRODUCTION DEPLOYMENTS: Citizen Emergency Portal: https://ashaien.vercel.app
+Hospital ER Command Desk: https://ashaien-admin.vercel.app
+Complete Source & Documentation: docs/ in GitHub SIH2026-ASHA Repository
+
+TOTAL WORDS IN DECK: 1752
+
+================================================================================
+DECK: d:/HACKATHON/SIH2026-ASHA-Presentation-Ready-Screenshots.pptx
+================================================================================
+
+--- SLIDE 1 (Word Count: 248, Images: 2) ---
+
+⚡ SIH 2026 • OPEN INNOVATION MEDTECH
+SMART INDIA HACKATHON 2026
+ASHA: Automated System for Hospital Allocation
+Intelligent Golden Hour Triage Acuity Detection, High-Probability Bed Securing & First-Aid Protocols
+📋 TEAM REGISTRATION & NATIONAL CRISIS BRIEF
+TEAM NAME: TEAM ASHA
+PROBLEM STATEMENT ID: Student Innovation (Open Category — Theme: MedTech / BioTech / HealthTech)
+PROBLEM STATEMENT TITLE: Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility
+TEAM LEADER NAME: SHAYAK DAS
+CATEGORY / THEME: Open Innovation | MedTech / BioTech / HealthTech | Software (Web-First Realtime)
+MENTOR NAME: [Open Innovation Faculty Mentor]
+🚨 THE NATIONAL CRISIS: Only 1 in 5 emergency victims in India reach medical care within the Golden Hour. Over 50% die inside the ambulance during the fatal 2.4 hospital gate rejection cycle!
+⭐ OUR BIGGEST PLUS POINT: Shows EXACTLY WHAT TO DO in the current situation with life-saving physical first-aid steps (propping upright to breathe, recovery position, direct wound pressure) en route!
+COMMUNICATION MODES: Speak in English, speak in pure Bengali (বুকে ব্যথা), or type in Benglish/English with zero cloud latency
+ADMISSION PASS SYSTEM: Direct 4-Digit Gate OTP (Spoken in 2s at ER bay; 100m geofence proximity lock & IP/device risk scoring stop abuse)
+⏱️ 60-MIN GOLDEN HOUR
+Pre-hospital triage stops in-ambulance wander
+🏥 10 KOLKATA ER HUBS
+Live WebSocket sync of staffed ICU beds
+🛡️ 100m GEOFENCE LOCK
+4-digit OTP unlocks only at ER gate + anti-scalp
+🎙️ BENGALI VOICE TRIAGE
+0ms intake in pure Bengali, Hinglish, English
+
+--- SLIDE 2 (Word Count: 494, Images: 1) ---
+
+⚡ PROBLEM & SOLUTION
+PROPOSED SOLUTION: ASHA EMERGENCY RESUSCITATION GRID
+Solving India's 1-in-5 Golden Hour Survival Crisis • Eliminating the Fatal 2.4 Gate Rejection Cycle
+🚨 THE MASSIVE CRISIS: ONLY 1 IN 5 VICTIMS REACH CARE IN THE GOLDEN HOUR
+▪ The National Tragedy: Over 150,000 Indians die each year inside ambulances—not from lack of medical cures, but because ambulances wander through an average of 2.4 hospital gate rejections.
+▪ Read-Only State Directories: Current portals answer 'what existed hours ago', not 'is a bed held for me?' In acute shock, reading is not reserving.
+▪ The Ghost Bed Paradox: Portals display raw physical furniture, hiding that zero on-duty nurses are present to staff ventilators.
+▪ The En-Route Void: Patients bleed or asphyxiate during transit while helpless families panic with zero medical guidance.
+💡 ASHA: TURNING HELPLESS TRANSIT INTO ACTIVE RESUSCITATION
+▪ ⭐ OUR BIGGEST PLUS POINT: SITUATIONAL FIRST-AID PROTOCOLS: The exact second an emergency is detected, ASHA shows bystanders EXACTLY WHAT TO DO RIGHT NOW (Prop upright at 45° & loosen tight collars/clothing for chest pain, apply firm clean cloth pressure on bleeding, side recovery position to prevent choking) with vital DO NOT DO warnings.
+▪ Zero-Signup Instant Web Access: Zero app download, zero password barrier. Loads in <0.8s on any phone browser during active emergency panic.
+▪ Dynamic Staffed Bed Allocation: ASHA strictly computes usable beds as Staffed Beds = min(Physical Beds, Nurses × Ratio). Sheds normal beds first during staff drops to protect ICU, maximizing the probability of securing an available critical bed.
+▪ Objective Triage Detection (ESI-1 to ESI-5): Does not clinically judge or diagnose patients; uses a standardized triage detection system to categorize acuity levels for optimal hospital ward matching.
+⭐ DEEP COMPETITOR DEFEAT MATRIX (ANALYSIS OF SIH COMPETITORS)
+✔ vs. DokLink & State Dashboards (e-RaktKosh / Swasthya Sathi): Competitors display static, unverified physical frames ('Ghost Beds') without booking locks; multiple ambulances rush to the same bed causing gate rejection. ASHA strictly computes nurse-staffed capacity and executes atomic row-level reservation (SELECT FOR UPDATE), giving patients the highest probability of securing an available critical bed.
+✔ vs. XparkAI & Healthcare Aggregators (iRelief / Zuzu Healthcare): Competitors rely on high-latency LLM chatbots prone to clinical hallucinations, mandatory signups, and static blocks with zero GPS tracking. ASHA provides zero-signup instant web PWA (<0.8s), deterministic 0ms clinical tokenization, and dynamic GPS vector auto-release loops.
+✔ vs. 108 Emergency Dispatch & Telephonic Networks: Centralized call centers suffer 1-5 min voice phone queues, manual radio triage, and zero en-route vital coaching. ASHA automates sub-420ms algorithmic OSRM routing, live WebSocket hospital telemetry, and immediate step-by-step Situational First-Aid Protocols.
+09:41
+5G  100%
+📱 CITIZEN APP LIVE TRIAGE & MAP
+[ 📷 CLICK & PASTE SCREENSHOT HERE ]
+• Mobile screenshot of ashaien.vercel.app
+• Voice/text search with Pure Bengali translation
+• Displays verified hospitals with Staffed Beds & Blood
+• Leaflet map with OSRM road route & dynamic ETA
+• Instant 1-tap call to ER Desk & 108 ambulance
+
+--- SLIDE 3 (Word Count: 335, Images: 1) ---
+
+⚡ TECHNICAL PIPELINE
+TECHNICAL APPROACH & SYSTEM ARCHITECTURE
+Sub-Second Resuscitation Pipeline • WebSockets & Road Snapping with Zero Cloud AI Latency
+🛠️ SYSTEM ARCHITECTURE LAYERS & CORE TECHNOLOGIES
+▪ Citizen Web Client: React 19, TypeScript, Tailwind CSS, Vite. Zero-install responsive PWA optimized for low-end smartphones. Native W3C Web Speech API with 2.2s silence debounce.
+▪ In-Memory Bengali Medical Engine: Client-side deterministic tokenizer mapping 150+ Bengali phrases to English clinical terms in 0ms without external LLM API costs or cloud latency.
+▪ Triage Acuity Detection Engine: Standardized ESI-1 to ESI-5 triage detection system. Does not diagnose or medically judge patients; strictly categorizes resource acuity to route to equipped wards without LLM hallucinations.
+▪ Open Source Routing Machine (OSRM): Self-hosted C++ routing engine with 1.35x Indian road winding factor, sub-second route calculation (<420ms), bypassing Google Maps API fees.
+▪ Real-Time Cloud Synchronization: Supabase PostgreSQL WAL change-data-capture broadcasting live hold events across citizen and ER desk in <50 milliseconds over WebSockets.
+🔄 4-STEP END-TO-END METHODOLOGY & WORKING PROTOTYPE FLOW
+✔ 1. Spoken / Typed Ingestion: Continuous speech recognition streams Bengali/English transcript; in-memory normalizer converts to canonical clinical terms with 0ms latency.
+✔ 2. Triage Acuity Detection & First-Aid: Maps acuity (ESI-1 to ESI-5) to target ward capacity (Cardiac/Adult/Pediatric ICU) while instantly rendering the Situational First-Aid Protocol Sheet.
+✔ 3. 15-Min Dynamic Soft-Lock: Locks 1 staffed bed, issues secure 4-digit OTP (e.g. 4892), and activates 10-second GPS telemetry loop monitoring ambulance heading.
+✔ 4. Gate Check-In & 100m Geofenced Hard-Lock: Paramedic speaks 4-digit OTP at ER bay (<2s); admin desk validates patient is within 100m before converting to permanent admission.
+09:41
+5G  100%
+📱 SITUATIONAL FIRST-AID PROTOCOL SHEET
+[ 📷 CLICK & PASTE SCREENSHOT HERE ]
+• Screenshot of active 'WHAT TO DO NOW' Action Sheet
+• Intuitive physical steps (prop upright at 45°, side recovery)
+• Direct firm pressure guide on bleeding wounds with clean cloth
+• Critical DO NOT DO warnings (no water to fainting, no spoons in fits)
+• Bystander psychological calming script & vital coaching
+
+--- SLIDE 4 (Word Count: 489, Images: 1) ---
+
+⚡ DEFENSIVE SECURITY GRID
+FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY
+100m Geofence Hard-Lock Gate • IP/Device Multi-Factor Risk Scoring (0-100) • High-Certainty Gate Verification
+📊 FEASIBILITY & DEPLOYMENT VIABILITY
+✔ Operational Feasibility: Web-first zero-install architecture for citizens. Hospital ER desk operates inside existing triage computers with zero proprietary hardware requirements.
+✔ Financial Viability: Self-hosted OSRM on government cloud (NIC MeghRaj) eliminates millions in recurring Google Maps API billing. Zero cloud AI costs in the emergency loop.
+✔ Low-Bandwidth Resiliency: Ultralight bundle (<1.4MB) loads smoothly and caches offline, maintaining full operational integrity even on congested 3G/4G rural mobile networks.
+✔ ABDM Compliance: Native alignment with Ayushman Bharat Digital Mission (ABDM) Health Facility Registry (HFR) and HL7/FHIR pre-arrival medical summaries.
+⚠️ FOUR-TIER OPERATIONAL RISKS
+✕ Challenge 1: Bed Hoarding by Touts: Competing private ambulances or touts locking beds remotely or attempting to scalp reservations. ★ Mitigation: 50% public hold cap, 100m geofence gate, and client risk engine.
+✕ Challenge 2: Night Shift Nurse Fatigue: Overburdened nurses failing to update beds during peak midnight mass-casualty surges. ★ Mitigation: 1-Tap +/- adjusters dynamically recompute beds; normal beds shed first and 1:2 ICU surge stretch activates.
+✕ Challenge 3: Traffic Jams & False Expirations: Ambulances caught in severe Kolkata congestion getting prematurely cancelled. ★ Mitigation: Dynamic heading vector clamping pauses countdown timer while vehicle moves toward hospital.
+✕ Challenge 4: Patient Privacy & Data Leakage: Exposing patient trauma telemetry over open channels. ★ Mitigation: Ephemeral encrypted state with automatic purge 60 minutes post-admission.
+🛡️ CLIENT RISK ENGINE & 100m GEOFENCE
+MATHEMATICAL RISK COMPOSITE (R ∈ [0, 100])
+R = 0.30·SIP + 0.35·SDevice + 0.20·SVelocity + 0.15·SGeo
+SIP = min(100,  30·max(0, N1h - 1) + 10·max(0, N24h - 2))
+★ Tiered Mitigation Thresholds: R < 40: Instant Hold • 40 ≤ R < 70: SMS OTP • 70 ≤ R < 90: Captcha Throttling • R ≥ 90: Hard Freeze.
+★ IP Subnet Burst Velocity (S_IP): Genuine citizen has N_1h = 1 ⟹ S_IP = 0. A tout bot making 4 hold attempts in 20 min gets S_IP = 90 (High Risk).
+★ Device Hardware Entropy (S_Device): Synthesized client-side from GPU Canvas 2D anti-alias hash, WebGL renderer, and AudioContext jitter to detect headless bot farms.
+★ 100m Hospital Geofence Hard-Lock Gate: The 4-digit OTP strictly validates in ER admin panel ONLY when patient is within 100m of ER entrance—remote scalping is impossible!
+🔄 15-Minute Dynamic Soft-Lock & Anti-Hoarding State Machine
+Step 1: Public Staffed Bed Pool (50% Hold Cap)
+Beds verified via on-duty nurse ratio; 50% pool reserved for direct ambulance drive-ups.
+Step 2: 15-Min Dynamic Soft-Lock (4-Digit OTP Issued)
+Bed count decrements by 1; secure 4-digit OTP generated for 2-second gate check-in.
+Step 3: 10s GPS Vector Loop: TOWARD / AWAY Heartbeat
+• TOWARD: Countdown paused, live ETA shown
+• AWAY: Alert & auto-cancellation
+Step 4: Gate 4-Digit Check-In (100m Hard-Lock Gate)
+Spoken 4-digit OTP entered into ER Desk converts soft-lock to permanent admission (<2s).
+
+--- SLIDE 5 (Word Count: 348, Images: 1) ---
+
+⚡ HEALTHCARE IMPACT
+IMPACT, HEALTHCARE VALUE & REAL-TIME SYNC ADMIN PANEL
+Saving 15,000+ Golden Hour Lives Annually • Live ER Desk with 10 Emergency Hospitals
+❤️ CLINICAL & SOCIAL IMPACT: SAVING 15,000+ LIVES ANNUALLY
+▪ Transforming 1-in-5 Golden Hour Survival: Currently only 1 in 5 Indian emergency victims reach care in time. ASHA eliminates the 2.4 gate rejection cycle, giving families the highest probability of securing an available bed on their first run.
+▪ Bridging the En-Route Care Void: Empowers families with AIIMS/ERC-validated first-aid steps, actively preserving cerebral and cardiac perfusion before hospital arrival.
+▪ Ending Predatory Ambulance Touts: Prevents middlemen from diverting patients to unequipped nursing homes based on referral kickbacks.
+▪ Equitable Regional Bed Balancing: Diverts cases from saturated medical colleges (140% load) to secondary hospitals with idle staffed beds.
+🏥 HOSPITAL ER COMMAND DESK: REAL-TIME SYNC ACROSS 10 HOSPITALS
+✔ Live WebSocket Queue (<50ms Latency): Supabase PostgreSQL WAL broadcasts incoming holds instantly with audio klaxon siren and flashing visual banner.
+✔ 1-Tap Nurse Shift Counter & Dynamic Allocation: Nurses tap +/- on active nurses; beds dynamically recompute (normal beds shed first, 1:2 ICU stretch active in low staff).
+✔ 100m Geofenced 4-Digit OTP Admission (<2s): Triage nurse inputs citizen's 4-digit OTP; backend strictly validates that patient's phone is within 100m of ER gate before converting to permanent hard-lock!
+✔ Active in 10 Kolkata Emergency Hubs: Configured with real credentials across ILS Dum Dum, Tata Medical Center, Charnock VIP Road, Ohio Hospital, HCG Cancer Centre, Dum Dum Municipal, North City Neuro, Neotia, CNCI, and Apollo Multispeciality.
+✔ Automated Cancellation & Re-Routing: If an ER bed becomes compromised, 1-tap admin cancel instantly re-routes patient to next optimal hospital, auto-updating citizen banner with new hospital address and fresh 4-digit OTP.
+09:41
+5G  100%
+📱 HOSPITAL ER COMMAND DESK PORTAL
+[ 📷 CLICK & PASTE SCREENSHOT HERE ]
+• Mobile/tablet screenshot of ashait-admin.vercel.app
+• Live Incoming Holds Queue with patient ETA & countdown
+• 1-Tap active nurse shift adjusters dynamically updating beds
+• Instant 4-digit OTP check-in (<2s) & automated re-routing
+• Multi-ward telemetry: Adult ICU, Pediatric, Cardiac, HDU
+
+--- SLIDE 6 (Word Count: 434, Images: 1) ---
+
+⚡ RESEARCH & SCALE
+CLINICAL RESEARCH DATA ORIGIN & NATIONAL SCALABILITY
+Evidence-Based Protocol Lineage • Zero-Capex Architecture for 10,000 Hospitals Nationwide
+📚 CLINICAL RESEARCH & PROTOCOL DATA ORIGIN
+▪ AIIMS Department of Emergency Medicine: Clinical foundation for pre-hospital trauma resuscitation protocols, rapid hemorrhage control guidelines, and Kolkata golden-hour transport benchmarks.
+▪ European Resuscitation Council (ERC 2021/2025 Guidelines): Evidence base for situational first-aid instructions: immediate Semi-Fowler 45° posture with bent knees for cardiac ischemia, stroke recovery lateral positioning, and active bystander calming scripts.
+▪ American Heart Association & Red Cross Guidelines: Evidence base for non-medical bystander life support: physical airway positioning, high-quality hands-only CPR coaching, and firm direct pressure hemorrhage control without medication risks.
+▪ AHRQ Emergency Severity Index (ESI v4): Scientifically validated 5-level clinical triage framework operationalized in ASHA to stratify symptom acuity and ward matching.
+▪ Indian Society of Critical Care Medicine (ISCCM): Mandated statutory nurse-to-patient staffing standards (ICU 1:1, HDU 1:2, General Ward 1:6) defining operational bed capacity.
+▪ The Lancet Global Health & AIIMS Audits: Epidemiological evidence showing only 1 in 5 (20%) Indian emergency victims reach care in the Golden Hour, driving the fatal 2.4 gate rejection cycle.
+🚀 NATIONWIDE SCALING ROADMAP: 10 TO 10,000 HOSPITALS
+✔ Zero-Capex Web Deployment: Municipal and state health departments onboard district hospitals in 15 minutes without investing in servers or scanners. Triage desk runs inside existing web browsers.
+✔ Self-Hosted OSRM Containers on NIC MeghRaj: Eliminates Google Maps commercial API pricing, enabling millions of daily emergency routing requests at zero per-query cost.
+✔ Planned ML Anti-Abuse & Geofence Grid: Automated IP burst throttling, hardware canvas fingerprinting, and 100m hospital geofencing scale smoothly to protect 10,000 national hospitals against organized touts.
+✔ Redis TTL Keyspace Sharding: High-throughput in-memory state engine handling 100,000+ concurrent 15-minute soft-locks with automatic keyspace expiration and PostGIS spatial indexing.
+✔ Ayushman Bharat Digital Mission (ABDM) Integration: Pre-integrated with ABDM Health Facility Registry (HFR) and HL7/FHIR M1/M2/M3 diagnostic records for seamless nationwide health grid adoption.
+✔ Live Kolkata Metro Emergency Network: Active across 10 Kolkata emergency hubs (ILS Dum Dum, Tata Medical Center, Charnock, Ohio, HCG EKO, Dum Dum Municipal, etc.).
+🔄 Nationwide Geospatial Scaling Architecture
+Step 1: 10,000 National Hospital Nodes Onboarded
+State health departments register hospital ward beds & blood banks via ABDM HFR.
+Step 2: PostGIS Geospatial Partitioning & MeghRaj OSRM Grid
+Regional routing microservices hosted on NIC MeghRaj deliver <420ms paths at $0 cost.
+Step 3: Redis TTL Keyspace Event Sharding
+Manages 100,000+ concurrent 15-min soft-locks with automatic millisecond expiry.
+Step 4: National 108 Ambulance Dispatch Sync
+Integrates with state 108 computer-aided dispatch and citizen mobile emergency grid.
+
+TOTAL WORDS IN DECK: 2348
+
+================================================================================
+DECK: d:/HACKATHON/500 final.pptx
+================================================================================
+
+--- SLIDE 1 (Word Count: 248, Images: 2) ---
+
+⚡ SIH 2026 • OPEN INNOVATION MEDTECH
+SMART INDIA HACKATHON 2026
+ASHA: Automated System for Hospital Allocation
+Intelligent Golden Hour Triage Acuity Detection, High-Probability Bed Securing & First-Aid Protocols
+📋 TEAM REGISTRATION & NATIONAL CRISIS BRIEF
+TEAM NAME: TEAM ASHA
+PROBLEM STATEMENT ID: Student Innovation (Open Category — Theme: MedTech / BioTech / HealthTech)
+PROBLEM STATEMENT TITLE: Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility
+TEAM LEADER NAME: SHAYAK DAS
+CATEGORY / THEME: Open Innovation | MedTech / BioTech / HealthTech | Software (Web-First Realtime)
+MENTOR NAME: [Open Innovation Faculty Mentor]
+🚨 THE NATIONAL CRISIS: Only 1 in 5 emergency victims in India reach medical care within the Golden Hour. Over 50% die inside the ambulance during the fatal 2.4 hospital gate rejection cycle!
+⭐ OUR BIGGEST PLUS POINT: Shows EXACTLY WHAT TO DO in the current situation with life-saving physical first-aid steps (propping upright to breathe, recovery position, direct wound pressure) en route!
+COMMUNICATION MODES: Speak in English, speak in pure Bengali (বুকে ব্যথা), or type in Benglish/English with zero cloud latency
+ADMISSION PASS SYSTEM: Direct 4-Digit Gate OTP (Spoken in 2s at ER bay; 100m geofence proximity lock & IP/device risk scoring stop abuse)
+⏱️ 60-MIN GOLDEN HOUR
+Pre-hospital triage stops in-ambulance wander
+🏥 10 KOLKATA ER HUBS
+Live WebSocket sync of staffed ICU beds
+🛡️ 100m GEOFENCE LOCK
+4-digit OTP unlocks only at ER gate + anti-scalp
+🎙️ BENGALI VOICE TRIAGE
+0ms intake in pure Bengali, Hinglish, English
+
+--- SLIDE 2 (Word Count: 537, Images: 1) ---
+
+⚡ PROBLEM & SOLUTION
+PROPOSED SOLUTION: ASHA EMERGENCY RESUSCITATION GRID
+Solving India's 1-in-5 Golden Hour Survival Crisis • Eliminating the Fatal 2.4 Gate Rejection Cycle
+🚨 THE MASSIVE CRISIS: ONLY 1 IN 5 VICTIMS REACH CARE IN THE GOLDEN HOUR
+▪ The National Tragedy: Over 150,000 Indians die each year inside ambulances—not from lack of medical cures, but because ambulances wander through an average of 2.4 hospital gate rejections.
+▪ Read-Only State Directories: Current portals answer 'what existed hours ago', not 'is a bed held for me?' In acute shock, reading is not reserving.
+▪ The Ghost Bed Paradox: Portals display raw physical furniture, hiding that zero on-duty nurses are present to staff ventilators.
+▪ The En-Route Void: Patients bleed or asphyxiate during transit while helpless families panic with zero medical guidance.
+💡 ASHA: TURNING HELPLESS TRANSIT INTO ACTIVE RESUSCITATION
+▪ ⭐ OUR BIGGEST PLUS POINT: SITUATIONAL FIRST-AID PROTOCOLS: The exact second an emergency is detected, ASHA shows bystanders EXACTLY WHAT TO DO RIGHT NOW (Prop upright at 45° & loosen tight collars/clothing for chest pain, apply firm clean cloth pressure on bleeding, side recovery position to prevent choking) with vital DO NOT DO warnings.
+▪ Zero-Signup Instant Web Access: Zero app download, zero password barrier. Loads in <0.8s on any phone browser during active emergency panic.
+▪ Dynamic Staffed Bed Allocation: ASHA strictly computes usable beds as Staffed Beds = min(Physical Beds, Nurses × Ratio). Sheds normal beds first during staff drops to protect ICU, maximizing the probability of securing an available critical bed.
+▪ Objective Triage Detection (ESI-1 to ESI-5): Does not clinically judge or diagnose patients; uses a standardized triage detection system to categorize acuity levels for optimal hospital ward matching.
+▪ Realistic Budget Choice (Govt vs. Private): Immediate bifurcation between nearest free Government and Private facilities—ensuring families under acute financial constraints avoid catastrophic medical debt while securing care in the Golden Hour.
+⭐ DEEP COMPETITOR DEFEAT MATRIX (ANALYSIS OF SIH COMPETITORS)
+✔ vs. DokLink & State Dashboards (e-RaktKosh / Swasthya Sathi): Competitors display static, unverified physical frames ('Ghost Beds') without booking locks; multiple ambulances rush to the same bed causing gate rejection. ASHA strictly computes nurse-staffed capacity and executes atomic row-level reservation (SELECT FOR UPDATE), giving patients the highest probability of securing an available critical bed.
+✔ vs. XparkAI & Healthcare Aggregators (iRelief / Zuzu Healthcare): Competitors rely on high-latency LLM chatbots prone to clinical hallucinations, mandatory signups, and static blocks with zero GPS tracking. ASHA provides zero-signup instant web PWA (<0.8s), deterministic 0ms clinical tokenization, and dynamic GPS vector auto-release loops.
+✔ vs. 108 Emergency Dispatch & Telephonic Networks: Centralized call centers suffer 1-5 min voice phone queues, manual radio triage, and zero en-route vital coaching. ASHA automates sub-420ms algorithmic OSRM routing, live WebSocket hospital telemetry, and immediate step-by-step Situational First-Aid Protocols.
+09:41
+5G  100%
+📱 CITIZEN APP LIVE TRIAGE & MAP
+[ 📷 CLICK & PASTE SCREENSHOT HERE ]
+• Mobile screenshot of ashaien.vercel.app
+• Voice/text search with Pure Bengali translation
+• Displays verified hospitals with Staffed Beds & Blood
+• Leaflet map with OSRM road route & dynamic ETA
+• Instant 1-tap call to ER Desk & 108 ambulance
+• Real-time choice: Nearest Govt vs. Private hospital for family budget
+
+--- SLIDE 3 (Word Count: 335, Images: 1) ---
+
+⚡ TECHNICAL PIPELINE
+TECHNICAL APPROACH & SYSTEM ARCHITECTURE
+Sub-Second Resuscitation Pipeline • WebSockets & Road Snapping with Zero Cloud AI Latency
+🛠️ SYSTEM ARCHITECTURE LAYERS & CORE TECHNOLOGIES
+▪ Citizen Web Client: React 19, TypeScript, Tailwind CSS, Vite. Zero-install responsive PWA optimized for low-end smartphones. Native W3C Web Speech API with 2.2s silence debounce.
+▪ In-Memory Bengali Medical Engine: Client-side deterministic tokenizer mapping 150+ Bengali phrases to English clinical terms in 0ms without external LLM API costs or cloud latency.
+▪ Triage Acuity Detection Engine: Standardized ESI-1 to ESI-5 triage detection system. Does not diagnose or medically judge patients; strictly categorizes resource acuity to route to equipped wards without LLM hallucinations.
+▪ Open Source Routing Machine (OSRM): Self-hosted C++ routing engine with 1.35x Indian road winding factor, sub-second route calculation (<420ms), bypassing Google Maps API fees.
+▪ Real-Time Cloud Synchronization: Supabase PostgreSQL WAL change-data-capture broadcasting live hold events across citizen and ER desk in <50 milliseconds over WebSockets.
+🔄 4-STEP END-TO-END METHODOLOGY & WORKING PROTOTYPE FLOW
+✔ 1. Spoken / Typed Ingestion: Continuous speech recognition streams Bengali/English transcript; in-memory normalizer converts to canonical clinical terms with 0ms latency.
+✔ 2. Triage Acuity Detection & First-Aid: Maps acuity (ESI-1 to ESI-5) to target ward capacity (Cardiac/Adult/Pediatric ICU) while instantly rendering the Situational First-Aid Protocol Sheet.
+✔ 3. 15-Min Dynamic Soft-Lock: Locks 1 staffed bed, issues secure 4-digit OTP (e.g. 4892), and activates 10-second GPS telemetry loop monitoring ambulance heading.
+✔ 4. Gate Check-In & 100m Geofenced Hard-Lock: Paramedic speaks 4-digit OTP at ER bay (<2s); admin desk validates patient is within 100m before converting to permanent admission.
+09:41
+5G  100%
+📱 SITUATIONAL FIRST-AID PROTOCOL SHEET
+[ 📷 CLICK & PASTE SCREENSHOT HERE ]
+• Screenshot of active 'WHAT TO DO NOW' Action Sheet
+• Intuitive physical steps (prop upright at 45°, side recovery)
+• Direct firm pressure guide on bleeding wounds with clean cloth
+• Critical DO NOT DO warnings (no water to fainting, no spoons in fits)
+• Bystander psychological calming script & vital coaching
+
+--- SLIDE 4 (Word Count: 489, Images: 1) ---
+
+⚡ DEFENSIVE SECURITY GRID
+FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY
+100m Geofence Hard-Lock Gate • IP/Device Multi-Factor Risk Scoring (0-100) • High-Certainty Gate Verification
+📊 FEASIBILITY & DEPLOYMENT VIABILITY
+✔ Operational Feasibility: Web-first zero-install architecture for citizens. Hospital ER desk operates inside existing triage computers with zero proprietary hardware requirements.
+✔ Financial Viability: Self-hosted OSRM on government cloud (NIC MeghRaj) eliminates millions in recurring Google Maps API billing. Zero cloud AI costs in the emergency loop.
+✔ Low-Bandwidth Resiliency: Ultralight bundle (<1.4MB) loads smoothly and caches offline, maintaining full operational integrity even on congested 3G/4G rural mobile networks.
+✔ ABDM Compliance: Native alignment with Ayushman Bharat Digital Mission (ABDM) Health Facility Registry (HFR) and HL7/FHIR pre-arrival medical summaries.
+⚠️ FOUR-TIER OPERATIONAL RISKS
+✕ Challenge 1: Bed Hoarding by Touts: Competing private ambulances or touts locking beds remotely or attempting to scalp reservations. ★ Mitigation: 50% public hold cap, 100m geofence gate, and client risk engine.
+✕ Challenge 2: Night Shift Nurse Fatigue: Overburdened nurses failing to update beds during peak midnight mass-casualty surges. ★ Mitigation: 1-Tap +/- adjusters dynamically recompute beds; normal beds shed first and 1:2 ICU surge stretch activates.
+✕ Challenge 3: Traffic Jams & False Expirations: Ambulances caught in severe Kolkata congestion getting prematurely cancelled. ★ Mitigation: Dynamic heading vector clamping pauses countdown timer while vehicle moves toward hospital.
+✕ Challenge 4: Patient Privacy & Data Leakage: Exposing patient trauma telemetry over open channels. ★ Mitigation: Ephemeral encrypted state with automatic purge 60 minutes post-admission.
+🛡️ CLIENT RISK ENGINE & 100m GEOFENCE
+MATHEMATICAL RISK COMPOSITE (R ∈ [0, 100])
+R = 0.30·SIP + 0.35·SDevice + 0.20·SVelocity + 0.15·SGeo
+SIP = min(100,  30·max(0, N1h - 1) + 10·max(0, N24h - 2))
+★ Tiered Mitigation Thresholds: R < 40: Instant Hold • 40 ≤ R < 70: SMS OTP • 70 ≤ R < 90: Captcha Throttling • R ≥ 90: Hard Freeze.
+★ IP Subnet Burst Velocity (S_IP): Genuine citizen has N_1h = 1 ⟹ S_IP = 0. A tout bot making 4 hold attempts in 20 min gets S_IP = 90 (High Risk).
+★ Device Hardware Entropy (S_Device): Synthesized client-side from GPU Canvas 2D anti-alias hash, WebGL renderer, and AudioContext jitter to detect headless bot farms.
+★ 100m Hospital Geofence Hard-Lock Gate: The 4-digit OTP strictly validates in ER admin panel ONLY when patient is within 100m of ER entrance—remote scalping is impossible!
+🔄 15-Minute Dynamic Soft-Lock & Anti-Hoarding State Machine
+Step 1: Public Staffed Bed Pool (50% Hold Cap)
+Beds verified via on-duty nurse ratio; 50% pool reserved for direct ambulance drive-ups.
+Step 2: 15-Min Dynamic Soft-Lock (4-Digit OTP Issued)
+Bed count decrements by 1; secure 4-digit OTP generated for 2-second gate check-in.
+Step 3: 10s GPS Vector Loop: TOWARD / AWAY Heartbeat
+• TOWARD: Countdown paused, live ETA shown
+• AWAY: Alert & auto-cancellation
+Step 4: Gate 4-Digit Check-In (100m Hard-Lock Gate)
+Spoken 4-digit OTP entered into ER Desk converts soft-lock to permanent admission (<2s).
+
+--- SLIDE 5 (Word Count: 348, Images: 1) ---
+
+⚡ HEALTHCARE IMPACT
+IMPACT, HEALTHCARE VALUE & REAL-TIME SYNC ADMIN PANEL
+Saving 15,000+ Golden Hour Lives Annually • Live ER Desk with 10 Emergency Hospitals
+❤️ CLINICAL & SOCIAL IMPACT: SAVING 15,000+ LIVES ANNUALLY
+▪ Transforming 1-in-5 Golden Hour Survival: Currently only 1 in 5 Indian emergency victims reach care in time. ASHA eliminates the 2.4 gate rejection cycle, giving families the highest probability of securing an available bed on their first run.
+▪ Bridging the En-Route Care Void: Empowers families with AIIMS/ERC-validated first-aid steps, actively preserving cerebral and cardiac perfusion before hospital arrival.
+▪ Ending Predatory Ambulance Touts: Prevents middlemen from diverting patients to unequipped nursing homes based on referral kickbacks.
+▪ Equitable Regional Bed Balancing: Diverts cases from saturated medical colleges (140% load) to secondary hospitals with idle staffed beds.
+🏥 HOSPITAL ER COMMAND DESK: REAL-TIME SYNC ACROSS 10 HOSPITALS
+✔ Live WebSocket Queue (<50ms Latency): Supabase PostgreSQL WAL broadcasts incoming holds instantly with audio klaxon siren and flashing visual banner.
+✔ 1-Tap Nurse Shift Counter & Dynamic Allocation: Nurses tap +/- on active nurses; beds dynamically recompute (normal beds shed first, 1:2 ICU stretch active in low staff).
+✔ 100m Geofenced 4-Digit OTP Admission (<2s): Triage nurse inputs citizen's 4-digit OTP; backend strictly validates that patient's phone is within 100m of ER gate before converting to permanent hard-lock!
+✔ Active in 10 Kolkata Emergency Hubs: Configured with real credentials across ILS Dum Dum, Tata Medical Center, Charnock VIP Road, Ohio Hospital, HCG Cancer Centre, Dum Dum Municipal, North City Neuro, Neotia, CNCI, and Apollo Multispeciality.
+✔ Automated Cancellation & Re-Routing: If an ER bed becomes compromised, 1-tap admin cancel instantly re-routes patient to next optimal hospital, auto-updating citizen banner with new hospital address and fresh 4-digit OTP.
+09:41
+5G  100%
+📱 HOSPITAL ER COMMAND DESK PORTAL
+[ 📷 CLICK & PASTE SCREENSHOT HERE ]
+• Mobile/tablet screenshot of ashait-admin.vercel.app
+• Live Incoming Holds Queue with patient ETA & countdown
+• 1-Tap active nurse shift adjusters dynamically updating beds
+• Instant 4-digit OTP check-in (<2s) & automated re-routing
+• Multi-ward telemetry: Adult ICU, Pediatric, Cardiac, HDU
+
+--- SLIDE 6 (Word Count: 434, Images: 1) ---
+
+⚡ RESEARCH & SCALE
+CLINICAL RESEARCH DATA ORIGIN & NATIONAL SCALABILITY
+Evidence-Based Protocol Lineage • Zero-Capex Architecture for 10,000 Hospitals Nationwide
+📚 CLINICAL RESEARCH & PROTOCOL DATA ORIGIN
+▪ AIIMS Department of Emergency Medicine: Clinical foundation for pre-hospital trauma resuscitation protocols, rapid hemorrhage control guidelines, and Kolkata golden-hour transport benchmarks.
+▪ European Resuscitation Council (ERC 2021/2025 Guidelines): Evidence base for situational first-aid instructions: immediate Semi-Fowler 45° posture with bent knees for cardiac ischemia, stroke recovery lateral positioning, and active bystander calming scripts.
+▪ American Heart Association & Red Cross Guidelines: Evidence base for non-medical bystander life support: physical airway positioning, high-quality hands-only CPR coaching, and firm direct pressure hemorrhage control without medication risks.
+▪ AHRQ Emergency Severity Index (ESI v4): Scientifically validated 5-level clinical triage framework operationalized in ASHA to stratify symptom acuity and ward matching.
+▪ Indian Society of Critical Care Medicine (ISCCM): Mandated statutory nurse-to-patient staffing standards (ICU 1:1, HDU 1:2, General Ward 1:6) defining operational bed capacity.
+▪ The Lancet Global Health & AIIMS Audits: Epidemiological evidence showing only 1 in 5 (20%) Indian emergency victims reach care in the Golden Hour, driving the fatal 2.4 gate rejection cycle.
+🚀 NATIONWIDE SCALING ROADMAP: 10 TO 10,000 HOSPITALS
+✔ Zero-Capex Web Deployment: Municipal and state health departments onboard district hospitals in 15 minutes without investing in servers or scanners. Triage desk runs inside existing web browsers.
+✔ Self-Hosted OSRM Containers on NIC MeghRaj: Eliminates Google Maps commercial API pricing, enabling millions of daily emergency routing requests at zero per-query cost.
+✔ Planned ML Anti-Abuse & Geofence Grid: Automated IP burst throttling, hardware canvas fingerprinting, and 100m hospital geofencing scale smoothly to protect 10,000 national hospitals against organized touts.
+✔ Redis TTL Keyspace Sharding: High-throughput in-memory state engine handling 100,000+ concurrent 15-minute soft-locks with automatic keyspace expiration and PostGIS spatial indexing.
+✔ Ayushman Bharat Digital Mission (ABDM) Integration: Pre-integrated with ABDM Health Facility Registry (HFR) and HL7/FHIR M1/M2/M3 diagnostic records for seamless nationwide health grid adoption.
+✔ Live Kolkata Metro Emergency Network: Active across 10 Kolkata emergency hubs (ILS Dum Dum, Tata Medical Center, Charnock, Ohio, HCG EKO, Dum Dum Municipal, etc.).
+🔄 Nationwide Geospatial Scaling Architecture
+Step 1: 10,000 National Hospital Nodes Onboarded
+State health departments register hospital ward beds & blood banks via ABDM HFR.
+Step 2: PostGIS Geospatial Partitioning & MeghRaj OSRM Grid
+Regional routing microservices hosted on NIC MeghRaj deliver <420ms paths at $0 cost.
+Step 3: Redis TTL Keyspace Event Sharding
+Manages 100,000+ concurrent 15-min soft-locks with automatic millisecond expiry.
+Step 4: National 108 Ambulance Dispatch Sync
+Integrates with state 108 computer-aided dispatch and citizen mobile emergency grid.
+
+TOTAL WORDS IN DECK: 2391
+
+================================================================================
+DECK: d:/HACKATHON/myfinalppt/mymain.pptx
+================================================================================
+
+--- SLIDE 1 (Word Count: 196, Images: 2) ---
+
+⚡ SIH 2026 • OPEN INNOVATION MEDTECH
+SMART INDIA HACKATHON 2026
+ASHA: Automated System for Hospital Allocation
+Intelligent Golden Hour Triage Acuity Detection, High-Probability Bed Securing & First-Aid Protocols
+📋 TEAM REGISTRATION & NATIONAL CRISIS BRIEF
+TEAM NAME: TEAM ASHA
+PROBLEM STATEMENT ID: Student Innovation (Open Category — Theme: MedTech / BioTech / HealthTech)
+PROBLEM STATEMENT TITLE: Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility
+TEAM LEADER NAME: SHAYAK DAS
+CATEGORY / THEME: Open Innovation | MedTech / BioTech / HealthTech | Software (Web-First Realtime)
+THE NATIONAL CRISIS: Only 1 in 5 emergency victims in India reach medical care within the Golden Hour. Over 50% die inside the ambulance during repeated hospital gate turnaways and blind transit delays
+OUR BIGGEST PLUS POINT: Shows EXACTLY WHAT TO DO in the current situation with life-saving physical first-aid steps (propping upright to breathe, recovery position, direct wound pressure) en route!
+COMMUNICATION MODES: Speak in English, speak in pure Bengali (বুকে ব্যথা), or type in Benglish/English with zero cloud latency
+ADMISSION PASS SYSTEM: Direct 4-Digit Gate OTP (Spoken in 2s at ER bay; 100m geofence proximity lock & IP/device risk scoring stop abuse)
+
+--- SLIDE 2 (Word Count: 464, Images: 1) ---
+
+⚡ PROBLEM & SOLUTION
+PROPOSED SOLUTION: ASHA EMERGENCY RESUSCITATION GRID
+Solving India's 1-in-5 Golden Hour Survival Crisis • Helping families save  their loved ones.
+THE MASSIVE CRISIS: ONLY 1 IN 5 VICTIMS REACH CARE IN THE GOLDEN HOUR
+▪ The National Tragedy: Over 150,000 Indians die each year inside ambulances—not from lack of medical cures, but because ambulances wander blindly between hospitals, facing repeated turnaways, and fatal admission delays
+▪ Read-Only State Directories: Current portals answer 'what existed hours ago', not 'is a bed held for me?' In acute shock, reading is not reserving.
+▪ The Ghost Bed Paradox: Portals display raw physical furniture, hiding that zero on-duty nurses are present to staff ventilators.
+▪ The En-Route Void: Patients bleed or asphyxiate during transit while helpless families panic with zero medical guidance.
+ASHA: TURNING HELPLESS TRANSIT INTO ACTIVE RESUSCITATION
+▪  OUR BIGGEST PLUS POINT: SITUATIONAL FIRST-AID PROTOCOLS: The exact second an emergency is detected, ASHA shows bystanders EXACTLY WHAT TO DO RIGHT NOW (Prop upright at 45° & loosen tight collars/clothing for chest pain, apply firm clean cloth pressure on bleeding, side recovery position to prevent choking) with vital DO NOT DO warnings.
+▪ Zero-Signup Instant Web Access: Zero app download, zero password barrier. Loads in <0.8s on any phone browser during active emergency panic.
+▪ Dynamic Staffed Bed Allocation: ASHA strictly computes usable beds as Staffed Beds = min(Physical Beds, Nurses × Ratio). Sheds normal beds first during staff drops to protect ICU, maximizing the probability of securing an available critical bed.
+▪ Objective Triage Detection (ESI-1 to ESI-5): Does not clinically judge or diagnose patients; uses a standardized triage detection system to categorize acuity levels for optimal hospital ward matching.
+▪ Realistic Budget Choice (Govt vs. Private): Immediate bifurcation between nearest free Government and Private facilities—ensuring families under acute financial constraints avoid catastrophic medical debt while securing care in the Golden Hour.
+DEEP COMPETITOR DEFEAT MATRIX (ANALYSIS OF SIH COMPETITORS)
+✔ vs. DokLink & State Dashboards (e-RaktKosh / Swasthya Sathi): Competitors display static, unverified physical frames ('Ghost Beds') without booking locks; multiple ambulances rush to the same bed causing gate rejection. ASHA strictly computes nurse-staffed capacity and executes atomic row-level reservation (SELECT FOR UPDATE), giving patients the highest probability of securing an available critical bed.
+✔ vs. XparkAI & Healthcare Aggregators (iRelief / Zuzu Healthcare): Competitors rely on high-latency LLM chatbots prone to clinical hallucinations, mandatory signups, and static blocks with zero GPS tracking. ASHA provides zero-signup instant web PWA (<0.8s), deterministic 0ms clinical tokenization, and dynamic GPS vector auto-release loops.
+✔ vs. 108 Emergency Dispatch & Telephonic Networks: Centralized call centers suffer 1-5 min voice phone queues, manual radio triage, and zero en-route vital coaching. ASHA automates sub-420ms algorithmic OSRM routing, live WebSocket hospital telemetry, and immediate step-by-step Situational First-Aid Protocols.
+
+--- SLIDE 3 (Word Count: 264, Images: 1) ---
+
+⚡ TECHNICAL PIPELINE
+TECHNICAL APPROACH & SYSTEM ARCHITECTURE
+Sub-Second Resuscitation Pipeline • WebSockets & Road Snapping with Zero Cloud AI Latency
+SYSTEM ARCHITECTURE LAYERS & CORE TECHNOLOGIES
+▪ Citizen Web Client: React 19, TypeScript, Tailwind CSS, Vite. Zero-install responsive PWA optimized for low-end smartphones. Native W3C Web Speech API with 2.2s silence debounce.
+▪ In-Memory Bengali Medical Engine: Client-side deterministic tokenizer mapping 150+ Bengali phrases to English clinical terms in 0ms without external LLM API costs or cloud latency.
+▪ Triage Acuity Detection Engine: Standardized ESI-1 to ESI-5 triage detection system. Does not diagnose or medically judge patients; strictly categorizes resource acuity to route to equipped wards without LLM hallucinations.
+▪ Open Source Routing Machine (OSRM): Self-hosted C++ routing engine with 1.35x Indian road winding factor, sub-second route calculation (<420ms), bypassing Google Maps API fees.
+▪ Real-Time Cloud Synchronization: Supabase PostgreSQL WAL change-data-capture broadcasting live hold events across citizen and ER desk in <50 milliseconds over WebSockets.
+4-STEP END-TO-END METHODOLOGY & WORKING PROTOTYPE FLOW
+✔ 1. Spoken / Typed Ingestion: Continuous speech recognition streams Bengali/English transcript; in-memory normalizer converts to canonical clinical terms with 0ms latency.
+✔ 2. Triage Acuity Detection & First-Aid: Maps acuity (ESI-1 to ESI-5) to target ward capacity (Cardiac/Adult/Pediatric ICU) while instantly rendering the Situational First-Aid Protocol Sheet.
+✔ 3. 15-Min Dynamic Soft-Lock: Locks 1 staffed bed, issues secure 4-digit OTP (e.g. 4892), and activates 10-second GPS telemetry loop monitoring ambulance heading.
+✔ 4. Gate Check-In & 100m Geofenced Hard-Lock: Paramedic speaks 4-digit OTP at ER bay (<2s); admin desk validates patient is within 100m before converting to permanent admission.
+
+--- SLIDE 4 (Word Count: 489, Images: 1) ---
+
+⚡ DEFENSIVE SECURITY GRID
+FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY
+100m Geofence Hard-Lock Gate • IP/Device Multi-Factor Risk Scoring (0-100) • High-Certainty Gate Verification
+📊 FEASIBILITY & DEPLOYMENT VIABILITY
+✔ Operational Feasibility: Web-first zero-install architecture for citizens. Hospital ER desk operates inside existing triage computers with zero proprietary hardware requirements.
+✔ Financial Viability: Self-hosted OSRM on government cloud (NIC MeghRaj) eliminates millions in recurring Google Maps API billing. Zero cloud AI costs in the emergency loop.
+✔ Low-Bandwidth Resiliency: Ultralight bundle (<1.4MB) loads smoothly and caches offline, maintaining full operational integrity even on congested 3G/4G rural mobile networks.
+✔ ABDM Compliance: Native alignment with Ayushman Bharat Digital Mission (ABDM) Health Facility Registry (HFR) and HL7/FHIR pre-arrival medical summaries.
+⚠️ FOUR-TIER OPERATIONAL RISKS
+✕ Challenge 1: Bed Hoarding by Touts: Competing private ambulances or touts locking beds remotely or attempting to scalp reservations. ★ Mitigation: 50% public hold cap, 100m geofence gate, and client risk engine.
+✕ Challenge 2: Night Shift Nurse Fatigue: Overburdened nurses failing to update beds during peak midnight mass-casualty surges. ★ Mitigation: 1-Tap +/- adjusters dynamically recompute beds; normal beds shed first and 1:2 ICU surge stretch activates.
+✕ Challenge 3: Traffic Jams & False Expirations: Ambulances caught in severe Kolkata congestion getting prematurely cancelled. ★ Mitigation: Dynamic heading vector clamping pauses countdown timer while vehicle moves toward hospital.
+✕ Challenge 4: Patient Privacy & Data Leakage: Exposing patient trauma telemetry over open channels. ★ Mitigation: Ephemeral encrypted state with automatic purge 60 minutes post-admission.
+🛡️ CLIENT RISK ENGINE & 100m GEOFENCE
+MATHEMATICAL RISK COMPOSITE (R ∈ [0, 100])
+R = 0.30·SIP + 0.35·SDevice + 0.20·SVelocity + 0.15·SGeo
+SIP = min(100,  30·max(0, N1h - 1) + 10·max(0, N24h - 2))
+★ Tiered Mitigation Thresholds: R < 40: Instant Hold • 40 ≤ R < 70: SMS OTP • 70 ≤ R < 90: Captcha Throttling • R ≥ 90: Hard Freeze.
+★ IP Subnet Burst Velocity (S_IP): Genuine citizen has N_1h = 1 ⟹ S_IP = 0. A tout bot making 4 hold attempts in 20 min gets S_IP = 90 (High Risk).
+★ Device Hardware Entropy (S_Device): Synthesized client-side from GPU Canvas 2D anti-alias hash, WebGL renderer, and AudioContext jitter to detect headless bot farms.
+★ 100m Hospital Geofence Hard-Lock Gate: The 4-digit OTP strictly validates in ER admin panel ONLY when patient is within 100m of ER entrance—remote scalping is impossible!
+🔄 15-Minute Dynamic Soft-Lock & Anti-Hoarding State Machine
+Step 1: Public Staffed Bed Pool (50% Hold Cap)
+Beds verified via on-duty nurse ratio; 50% pool reserved for direct ambulance drive-ups.
+Step 2: 15-Min Dynamic Soft-Lock (4-Digit OTP Issued)
+Bed count decrements by 1; secure 4-digit OTP generated for 2-second gate check-in.
+Step 3: 10s GPS Vector Loop: TOWARD / AWAY Heartbeat
+• TOWARD: Countdown paused, live ETA shown
+• AWAY: Alert & auto-cancellation
+Step 4: Gate 4-Digit Check-In (100m Hard-Lock Gate)
+Spoken 4-digit OTP entered into ER Desk converts soft-lock to permanent admission (<2s).
+
+--- SLIDE 5 (Word Count: 286, Images: 1) ---
+
+⚡ HEALTHCARE IMPACT
+IMPACT, HEALTHCARE VALUE & REAL-TIME SYNC ADMIN PANEL
+Saving 15,000+ Golden Hour Lives Annually • Live ER Desk with 10 Emergency Hospitals
+CLINICAL & SOCIAL IMPACT: SAVING 15,000+ LIVES ANNUALLY
+▪ Transforming 1-in-5 Golden Hour Survival: Currently only 1 in 5 Indian emergency victims reach care in time. ASHA eliminates blind emergency turnaways, giving families the highest probability of securing an available bed on their first run.
+▪ Bridging the En-Route Care Void: Empowers families with AIIMS/ERC-validated first-aid steps, actively preserving cerebral and cardiac perfusion before hospital arrival.
+▪ Ending Predatory Ambulance Touts: Prevents middlemen from diverting patients to unequipped nursing homes based on referral kickbacks.
+▪ Equitable Regional Bed Balancing: Diverts cases from saturated medical colleges (140% load) to secondary hospitals with idle staffed beds.
+HOSPITAL ER COMMAND DESK: REAL-TIME SYNC ACROSS 10 HOSPITALS
+✔ Live WebSocket Queue (<50ms Latency): Supabase PostgreSQL WAL broadcasts incoming holds instantly with audio klaxon siren and flashing visual banner.
+✔ 1-Tap Nurse Shift Counter & Dynamic Allocation: Nurses tap +/- on active nurses; beds dynamically recompute (normal beds shed first, 1:2 ICU stretch active in low staff).
+✔ 100m Geofenced 4-Digit OTP Admission (<2s): Triage nurse inputs citizen's 4-digit OTP; backend strictly validates that patient's phone is within 100m of ER gate before converting to permanent hard-lock!
+✔ Active in 10 Kolkata Emergency Hubs: Configured with real credentials across ILS Dum Dum, Tata Medical Center, Charnock VIP Road, Ohio Hospital, HCG Cancer Centre, Dum Dum Municipal, North City Neuro, Neotia, CNCI, and Apollo Multispeciality.
+✔ Automated Cancellation & Re-Routing: If an ER bed becomes compromised, 1-tap admin cancel instantly re-routes patient to next optimal hospital, auto-updating citizen banner with new hospital address and fresh 4-digit OTP.
+
+--- SLIDE 6 (Word Count: 432, Images: 1) ---
+
+⚡ RESEARCH & SCALE
+CLINICAL RESEARCH DATA ORIGIN & NATIONAL SCALABILITY
+Evidence-Based Protocol Lineage • Zero-Capex Architecture for 10,000 Hospitals Nationwide
+CLINICAL RESEARCH & PROTOCOL DATA ORIGIN
+▪ AIIMS Department of Emergency Medicine: Clinical foundation for pre-hospital trauma resuscitation protocols, rapid hemorrhage control guidelines, and Kolkata golden-hour transport benchmarks.
+▪ European Resuscitation Council (ERC 2021/2025 Guidelines): Evidence base for situational first-aid instructions: immediate Semi-Fowler 45° posture with bent knees for cardiac ischemia, stroke recovery lateral positioning, and active bystander calming scripts.
+▪ American Heart Association & Red Cross Guidelines: Evidence base for non-medical bystander life support: physical airway positioning, high-quality hands-only CPR coaching, and firm direct pressure hemorrhage control without medication risks.
+▪ AHRQ Emergency Severity Index (ESI v4): Scientifically validated 5-level clinical triage framework operationalized in ASHA to stratify symptom acuity and ward matching.
+▪ Indian Society of Critical Care Medicine (ISCCM): Mandated statutory nurse-to-patient staffing standards (ICU 1:1, HDU 1:2, General Ward 1:6) defining operational bed capacity.
+▪ The Lancet Global Health & AIIMS Audits: Epidemiological evidence showing only 1 in 5 (20%) Indian emergency victims reach care in the Golden Hour, driving the fatal 2.4 gate rejection cycle.
+NATIONWIDE SCALING ROADMAP: 10 TO 10,000 HOSPITALS
+✔ Zero-Capex Web Deployment: Municipal and state health departments onboard district hospitals in 15 minutes without investing in servers or scanners. Triage desk runs inside existing web browsers.
+✔ Self-Hosted OSRM Containers on NIC MeghRaj: Eliminates Google Maps commercial API pricing, enabling millions of daily emergency routing requests at zero per-query cost.
+✔ Planned ML Anti-Abuse & Geofence Grid: Automated IP burst throttling, hardware canvas fingerprinting, and 100m hospital geofencing scale smoothly to protect 10,000 national hospitals against organized touts.
+✔ Redis TTL Keyspace Sharding: High-throughput in-memory state engine handling 100,000+ concurrent 15-minute soft-locks with automatic keyspace expiration and PostGIS spatial indexing.
+✔ Ayushman Bharat Digital Mission (ABDM) Integration: Pre-integrated with ABDM Health Facility Registry (HFR) and HL7/FHIR M1/M2/M3 diagnostic records for seamless nationwide health grid adoption.
+✔ Live Kolkata Metro Emergency Network: Active across 10 Kolkata emergency hubs (ILS Dum Dum, Tata Medical Center, Charnock, Ohio, HCG EKO, Dum Dum Municipal, etc.).
+🔄 Nationwide Geospatial Scaling Architecture
+Step 1: 10,000 National Hospital Nodes Onboarded
+State health departments register hospital ward beds & blood banks via ABDM HFR.
+Step 2: PostGIS Geospatial Partitioning & MeghRaj OSRM Grid
+Regional routing microservices hosted on NIC MeghRaj deliver <420ms paths at $0 cost.
+Step 3: Redis TTL Keyspace Event Sharding
+Manages 100,000+ concurrent 15-min soft-locks with automatic millisecond expiry.
+Step 4: National 108 Ambulance Dispatch Sync
+Integrates with state 108 computer-aided dispatch and citizen mobile emergency grid.
+
+TOTAL WORDS IN DECK: 2131
+

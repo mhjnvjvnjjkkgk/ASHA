@@ -1,35 +1,33 @@
-# Viva Preparation Guide: TTL Worker Developer
+# Viva Preparation Guide: Background Telemetry & Anti-Abuse Engineer
 
-**Role:** "I built the background worker that automatically frees expired bed holds"
+**Role:** "I built the real-time GPS telemetry vector tracker and anti-hoarding bed reservation engine."
 
 **Elevator Pitch:**
-I engineered the background TTL (Time-To-Live) worker that runs continuously alongside our server. It automatically monitors the database and releases expired bed reservations in real-time, ensuring that critical hospital beds are never locked up by no-shows.
+"I engineered ASHA's 15-minute dynamic GPS soft-lock engine and directional vector tracking algorithm. By continuously analyzing the rate of distance change relative to the target hospital, our system differentiates between patients genuinely traveling to the ER, stationary users, and those moving in the wrong direction, automatically returning beds to the public pool to prevent hoarding."
 
-## Code Walkthrough: `ttl_worker.py`
-The `ttl_worker.py` file maintains database efficiency.
-- **`_worker_loop`**: This is an infinite `while True` loop that sleeps for 10 seconds, wakes up, and calls `db_module.release_expired_holds()`. It logs the number of stale holds released and handles any unexpected exceptions.
-- **`start_ttl_worker`**: This function is called when the Flask app starts. It initializes a Python `threading.Thread` targeting the worker loop and explicitly sets it as a daemon thread before starting it.
-
-## Technical Explanations
-**Daemon Threads vs Regular Threads:**
-A daemon thread runs in the background and is tied to the lifecycle of the main program. If the main Flask server shuts down or crashes, the daemon thread is automatically killed. A regular thread would block the program from exiting, causing hanging processes.
-
-**Why a 10-Second Interval?**
-We chose a 10-second interval because it strikes the perfect balance. It ensures expired holds are returned to the available bed pool almost instantly during fast-paced emergencies, while being long enough to prevent overloading the Supabase database with excessive queries.
+## Code Walkthrough & Mathematical Architecture
+- **Vector Derivative Calculation:** Computes velocity vector $\frac{d(t_2) - d(t_1)}{t_2 - t_1} \times 3600$ every 10 seconds.
+- **Three Telemetry States:**
+  - **`TOWARD` ($\Delta d / \Delta t < -0.5\text{ km/h}$):** Patient is approaching; 15-minute countdown is paused and dynamic driving ETA is displayed.
+  - **`STATIONARY` ($|\Delta d / \Delta t| \le 0.5\text{ km/h}$):** User is not moving; 15-minute countdown decrements every second.
+  - **`AWAY` ($\Delta d / \Delta t > +0.5\text{ km/h}$):** Distance is increasing; triggers a Wrong Direction Alert and auto-cancels the hold over 2–3 consecutive checks.
+- **Staffed Bed vs. Ghost Bed Formula:**
+  $$\text{Staffed Beds} = \min(\text{Physical Beds}, \text{On-Duty Nurses} \times \text{Ratio})$$
+  Enforces mandatory nurse-to-patient ratios: 1:1 ICU, 1:2 PICU, 1:6 General Ward.
 
 ## Tough Judge Questions & Winning Answers
 
-**1. "What is a daemon thread and why did you use one?"**
-*Answer:* A daemon thread is a background thread that automatically dies when the main program exits. We used it so our TTL worker could run continuously alongside the Flask server without preventing the server from gracefully shutting down when we restart it.
+**1. "What is a 'Ghost Bed' and how does ASHA eliminate it?"**
+*Answer:* A ghost bed is a physical bed frame listed on a hospital dashboard that cannot accept a patient because no on-duty nurse is available to staff it. ASHA calculates usable beds strictly as the minimum of physical beds and nurse capacity based on clinical ratios ($1:1$ for ICU, $1:6$ for Ward).
 
-**2. "Why 10 seconds instead of 1 second or 1 minute?"**
-*Answer:* One second would spam the database with unnecessary API calls and cause rate-limiting, while one minute is too long to keep a critical ICU bed locked if a hold has expired. Ten seconds provides near real-time bed availability with minimal server overhead.
+**2. "What happens if someone soft-locks a bed and sits at home?"**
+*Answer:* The GPS telemetry loop detects $0\text{ km/h}$ movement, setting the vector to `STATIONARY`. The 15-minute countdown continues to decrement. If the user does not arrive and verify the 4-digit OTP before 15 minutes expire, the hold automatically terminates and the bed is freed.
 
-**3. "What happens if the worker crashes?"**
-*Answer:* The worker loop is wrapped in a robust `try-except` block. If a database timeout or error occurs, the exception is caught and logged, and the loop simply sleeps and tries again in the next cycle, ensuring the worker never permanently crashes.
+**3. "What if an ambulance encounters a detour or traffic jam?"**
+*Answer:* If the vehicle is moving slowly or temporarily stalled in traffic along the route, the system detects proximity to the road polyline. As long as the directional vector is generally toward the hospital, the timer remains paused.
 
-**4. "How does this compare to a cron job or scheduled task?"**
-*Answer:* A cron job typically runs every minute at best, which isn't fast enough for emergency logistics. Our threaded worker runs every 10 seconds, providing much tighter real-time synchronization between expired holds and bed availability on the frontend.
+**4. "Why 15 minutes for the soft-lock window?"**
+*Answer:* Clinical emergency data shows that in urban Indian settings, the average ambulance transit time to the nearest tertiary center is 12–18 minutes. A 15-minute window provides sufficient travel time while preventing long-term bed hoarding.
 
-**5. "Could you use Supabase scheduled functions instead?"**
-*Answer:* Yes, Supabase supports pg_cron for scheduled functions, which would be ideal for production. However, for this hackathon, building it in Python gave us immediate control, easier debugging, and allowed us to log the worker's real-time actions directly in our Flask console.
+**5. "How does the nurse know if a held bed is actually en route?"**
+*Answer:* On the Hospital Admin Desk (`ashaien-admin.vercel.app`), the Holds Queue tab displays the live vector status (`TOWARD`, `STATIONARY`, `AWAY`), the patient's triaged symptom, the dynamic ETA, and the 4-digit OTP.

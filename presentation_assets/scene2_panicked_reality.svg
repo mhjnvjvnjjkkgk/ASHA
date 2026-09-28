@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .skin-maa { fill: #E8BA96; }
+      .skin-shadow-maa { fill: #DFAB88; }
+      .hair-maa { fill: #1E293B; }
+      .kurta-mustard { fill: #EAB308; }
+      .dupatta-teal { fill: #0D9488; }
+      .bubble-bg { fill: #FFFFFF; stroke: #E11D48; stroke-width: 2.5; filter: drop-shadow(0 4px 12px rgba(225,29,72,0.12)); }
+      .tag-reject { fill: #FFF1F2; stroke: #E11D48; stroke-width: 1.5; }
+      .text-title { font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif; font-weight: 700; }
+      .text-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="1000" class="bg" />
+
+  <!-- Top Telemetry Pill -->
+  <g transform="translate(60, 45)">
+    <rect width="440" height="42" rx="21" fill="#FFF1F2" stroke="#E11D48" stroke-width="1.5" />
+    <circle cx="24" cy="21" r="7" fill="#E11D48" />
+    <text x="42" y="27" font-size="16" class="text-title" fill="#9F1239">⏱️ 01:25 AM • T = 10:00 (50 MIN REMAINING)</text>
+  </g>
+
+  <!-- Problem Tag -->
+  <g transform="translate(60, 105)">
+    <rect width="260" height="28" rx="6" fill="#FEE2E2" />
+    <text x="12" y="19" font-size="13" class="text-title" fill="#B91C1C">THE FATAL 2.4 GATE REJECTION CYCLE</text>
+  </g>
+
+  <!-- Mother Central Figure (Ananya, 42) in Overwhelming Frantic Panic -->
+  <g id="mother_panic" transform="translate(260, 180)">
+    <path d="M 130 380 Q 230 350 330 380 L 360 760 L 100 760 Z" class="kurta-mustard" />
+    <path d="M 120 380 Q 90 520 110 680 Q 140 680 150 520 Z" class="dupatta-teal" />
+    <path d="M 210 370 L 230 430 L 250 370" stroke="#FFFFFF" stroke-width="5" fill="none" />
+
+    <rect x="205" y="270" width="50" height="70" rx="12" class="skin-maa" />
+    <circle cx="230" cy="210" r="95" class="skin-maa" />
+
+    <path d="M 140 200 Q 160 90 260 110 Q 320 150 325 240 Q 270 170 200 190 Z" class="hair-maa" />
+    <path d="M 130 220 Q 110 260 125 310" stroke="#1E293B" stroke-width="8" fill="none" />
+    <path d="M 320 220 Q 345 270 335 320" stroke="#1E293B" stroke-width="8" fill="none" />
+    <circle cx="230" cy="165" r="6" fill="#E11D48" />
+
+    <!-- Right Hand Clutched to Forehead in Agony / Grief -->
+    <path d="M 130 400 Q 90 320 150 170" stroke="#EAB308" stroke-width="36" stroke-linecap="round" fill="none" />
+    <circle cx="160" cy="160" r="24" class="skin-maa" />
+    <path d="M 148 150 Q 165 145 180 155" fill="#DFAB88" />
+
+    <!-- Left Hand Holding Smartphone to Ear -->
+    <path d="M 330 400 Q 370 320 310 230" stroke="#EAB308" stroke-width="36" stroke-linecap="round" fill="none" />
+    <rect x="295" y="210" width="26" height="50" rx="6" fill="#0F172A" />
+    <circle cx="305" cy="245" r="18" class="skin-maa" />
+
+    <path d="M 185 185 Q 200 170 215 185" stroke="#0F172A" stroke-width="4.5" fill="none" />
+    <path d="M 245 185 Q 260 170 275 185" stroke="#0F172A" stroke-width="4.5" fill="none" />
+
+    <ellipse cx="200" cy="205" rx="14" ry="16" fill="#FFFFFF" stroke="#0F172A" stroke-width="2" />
+    <circle cx="202" cy="205" r="7" fill="#0F172A" />
+    <ellipse cx="260" cy="205" rx="14" ry="16" fill="#FFFFFF" stroke="#0F172A" stroke-width="2" />
+    <circle cx="258" cy="205" r="7" fill="#0F172A" />
+
+    <path d="M 200 222 Q 195 245 198 260" stroke="#38BDF8" stroke-width="3.5" fill="none" stroke-linecap="round" />
+    <path d="M 260 222 Q 265 245 262 260" stroke="#38BDF8" stroke-width="3.5" fill="none" stroke-linecap="round" />
+
+    <ellipse cx="230" cy="255" rx="18" ry="18" fill="#881337" />
+    <path d="M 218 248 Q 230 242 242 248" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  </g>
+
+  <!-- Rejection Speech Callouts from Hospitals -->
+  <g transform="translate(680, 220)">
+    <g transform="translate(0, 0)">
+      <rect width="250" height="70" rx="12" class="tag-reject" />
+      <circle cx="30" cy="35" r="14" fill="#E11D48" />
+      <text x="24" y="41" font-size="16" fill="#FFFFFF" font-weight="bold">✕</text>
+      <text x="56" y="30" font-size="15" class="text-title" fill="#9F1239">NO ICU BEDS</text>
+      <text x="56" y="52" font-size="12" class="text-body" fill="#BE123C">Govt Hospital • Divert</text>
+    </g>
+    <g transform="translate(20, 95)">
+      <rect width="250" height="70" rx="12" class="tag-reject" />
+      <circle cx="30" cy="35" r="14" fill="#E11D48" />
+      <text x="24" y="41" font-size="16" fill="#FFFFFF" font-weight="bold">✕</text>
+      <text x="56" y="30" font-size="15" class="text-title" fill="#9F1239">LINE DISCONNECTED</text>
+      <text x="56" y="52" font-size="12" class="text-body" fill="#BE123C">Continuous Busy Tone</text>
+    </g>
+    <g transform="translate(0, 190)">
+      <rect width="265" height="85" rx="12" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.8" />
+      <text x="18" y="28" font-size="14" class="text-title" fill="#991B1B">🚨 GHOST BED PARADOX</text>
+      <text x="18" y="50" font-size="12" class="text-body" fill="#7F1D1D">Portal: "4 Beds Open"</text>
+      <text x="18" y="70" font-size="12" class="text-title" fill="#B91C1C">Nurse: "No staff! Cannot admit!"</text>
+    </g>
+  </g>
+
+  <!-- Simplified Emotionally Resonant Dialogue Bubble (Maa - Panic) -->
+  <g transform="translate(70, 240)">
+    <path d="M 0,0 L 320,0 Q 340,0 340,20 L 340,110 Q 340,130 320,130 L 260,130 L 280,160 L 220,130 L 20,130 Q 0,130 0,110 Z" class="bubble-bg" />
+    <text x="24" y="40" font-size="18" class="text-title" fill="#0F172A">Maa (42):</text>
+    <text x="24" y="72" font-size="18" class="text-title" fill="#E11D48">"Every hospital line is busy!</text>
+    <text x="24" y="98" font-size="18" class="text-title" fill="#E11D48"> No ICU beds anywhere?!"</text>
+  </g>
+
+  <!-- Bottom Context Banner -->
+  <g transform="translate(60, 920)">
+    <rect width="880" height="45" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" />
+    <text x="25" y="28" font-size="14" class="text-body" fill="#475569">
+      <tspan font-weight="700" fill="#0F172A">Scene 2 • The Systemic Trap:</tspan> Static portals show metal frames (B_phys), not staffed beds. 75-110 min wasted in blind phone triage.
+    </text>
+  </g>
+</svg>

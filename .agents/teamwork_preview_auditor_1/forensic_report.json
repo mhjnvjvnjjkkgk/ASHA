@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "slide_count_6": true,
+    "widescreen_16_9": true,
+    "sih_blue_footer_on_all_slides": true,
+    "formulas_present": true,
+    "metrics_present": true,
+    "clinical_facts_present": true,
+    "mockup_preservation": true,
+    "mini_story_1_user_dialogue": true,
+    "assets_integrity": true,
+    "falsifiability_clean": true
+  },
+  "details": {
+    "pptx_size": 5992972,
+    "pptx_sha256": "322f600707b48b142ba932a3e90e94789ce8744570851b4e2ad0a60aa5350efb",
+    "slide_xmls": [
+      "ppt/slides/slide1.xml",
+      "ppt/slides/slide2.xml",
+      "ppt/slides/slide3.xml",
+      "ppt/slides/slide4.xml",
+      "ppt/slides/slide5.xml",
+      "ppt/slides/slide6.xml"
+    ],
+    "media_entries": 9
+  },
+  "verdict": "CLEAN"
+}

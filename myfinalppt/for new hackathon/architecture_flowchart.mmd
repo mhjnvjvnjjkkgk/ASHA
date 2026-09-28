@@ -1,0 +1,28 @@
+%%{init: {'theme': 'default', 'themeVariables': { 'fontFamily': 'Agency FB, sans-serif', 'fontSize': '16px', 'background': '#FFFFFF', 'mainBkg': '#FFFFFF', 'nodeBorder': '#0F172A', 'lineColor': '#0F172A', 'textColor': '#0F172A', 'edgeLabelBackground': '#FFFFFF' }}}%%
+flowchart TB
+    %% Row 1: Ingestion & Clinical Triage (Horizontal)
+    subgraph Row1 [" "]
+        direction LR
+        A(["📱 Citizen Web Client<br/>React 19 • Vite"]) -->|"Voice (2.2s debounce)"| B[["🧠 Bengali NLP Engine<br/>0ms In-Memory"]]
+        B -->|"Clinical Tokens"| C{{"🩺 Triage Acuity<br/>AHRQ ESI 1–5"}}
+        C -->|"Immediate Directives"| D("📋 First-Aid Sheet<br/>Semi-Fowler 45°")
+    end
+
+    %% Row 2: Geospatial Routing, Staffed Bed Math & Dual Terminals (Horizontal)
+    subgraph Row2 [" "]
+        direction LR
+        E[["🗺️ OSRM Router<br/>C++ Engine • 1.35x"]] -->|"<420ms Route"| F{"Staffed Bed Check<br/>min(Beds, Nurses × Ratio)"}
+        F -->|"15-min Soft Lock"| G[("⚡ Supabase Sync<br/>PostgreSQL WAL")]
+        G -->|"<50ms WebSockets"| H("📱 Citizen Active HUD<br/>Live ETA & OTP 4892")
+        G -->|"Incoming Triage"| I(["🏥 Hospital ER Desk<br/>100m Geofence Gate"])
+    end
+
+    %% Balanced Cross-Row Connections
+    A -->|"GPS Stream"| E
+    C -->|"Ward Acuity"| E
+    H -.->|"10s Vector Loop"| E
+    H -.->|"Verbal OTP"| I
+
+    %% Invisible Subgraph Containers (Removes all outer boxes for a pure, clean look)
+    style Row1 fill:none,stroke:none
+    style Row2 fill:none,stroke:none

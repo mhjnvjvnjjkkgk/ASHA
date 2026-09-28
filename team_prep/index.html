@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Team ASHA (SIH 2026) — Master Preparation Hub</title>
+  <style>
+    body {
+      background: #070d19;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .hub-container {
+      max-width: 960px;
+      width: 100%;
+    }
+    .hub-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hub-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hub-title {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .hub-subtitle {
+      font-size: 16px;
+      color: #94a3b8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+    .card-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+    .seg-1 { background: #6366f1; }
+    .seg-2 { background: #ec4899; }
+    .seg-3 { background: #06b6d4; }
+    .seg-4 { background: #10b981; }
+    .seg-5 { background: #f59e0b; }
+
+    .card-badge {
+      font-size: 11px;
+      font-weight: 800;
+      color: #94a3b8;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .card-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .card-role {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+    .universal-box {
+      margin-top: 40px;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .universal-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #facc15;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .universal-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .universal-item {
+      background: #131d36;
+      border: 1px solid #334155;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 24px 14px;
+      }
+      .hub-header {
+        margin-bottom: 24px;
+      }
+      .hub-title {
+        font-size: 26px;
+      }
+      .hub-subtitle {
+        font-size: 14px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .card {
+        padding: 20px 16px;
+      }
+      .universal-box {
+        margin-top: 24px;
+        padding: 20px 16px;
+      }
+      .universal-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hub-container">
+    <div class="hub-header">
+      <div class="hub-badge">SIH 2026 • MedTech / BioTech</div>
+      <h1 class="hub-title">PULSEGRID (TEAM ASHA)</h1>
+      <div class="hub-subtitle">Single-Page Color-Coded Preparation Dossiers for All 5 Team Segments</div>
+    </div>
+
+    <div class="grid">
+      <a href="Segment_1_Shayak_Team_Leader/SHAYAK_MASTER_PREPARATION_DOSSIER.html" class="card">
+        <div class="card-stripe seg-1"></div>
+        <div class="card-badge">Segment 1 • Team Leader</div>
+        <div class="card-name">Shayak Das</div>
+        <div class="card-role">Master Architecture, Systems Integration, 15-Min Dynamic Soft-Lock & Telemetry</div>
+        <div class="card-cta">Open Dossier →</div>
+      </a>
+
+      <a href="Segment_2_Sayoshi_AI_Triage_Speech/SAYOSHI_MASTER_PREPARATION_DOSSIER.html" class="card">
+        <div class="card-stripe seg-2"></div>
+        <div class="card-badge">Segment 2 • Speech & Triage</div>
+        <div class="card-name">Sayoshi</div>
+        <div class="card-role">Speech-to-Text, 2.2s Debounce, 150+ Bengali Medical Lexicon, 18 Clinical Categories</div>
+        <div class="card-cta">Open Dossier →</div>
+      </a>
+
+      <a href="Segment_3_Rishita_Maps_Routing_Navigation/RISHITA_MASTER_PREPARATION_DOSSIER.html" class="card">
+        <div class="card-stripe seg-3"></div>
+        <div class="card-badge">Segment 3 • Maps & Routing</div>
+        <div class="card-name">Rishita</div>
+        <div class="card-role">Leaflet Canvas, OSRM Road Snapping, 1.35x ETA Winding, Jitter Elimination</div>
+        <div class="card-cta">Open Dossier →</div>
+      </a>
+
+      <a href="Segment_4_Vishwaroop_Cloud_Sync_Admin_Desk/VISHWAROOP_MASTER_PREPARATION_DOSSIER.html" class="card">
+        <div class="card-stripe seg-4"></div>
+        <div class="card-badge">Segment 4 • Cloud & ER Desk</div>
+        <div class="card-name">Vishwaroop</div>
+        <div class="card-role">Supabase WebSockets, BroadcastChannel, 10 Kolkata Hospitals, 4-Digit OTP Admission</div>
+        <div class="card-cta">Open Dossier →</div>
+      </a>
+
+      <a href="Segment_5_Yash_Clinical_Protocols_Business/YASH_MASTER_PREPARATION_DOSSIER.html" class="card">
+        <div class="card-stripe seg-5"></div>
+        <div class="card-badge">Segment 5 • Clinical & Business</div>
+        <div class="card-name">Yash</div>
+        <div class="card-role">Situational First-Aid Protocols (Our Biggest Plus!), Ghost Bed Math, B2G/B2B Blueprint</div>
+        <div class="card-cta">Open Dossier →</div>
+      </a>
+    </div>
+
+    <div class="universal-box">
+      <div class="universal-title">📌 Universal Foundation (Included in All 5 Dossiers)</div>
+      <div class="universal-list">
+        <div class="universal-item">
+          <strong>00. Master Walkthrough:</strong> End-to-end crisis story from living room collapse to ER admission.
+        </div>
+        <div class="universal-item">
+          <strong>07. 32 Critical Judge Q&As:</strong> Unbeatable defenses against tough VC, doctor, and judge attacks.
+        </div>
+        <div class="universal-item">
+          <strong>09. Level 51 Interconnections:</strong> Complete inter-module architecture & reactive state loop.
+        </div>
+        <div class="universal-item">
+          <strong>Project Data Sources Blueprint:</strong> Statutory ISCCM ratios, 1-in-5 Golden Hour data, 10 Kolkata hospitals & 8 core features.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

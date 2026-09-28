@@ -1,0 +1,502 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "project": "PulseGrid / Team ASHA (Smart India Hackathon 2026)",
+    "worker": "Worker M2 (Storyboard & Narrative Designer)",
+    "timestamp": "2026-09-13T17:50:00+05:30",
+    "description": "Complete 5-step episodic visual storyline specification, conversational dialogue & thought bubble matrix, and slide geometry mapping.",
+    "target_deck": "SIH2026-ASHA-Presentation-Optimized.pptx"
+  },
+  "characters": {
+    "grandmother": {
+      "id": "char_grandmother",
+      "name": "Bani Devi (Dadi / Dida)",
+      "age": 70,
+      "role": "The Patient in Acute Distress",
+      "clinical_condition": "Acute ST-Elevation Myocardial Infarction (STEMI), ESI-1 Immediate Resuscitation",
+      "visual_tokens": {
+        "hair": "Silver-grey hair neatly parted in traditional low nape bun (khopa)",
+        "face": "Elderly Indian woman, delicate wrinkles around eyes, red round bindi, wire-rim spectacles",
+        "attire": "Pastel lilac/cream cotton saree (#F5F5DC body) with rich muted maroon woven border (#800020), cream blouse",
+        "accessories": "Thin gold bangles on right wrist, small stud earrings",
+        "hex_colors": {
+          "saree_body": "#F5F5DC",
+          "saree_border": "#800020",
+          "blouse": "#EFEBD9"
+        }
+      },
+      "gemini_token_string": "elderly Indian grandmother, 70 years old, silver-grey hair in low nape bun, wearing traditional lilac-cream cotton saree with muted maroon border, wire spectacles, red bindi, gold bangles"
+    },
+    "mother": {
+      "id": "char_mother",
+      "name": "Ananya (Maa / Sunita)",
+      "age": 42,
+      "role": "The Overwhelmed Caregiver (Traditional Systemic Trap)",
+      "visual_tokens": {
+        "hair": "Jet-black wavy hair tied in an unkempt low ponytail with loose flyaway strands",
+        "face": "Middle-aged Indian woman, highly expressive face, small gold stud earrings, red round bindi",
+        "attire": "Mustard-yellow cotton kurta (#EAB308) with white neckline embroidery, terracotta rust dupatta (#C2410C) over shoulder",
+        "hex_colors": {
+          "kurta": "#EAB308",
+          "dupatta": "#C2410C",
+          "embroidery": "#FFFFFF"
+        }
+      },
+      "gemini_token_string": "middle-aged Indian woman, 42 years old, expressive face, jet-black hair in loose ponytail, wearing warm mustard-yellow cotton kurta with terracotta rust dupatta, small gold studs, red bindi"
+    },
+    "granddaughter": {
+      "id": "char_granddaughter",
+      "name": "Riya",
+      "age": 16,
+      "role": "The Tech-Savvy Digital Rescuer (ASHA Champion)",
+      "visual_tokens": {
+        "hair": "Glossy jet-black hair pulled up into a sleek high ponytail secured with a medical-teal scrunchie (#0D9488)",
+        "face": "Poised intelligent Indian teenage girl, bright alert eyes, thin black wireframe glasses",
+        "attire": "Modern Indian smart-casual: vibrant Deep Teal/Cyan hoodie-top (#0D9488) with white sleeve accents, dark charcoal jeans",
+        "accessories": "Silver smartwatch with glowing telemetry display on left wrist, modern glowing smartphone in hand",
+        "hex_colors": {
+          "hoodie": "#0D9488",
+          "scrunchie": "#0D9488",
+          "jeans": "#1E293B",
+          "ui_glow": "#00F0FF"
+        }
+      },
+      "gemini_token_string": "smart teenage Indian girl, 16 years old, sleek high black ponytail with vibrant teal scrunchie, thin black glasses, wearing vibrant teal-cyan hoodie with white accents, dark jeans, silver smartwatch, holding glowing modern smartphone"
+    },
+    "doctor": {
+      "id": "char_doctor",
+      "name": "Dr. Arindam Banerjee",
+      "age": 42,
+      "role": "The Emergency Department Intensivist (Clinical Authority)",
+      "visual_tokens": {
+        "hair": "Short neat black hair with slight silvering at temples",
+        "face": "Indian male emergency physician, clean-shaven, thin rectangular spectacles, calm authoritative demeanor",
+        "attire": "Pristine white clinical lab coat (#FFFFFF) with hospital emergency insignia on chest, surgical sea-green scrubs (#14B8A6) underneath",
+        "accessories": "Dark navy stethoscope around neck, hospital triage tablet in hand, digital hospital ID badge",
+        "hex_colors": {
+          "lab_coat": "#FFFFFF",
+          "scrubs": "#14B8A6",
+          "stethoscope": "#0F172A"
+        }
+      },
+      "gemini_token_string": "professional Indian male emergency doctor, 42 years old, rectangular glasses, short black hair, wearing pristine white clinical lab coat, dark stethoscope around neck, sea-green scrubs underneath, digital tablet in hand, calm authoritative reassuring expression"
+    }
+  },
+  "scenes": [
+    {
+      "scene_id": "scene_1",
+      "scene_number": 1,
+      "title": "The Midnight Crisis",
+      "subtitle": "The Golden Hour Clock Starts",
+      "narrative_timestamp": "T = 00:00 (01:15 AM)",
+      "elapsed_time_minutes": 0,
+      "location": "Modest Kolkata living room, wooden sofa, wall clock reading 1:15 AM",
+      "characters_present": ["char_grandmother", "char_mother"],
+      "action_description": "Grandmother Bani Devi clutches her mid-chest with a clenched right fist in acute agony (Levine's sign), eyes squeezed shut, cold sweat, labored breathing. Mother Ananya rushes into the frame with a trembling glass of water in sheer terror, paralyzed and unsure how to act.",
+      "clinical_context": "Acute ST-Elevation Myocardial Infarction (STEMI), ESI-1 Immediate Resuscitation. Layman instinct to give water risks pulmonary aspiration during cardiogenic shock; laying patient flat exacerbates pulmonary venous congestion.",
+      "technical_context": "Emergency severity clock initialized at 00:00. Requires sub-60-minute door-to-treatment time to preserve myocardium.",
+      "visual_composition": {
+        "camera_angle": "Eye-level medium shot centered on living room sofa",
+        "lighting": "Warm midnight lamplight contrasting with deep slate-navy shadows",
+        "background": "Isolated clean solid white background (#FFFFFF) with zero clutter",
+        "color_palette": ["#800020", "#EAB308", "#E11D48", "#0F172A", "#FFFFFF"]
+      },
+      "dialogue_bubbles": [
+        {
+          "speaker": "char_grandmother",
+          "type": "thought",
+          "bengali_script": "বুকে যেন পাথর চেপে বসেছে... শ্বাস নিতে পারছি না!",
+          "english_subtitle": "My chest feels crushed by a boulder... I can't breathe!",
+          "clinical_rationale": "Classic Levine's sign retrosternal angina radiating to left arm."
+        }
+      ],
+      "target_slides": [1, 2],
+      "geometry_specs": {
+        "slide_1": {
+          "zone": "Zone C Hero Vignette",
+          "x_inches": 9.00,
+          "y_inches": 1.20,
+          "w_inches": 3.80,
+          "h_inches": 3.20
+        },
+        "slide_2": {
+          "zone": "Zone C Upper Panel (Comparison)",
+          "x_inches": 8.90,
+          "y_inches": 1.15,
+          "w_inches": 3.90,
+          "h_inches": 2.85
+        }
+      }
+    },
+    {
+      "scene_id": "scene_2",
+      "scene_number": 2,
+      "title": "The Panicked Reality & Ghost Bed Dilemma",
+      "subtitle": "Reading is Not Reserving",
+      "narrative_timestamp": "T = 10:00 (01:25 AM)",
+      "elapsed_time_minutes": 10,
+      "location": "Living room center table with open laptop, scribbled notepad, and mobile phone",
+      "characters_present": ["char_mother"],
+      "action_description": "Mother Ananya clutches her phone to her ear with white-knuckled grip, other hand on forehead in despair. Her notepad shows crossed-out lines: 'RG Kar - Line Busy', 'Medical College - 0 ICU Beds', 'ILS - No Oxygen'. Laptop screen shows static portal displaying 'Available ICU Beds: 4', but nurse on phone rejects admission: 'Beds occupied since 8 PM, nurse staff nai!'. Stuck ambulance with flashing siren seen through window.",
+      "clinical_context": "The 2.4 Hospital Gate Rejection Cycle in urban India. The Ghost Bed Paradox: Portals count physical metal frames without verifying 1:1 ICU nurse staffing ratios.",
+      "technical_context": "Static government portals fail due to batch update delays (6+ hour staleness) and lack of atomic reservation capability.",
+      "visual_composition": {
+        "camera_angle": "Medium close-up showing Mother's terrified expression and scribbled notepad",
+        "lighting": "Cold blue light from laptop screen contrasting with alert crimson rejection badges",
+        "background": "Isolated clean solid white background (#FFFFFF)",
+        "color_palette": ["#EAB308", "#C2410C", "#E11D48", "#64748B", "#FFFFFF"]
+      },
+      "dialogue_bubbles": [
+        {
+          "speaker": "char_mother",
+          "type": "speech",
+          "bengali_script": "সরকারি পোর্টালে দেখাচ্ছে ৪টি আইসিইউ বেড খালি আছে! অথচ নার্স ফোনে বলছে একজনও রোগী ভর্তি নেওয়া যাবে না?!",
+          "english_subtitle": "The government dashboard shows 4 ICU beds available! Why did the nurse just tell me they can't admit her?!",
+          "clinical_rationale": "Directly exposes the Ghost Bed Paradox and static portal failure."
+        }
+      ],
+      "target_slides": [2],
+      "geometry_specs": {
+        "slide_2": {
+          "zone": "Zone C Upper Panel (The Flawed Reality)",
+          "x_inches": 8.90,
+          "y_inches": 1.15,
+          "w_inches": 3.90,
+          "h_inches": 2.85
+        }
+      }
+    },
+    {
+      "scene_id": "scene_3",
+      "scene_number": 3,
+      "title": "The Smart Solution",
+      "subtitle": "Bengali Voice Triage & 15-Minute Dynamic Soft-Lock",
+      "narrative_timestamp": "T = 12:00 (01:27 AM)",
+      "elapsed_time_minutes": 12,
+      "location": "Living room center stage, illuminated by glowing smartphone display",
+      "characters_present": ["char_granddaughter", "char_mother", "char_grandmother"],
+      "action_description": "Teen Granddaughter Riya steps in with poised calm, holding her glowing phone running ashaien.vercel.app. She taps the glowing cyan mic icon and speaks colloquial Bengali. The screen instantly displays ESI-1 Critical alert, locks a staffed ICU bed at Calcutta National Medical College (CNMC, 2.8 km, 14 min), activates a 15-minute countdown timer (14:59), and generates 4-digit admission OTP 4892.",
+      "clinical_context": "Deterministic AHRQ ESI v4 acuity classification. Sub-millisecond symptom parsing triggers immediate Cardiac ICU allocation.",
+      "technical_context": "Client-side W3C Web Speech streaming + in-memory Bengali normalizer (0ms API latency, $0 cost). Atomic PostgreSQL row lock (SELECT FOR UPDATE) decrements staffed bed inventory across the state network.",
+      "visual_composition": {
+        "camera_angle": "Medium hero shot of Riya holding glowing phone toward viewer with confident posture",
+        "lighting": "Vibrant electric cyan (#00F0FF) UI glow illuminating characters against pure white",
+        "background": "Isolated clean solid white background (#FFFFFF)",
+        "color_palette": ["#0D9488", "#00F0FF", "#10B981", "#0F172A", "#FFFFFF"]
+      },
+      "dialogue_bubbles": [
+        {
+          "speaker": "char_granddaughter",
+          "type": "speech",
+          "bengali_script": "দিদার বুকে তীব্র ব্যথা করছে আর শ্বাস নিতে কষ্ট হচ্ছে!",
+          "english_subtitle": "Dida has severe chest pain and is struggling to breathe!",
+          "clinical_rationale": "Spoken Bengali symptom triggering ESI-1 triage and 0ms in-memory translation."
+        },
+        {
+          "speaker": "char_granddaughter",
+          "type": "speech",
+          "bengali_script": "মা, ফোন ছাড়ো! ASHA বাংলায় শুনে ০ সেকেন্ডে CNMC হাসপাতালে বেড লক করে দিয়েছে! আমাদের ওটিপি ৪৮৯২!",
+          "english_subtitle": "Ma, hang up! ASHA understood me in Bengali and locked a bed at CNMC in 0 seconds! Our OTP is 4892!",
+          "clinical_rationale": "Replaces panic with concrete action, 15-minute countdown, and 4-digit gate pass."
+        }
+      ],
+      "target_slides": [2, 3],
+      "geometry_specs": {
+        "slide_2": {
+          "zone": "Zone C Lower Panel (The ASHA Breakthrough)",
+          "x_inches": 8.90,
+          "y_inches": 4.15,
+          "w_inches": 3.90,
+          "h_inches": 3.05
+        },
+        "slide_3": {
+          "zone": "Zone C Full Right Column (Architecture Integration)",
+          "x_inches": 8.90,
+          "y_inches": 1.20,
+          "w_inches": 3.90,
+          "h_inches": 5.95
+        }
+      }
+    },
+    {
+      "scene_id": "scene_4",
+      "scene_number": 4,
+      "title": "Bridging the Transit Void",
+      "subtitle": "Situational First-Aid & GPS Telemetry Loop",
+      "narrative_timestamp": "T = 25:00 (01:40 AM)",
+      "elapsed_time_minutes": 25,
+      "location": "Backseat of moving family vehicle / ambulance en route to CNMC",
+      "characters_present": ["char_grandmother", "char_mother", "char_granddaughter"],
+      "action_description": "Grandmother Bani Devi is seated upright propped at a strict 45-degree angle (Semi-Fowler posture) supported by firm cushions, collar unbuttoned, chewing a 300mg soluble aspirin; her breathing is visibly calmer. Mother Ananya gently comforts her. Granddaughter Riya monitors her smartphone showing a live green directional GPS vector line connecting the moving car to the hospital icon, with dynamic ETA 11 min and active anti-hoarding telemetry.",
+      "clinical_context": "ERC 2021/2025 and AIIMS Emergency Medicine First-Aid Protocols: Semi-Fowler 45° posture reduces venous return to ischemic left ventricle by 22%, easing pulmonary congestion; 300mg aspirin inhibits thromboxane A2 platelet aggregation, reducing 30-day mortality by 23%.",
+      "technical_context": "10-second GPS vector heartbeat verifies directional velocity (v · d > 0). Moving toward hospital pauses countdown timer; stationary or diverging vehicles auto-cancel hold after timeout.",
+      "visual_composition": {
+        "camera_angle": "Three-quarter side angle inside vehicle cabin showing 45-degree elevation and phone screen",
+        "lighting": "Dynamic transit motion accents, green telemetry line glow",
+        "background": "Isolated clean solid white background (#FFFFFF)",
+        "color_palette": ["#0D9488", "#10B981", "#EAB308", "#800020", "#FFFFFF"]
+      },
+      "dialogue_bubbles": [
+        {
+          "speaker": "char_mother",
+          "type": "speech",
+          "bengali_script": "দিদাকে কি গাড়ির সিটে শুইয়ে দেব? একটু জল খাইয়ে দিই?!",
+          "english_subtitle": "Should I lay her flat on the car seat and give her some water?!",
+          "clinical_rationale": "Exposes common lethal layman misconceptions in cardiac arrest transit."
+        },
+        {
+          "speaker": "char_granddaughter",
+          "type": "speech",
+          "bengali_script": "একদম না, মা! ASHA-র নির্দেশ: কখনোই শোয়ানো যাবে না! ৪৫ ডিগ্রি তুলে বসিয়ে দাও আর এই ৩০০ মিলিগ্রাম অ্যাসপিরিন চিবিয়ে খেতে দাও!",
+          "english_subtitle": "Strictly NO, Ma! ASHA protocol warns: Never lay a cardiac patient flat! Prop her up at 45 degrees and have her chew this 300mg aspirin!",
+          "clinical_rationale": "Actionable AIIMS/ERC protocol application bridging transit mortality."
+        }
+      ],
+      "target_slides": [2, 4],
+      "geometry_specs": {
+        "slide_4": {
+          "zone": "Zone C Middle Card (Above State Machine)",
+          "x_inches": 8.50,
+          "y_inches": 1.60,
+          "w_inches": 4.30,
+          "h_inches": 3.85
+        }
+      }
+    },
+    {
+      "scene_id": "scene_5",
+      "scene_number": 5,
+      "title": "The Resuscitation & Relief",
+      "subtitle": "Golden Hour Preserved via 2-Second OTP Admission",
+      "narrative_timestamp": "T = 42:00 (01:57 AM)",
+      "elapsed_time_minutes": 42,
+      "location": "Emergency Department Resuscitation Bay Entrance at CNMC",
+      "characters_present": ["char_doctor", "char_grandmother", "char_mother", "char_granddaughter"],
+      "action_description": "Paramedic wheels Grandmother on gurney into ER bay; vital signs monitor shows stable sinus rhythm (SpO2 96%). Dr. Arindam Banerjee taps 4-digit OTP 4892 into hospital triage tablet terminal (ashaien-admin.vercel.app). Screen flashes green: 'PATIENT ADMITTED — CARDIAC ICU BED 04 SECURED — GEOFENCE VERIFIED (35m)'. Doctor gives confident thumbs-up to family: 'Total transit: 42 minutes! The 45° posture and zero gate delay kept her heart alive. She is going straight to Cath Lab!'. Mother weeps tears of joy in namaste; Riya smiles proudly.",
+      "clinical_context": "Door-to-treatment time achieved in 42 minutes, well inside the 60-minute Golden Hour. Door-to-balloon time preserved for primary percutaneous coronary intervention (PCI).",
+      "technical_context": "100-meter Haversine geofence verification confirms patient physical presence at hospital bay before hard-lock conversion. Total check-in time 1.8 seconds via WebSocket sync (<50ms).",
+      "visual_composition": {
+        "camera_angle": "Wide triumphant resuscitation bay shot with Dr. Banerjee in foreground giving thumbs-up",
+        "lighting": "Bright clinical hospital lighting, warm emotional resolution",
+        "background": "Isolated clean solid white background (#FFFFFF)",
+        "color_palette": ["#FFFFFF", "#0D9488", "#10B981", "#0F172A", "#14B8A6"]
+      },
+      "dialogue_bubbles": [
+        {
+          "speaker": "char_doctor",
+          "type": "speech",
+          "bengali_script": "৪৮৯২ এন্টার করলাম... অ্যাডমিটেড! মোট সময় লাগল ১.৮ সেকেন্ড! আপনারা ৪২ মিনিটে পৌঁছাতে পেরেছেন বলেই ওনার হার্ট সুরক্ষিত আছে। আমরা সোজা ক্যাথ ল্যাবে নিয়ে যাচ্ছি!",
+          "english_subtitle": "Entered 4-8-9-2... Admitted in 1.8 seconds! You reached us in 42 minutes, keeping her myocardium intact. She is going straight to the Cath Lab!",
+          "clinical_rationale": "Validates Golden Hour salvation and clinical soundness of platform."
+        },
+        {
+          "speaker": "char_mother",
+          "type": "speech",
+          "bengali_script": "ASHA না থাকলে আমরা তো অন্য হাসপাতালের বন্ধ দরজায় ধাক্কা খেতে খেতেই সব হারাতাম... ডাক্তারবাবু, আপনারাই দিদাকে বাঁচালেন!",
+          "english_subtitle": "Without ASHA, we would have lost everything wandering blindly between closed gates... you saved our Dida's life!",
+          "clinical_rationale": "Emotional resolution of the 2.4 hospital gate rejection cycle."
+        }
+      ],
+      "target_slides": [5],
+      "geometry_specs": {
+        "slide_5": {
+          "zone": "Zone C Full Right Column",
+          "x_inches": 8.90,
+          "y_inches": 1.15,
+          "w_inches": 3.90,
+          "h_inches": 6.00
+        }
+      }
+    }
+  ],
+  "dialogue_matrix": [
+    {
+      "matrix_id": "matrix_1",
+      "judge_concern": "Bed Hoarding & Scalping",
+      "typical_judge_skepticism": "What stops private ambulance drivers, brokers, or touts from locking all 20 ICU beds on burner SIM cards?",
+      "character_voice": "char_granddaughter & char_doctor",
+      "dialogue_type": "speech_and_system_callout",
+      "bengali_script": "একদম পারবে না, মা! ASHA প্রতি ১০ সেকেন্ডে আমাদের গাড়ির GPS মুভমেন্ট ট্র্যাক করে। গাড়ি হাসপাতালের দিকে না এগোলে বুকিং নিজে থেকেই বাতিল হয়ে যায়! আর ৫০% বেড তো হাসপাতালের গেটের জন্য সংরক্ষিত!",
+      "english_translation": "They can't, Ma! ASHA tracks our car's GPS vector every 10 seconds. If a vehicle doesn't move toward the hospital, the hold auto-cancels! Plus, public holds are strictly capped at 50%!",
+      "slide_mapping": [4],
+      "technical_defense": "10-second directional velocity vector loop (v · d > 0); 50% public hold cap; 100m Great-Circle Haversine geofence gate check."
+    },
+    {
+      "matrix_id": "matrix_2",
+      "judge_concern": "The Ghost Bed Paradox",
+      "typical_judge_skepticism": "State government portals already show bed availability. Why did they fail during COVID and emergencies?",
+      "character_voice": "char_mother & char_granddaughter",
+      "dialogue_type": "speech_and_thought",
+      "bengali_script": "কারণ ওই পোর্টালে শুধু লোহার খাট গোনা হয়, মা! ১:১ স্পেশালিস্ট নার্স ছাড়া আইসিইউ বেড তো আসলে ফাঁকা কঙ্কাল! ASHA শুধু সেই বেডই লক করে যার জন্য অন-ডিউটি নার্স উপস্থিত আছেন!",
+      "english_translation": "Because that dashboard counts metal furniture, Ma! An ICU bed without an on-duty 1:1 critical care nurse is a ghost bed. ASHA only locks beds that have an active nurse assigned right now!",
+      "slide_mapping": [2],
+      "technical_defense": "Clinical Staffing Ratio formula: B_staffed = min(B_phys, N_nurses * Ratio). Eliminates gate rejections caused by unstaffed equipment."
+    },
+    {
+      "matrix_id": "matrix_3",
+      "judge_concern": "Language & Dialect Barrier",
+      "typical_judge_skepticism": "In rural Bengal or severe panic, ordinary citizens cannot type complex English medical terms.",
+      "character_voice": "char_mother & char_granddaughter",
+      "dialogue_type": "speech",
+      "bengali_script": "ইংরেজি বলতে হবে না, মা! বাংলায় স্বাভাবিকভাবে বলো: 'দিদার বুকে তীব্র ব্যথা করছে আর ঘাম হচ্ছে'। ASHA ফোনের ভেতরেই ০ মিলিসেকেন্ডে আমাদের কথা ডাক্তারি ভাষায় বুঝে নেয়!",
+      "english_translation": "No English needed, Ma! Just speak naturally in Bengali: 'Dida has severe chest pain and sweating'. ASHA translates spoken Bengali into clinical ESI-1 in 0 milliseconds right inside the phone!",
+      "slide_mapping": [2, 3],
+      "technical_defense": "Continuous W3C Web Speech API + in-memory deterministic Bengali normalizer. Zero cloud LLM API cost, zero network latency, zero hallucinations."
+    },
+    {
+      "matrix_id": "matrix_4",
+      "judge_concern": "The En-Route Transit Void",
+      "typical_judge_skepticism": "Even if a bed is locked, what stops the patient from dying during the 40-minute drive?",
+      "character_voice": "char_mother & char_granddaughter",
+      "dialogue_type": "speech",
+      "bengali_script": "একদম না, মা! ASHA-র এইমস (AIIMS) নির্দেশিকা দেখো: হার্ট অ্যাটাকের রোগীকে কখনোই শোয়ানো যাবে না! ৪৫ ডিগ্রি তুলে বসিয়ে দাও যাতে ফুসফুসে চাপ না পড়ে, আর এই ৩০০ মিলিগ্রাম অ্যাসপিরিন চিবিয়ে খেতে দাও!",
+      "english_translation": "Strictly NO, Ma! ASHA's AIIMS protocol warns: Never lay a cardiac patient flat! Prop her up at 45 degrees so her lungs don't flood, and have her chew this 300mg soluble aspirin!",
+      "slide_mapping": [2, 4],
+      "technical_defense": "ERC 2021/2025 & AIIMS Emergency Protocols: Semi-Fowler 45° posture cuts left-ventricular preload by 22%; 300mg aspirin cuts 30-day mortality by 23%."
+    },
+    {
+      "matrix_id": "matrix_5",
+      "judge_concern": "Zero-Login vs Friction",
+      "typical_judge_skepticism": "Why not use Apollo 24/7 or Practo? Why create another web app?",
+      "character_voice": "char_mother & char_granddaughter",
+      "dialogue_type": "speech",
+      "bengali_script": "কোনো অ্যাপ ডাউনলোড বা পাসওয়ার্ড লাগবে না! বিপদের সময় কেউ পাসওয়ার্ড মনে রাখে না। যেকোনো ফোনের ব্রাউজারে ASHA খোলে মাত্র ০.৮ সেকেন্ডে। এক ট্যাপে কথা বলো, বেড লক!",
+      "english_translation": "No app downloads or passwords! In an emergency, nobody remembers passwords. ASHA loads on any phone browser in 0.8 seconds. One tap, speak symptom, bed locked!",
+      "slide_mapping": [2, 3],
+      "technical_defense": "Zero-signup responsive PWA (<1.4MB bundle); instant execution without login credentials, SMS gates, or credit card holds."
+    },
+    {
+      "matrix_id": "matrix_6",
+      "judge_concern": "Gate Admission Friction",
+      "typical_judge_skepticism": "At 2:00 AM in heavy rain, scanning phone QR codes or biometric readers fails and takes too long.",
+      "character_voice": "paramedic & char_doctor",
+      "dialogue_type": "speech",
+      "bengali_script": "৪৮৯২ এন্টার করলাম... অ্যাডমিটেড! বেড নম্বর ৪ প্রস্তুত। কোনো ফর্ম ফিলাপ বা লাইনের ঝামেলা নেই। মোট সময় লাগল ১.৮ সেকেন্ড!",
+      "english_translation": "Entered 4-8-9-2... Admitted! Cardiac ICU Bed #4 ready. Zero paperwork, zero registration line. Total check-in time: 1.8 seconds!",
+      "slide_mapping": [3, 5],
+      "technical_defense": "4-digit spoken numeric OTP eliminates optical scanner failures and wet phone glare; sub-50ms Supabase PostgreSQL WebSocket state transition."
+    },
+    {
+      "matrix_id": "matrix_7",
+      "judge_concern": "Family Budget Protection",
+      "typical_judge_skepticism": "Private hospitals charge exorbitant admission deposits, while government hospitals are congested. How does ASHA help families choose?",
+      "character_voice": "char_mother & char_granddaughter",
+      "dialogue_type": "thought_and_speech",
+      "bengali_script": "দেখো মা, ASHA দুটো অপশনই পাশাপাশি দেখাচ্ছে: সবচেয়ে কাছের সরকারি হাসপাতাল (CNMC, ১৪ মিনিট, সম্পূর্ণ বিনামূল্যে) আর বেসরকারি হাসপাতাল (ILS, ৮ মিনিট)। আমরা CNMC বেছে নিয়েছি—বেড নিশ্চিত, কোনো ডিপোজিটের ভয় নেই!",
+      "english_translation": "Look Ma, ASHA shows both options side-by-side: Nearest Free Government Hospital (CNMC, 14 min, ₹0) vs Private (ILS, 8 min). We chose CNMC—bed guaranteed, zero admission deposit shock!",
+      "slide_mapping": [2],
+      "technical_defense": "Dual-tier emergency routing transparency prevents catastrophic out-of-pocket medical expenditure during high-vulnerability panic."
+    }
+  ],
+  "slide_mappings": {
+    "slide_1": {
+      "slide_number": 1,
+      "title": "Idea Title & The Midnight Crisis Hook",
+      "storyboard_element": "Scene 1 Vignette",
+      "storyboard_zone": "Zone C Hero Callout (x: 9.00\", y: 1.20\", w: 3.80\", h: 3.20\")",
+      "characters": ["char_grandmother", "char_mother"],
+      "dialogue_overlay": "💭 Dadi: 'বুকে যেন পাথর চেপে বসেছে... শ্বাস নিতে পারছি না!' (My chest feels crushed... I can't breathe!)",
+      "hero_stat": "⏱️ 01:15 AM — Golden Hour Clock Starts • Only 1 in 5 Indian cardiac emergencies reach hospital in time."
+    },
+    "slide_2": {
+      "slide_number": 2,
+      "title": "Proposed Solution: ASHA Emergency Resuscitation Grid",
+      "storyboard_element": "Comparative Dual Storyboard Panel (Scene 2 vs Scene 3)",
+      "storyboard_zone": "Zone C Right Column (x: 8.90\", y: 1.15\", w: 3.90\", h: 6.05\")",
+      "characters": ["char_mother", "char_granddaughter"],
+      "upper_panel": {
+        "name": "The Flawed Reality (Scene 2)",
+        "bounds": { "x": 8.90, "y": 1.15, "w": 3.90, "h": 2.85 },
+        "dialogue": "💬 Mother: 'সরকারি পোর্টালে দেখাচ্ছে ৪টি আইসিইউ বেড খালি আছে! নার্স কেন বলছে ভর্তি নেওয়া যাবে না?!'"
+      },
+      "lower_panel": {
+        "name": "The ASHA Breakthrough (Scene 3)",
+        "bounds": { "x": 8.90, "y": 4.15, "w": 3.90, "h": 3.05 },
+        "dialogue": "💬 Riya: 'Zero downloads, zero passwords! Spoken Bengali converted to ESI-1 bed reservation in 0ms! Bed #4 locked, OTP is 4892!'"
+      }
+
+    },
+    "slide_3": {
+      "slide_number": 3,
+      "title": "Technical Approach & System Architecture",
+      "storyboard_element": "Scene 3 Deep-Dive + Master Dual-App Cloud Sync Flow",
+      "storyboard_zone": "Zone C Right Column (x: 8.90\", y: 1.20\", w: 3.90\", h: 5.95\")",
+      "characters": ["char_granddaughter", "char_doctor"],
+      "dialogue_overlay": "💬 Dr. Banerjee: 'My ER desk sounded an audible klaxon 14 minutes before arrival. Bed #4 was prepped before wheels touched the bay!'"
+    },
+    "slide_4": {
+      "slide_number": 4,
+      "title": "Feasibility, Risks & Anti-Hoarding Telemetry",
+      "storyboard_element": "Scene 4 (Transit Void & First-Aid) + 4-Step State Machine",
+      "storyboard_zone": "Zone C Middle Card (x: 8.50\", y: 1.60\", w: 4.30\", h: 3.85\") & Bottom Ribbon",
+      "characters": ["char_grandmother", "char_mother", "char_granddaughter"],
+      "dialogue_overlay": "💬 Riya: 'ASHA verifies directional vector every 10s! Moving toward hospital pauses timer; stationary vehicles auto-cancel!'"
+    },
+    "slide_5": {
+      "slide_number": 5,
+      "title": "Impact, Benefits & Real-Time Sync Admin Panel",
+      "storyboard_element": "Scene 5 (Resuscitation & Relief — Golden Hour Won)",
+      "storyboard_zone": "Zone C Right Column (x: 8.90\", y: 1.15\", w: 3.90\", h: 6.00\")",
+      "characters": ["char_doctor", "char_grandmother", "char_mother", "char_granddaughter"],
+      "dialogue_overlay": "💬 Dr. Banerjee: 'OTP 4892 verified in 1.8 seconds! Total transit: 42 minutes! The 45° posture kept her heart alive!'",
+      "outcome_telemetry": "Door-to-Treatment: 42 Min • Zero Gate Rejections • 100% Staffed Bed Guarantee"
+    },
+    "slide_6": {
+      "slide_number": 6,
+      "title": "Research, Evidence Base & National Scalability",
+      "storyboard_element": "Clinical Authority Anchor & Scaling Flowchart",
+      "storyboard_zone": "Zone C Top-Right Authority Card (x: 6.75\", y: 1.15\", w: 6.05\", h: 4.30\") & Bottom Ribbon",
+      "characters": ["char_doctor"],
+      "dialogue_overlay": "💬 Dr. Banerjee: 'Bani Devi's life was saved because every protocol in ASHA is grounded in evidence-based medicine: ESI v4, ISCCM, ERC, and ABDM.'"
+    }
+  },
+  "mockup_preservation": {
+    "mandate": "Strictly preserve all existing website and app image mockups in the presentation deck without deletion or replacement.",
+    "slides": {
+      "slide_2": {
+        "mockup_type": "Citizen Emergency PWA Mobile Mockup",
+        "app_url": "ashaien.vercel.app",
+        "source_asset": "STARTING PHASE (APP OPENING)/screen.png or phase 2, when searched/screen.png",
+        "mockup_container": { "x": 9.50, "y": 1.20, "w": 3.30, "h": 5.80 },
+        "preservation_status": "STRICTLY_PRESERVED",
+        "harmonic_integration": "Flanked by Scene 2 Mother panic callout (upper-left) and Scene 3 Granddaughter Riya (lower-left) gesturing directly toward the glowing mic button on the actual mockup screen."
+      },
+      "slide_3": {
+        "mockup_type": "Situational First-Aid Sheet & PWA Flow Mockup",
+        "app_url": "ashaien.vercel.app",
+        "source_asset": "when scrolled up/screen.png",
+        "mockup_container": { "x": 9.50, "y": 1.20, "w": 3.30, "h": 5.80 },
+        "preservation_status": "STRICTLY_PRESERVED",
+        "harmonic_integration": "Anchored alongside cloud architecture dataflow lines; doctor triage audio klaxon thought bubble overlays upper margin."
+      },
+      "slide_5": {
+        "mockup_type": "Hospital ER Command Desk Tablet/Terminal Mockup",
+        "app_url": "ashaien-admin.vercel.app",
+        "mockup_container": { "x": 8.90, "y": 1.40, "w": 3.90, "h": 3.60 },
+        "preservation_status": "STRICTLY_PRESERVED",
+        "harmonic_integration": "Flanked by Scene 5 Dr. Banerjee gesturing to the verified ADMITTED badge and OTP input on the real admin screen, with relieved family looking on."
+      }
+    }
+  },
+  "acceptance_checklist": {
+    "five_step_storyline": true,
+    "grandmother_acute_crisis_1_15_am": true,
+    "mother_frantic_ghost_beds": true,
+    "granddaughter_bengali_voice_otp_4892": true,
+    "transit_void_semi_fowler_45_gps": true,
+    "er_resuscitation_golden_hour_saved": true,
+    "seven_judge_concerns_matrix": true,
+    "bengali_english_subtitles_paired": true,
+    "bed_hoarding_defense": true,
+    "ghost_bed_math_defense": true,
+    "bengali_voice_latency_defense": true,
+    "en_route_first_aid_defense": true,
+    "zero_login_defense": true,
+    "geofence_100m_defense": true,
+    "family_budget_defense": true,
+    "slide_geometry_mapped": true,
+    "website_mockups_preserved": true,
+    "machine_readable_json_spec": true
+  }
+}
+

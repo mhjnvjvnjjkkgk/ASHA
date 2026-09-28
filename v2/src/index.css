@@ -1,0 +1,432 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --ink-900: #0f172a;
+    --ink-850: #1e293b;
+    --ink-800: #334155;
+    --ink-700: #475569;
+    --ink-600: #64748b;
+    --ink-500: #94a3b8;
+
+    /* Indian Flag (Tiranga) Core Palette */
+    --tiranga-saffron: #FF671F;
+    --tiranga-saffron-light: #FF8533;
+    --tiranga-white: #FFFFFF;
+    --tiranga-green: #138808;
+    --tiranga-green-light: #16A34A;
+    --tiranga-navy: #000080;
+
+    --theme-volt: #FF671F;
+    --theme-bg: #f8fafc;
+    --theme-card: #ffffff;
+    --theme-border: #e2e8f0;
+    --theme-muted: #64748b;
+    --theme-dim: #94a3b8;
+
+    --vital-cyan: #FF671F;
+    --vital-emerald: #16A34A;
+    --vital-crimson: #ef4444;
+    --vital-amber: #f59e0b;
+    --vital-purple: #6366f1;
+
+    --font-display: 'Inter', 'Bricolage Grotesque', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dark {
+    --theme-bg: #070e1e;
+    --theme-card: #0b162c;
+    --theme-border: #182b52;
+    --theme-muted: #94a3b8;
+    --theme-dim: #64748b;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #f8fafc;
+    color: #0f172a;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .dark body,
+  html.dark body {
+    background-color: #070e1e;
+    color: #f8fafc;
+  }
+}
+
+/* =========================================================================
+   APPLE LIQUID GLASS SYSTEM (iOS 18 / visionOS Material Physics)
+   ========================================================================= */
+
+/* General Liquid Glass Container */
+.liquid-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.90) 0%, rgba(248, 250, 252, 0.82) 100%);
+  backdrop-filter: blur(28px) saturate(200%) brightness(102%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(102%);
+  border: 1px solid rgba(203, 213, 225, 0.82);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 
+    0 16px 40px -8px rgba(15, 23, 42, 0.14),
+    0 4px 14px rgba(15, 23, 42, 0.05),
+    inset 0 1.5px 1.5px 0 #ffffff,
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dark .liquid-glass {
+  background: rgba(11, 20, 38, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 
+    0 20px 48px -8px rgba(0, 0, 0, 0.75),
+    0 4px 14px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Dedicated Liquid Glass Floating Bars (Location Bar & Search Bar) */
+.liquid-glass-bar {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 250, 252, 0.88) 100%);
+  backdrop-filter: blur(32px) saturate(200%) brightness(102%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(102%);
+  border: 1px solid rgba(203, 213, 225, 0.90);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 
+    0 18px 45px -8px rgba(15, 23, 42, 0.18),
+    0 6px 18px rgba(15, 23, 42, 0.08),
+    inset 0 2px 2px 0 #ffffff,
+    inset 0 -1px 1.5px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .liquid-glass-bar {
+  background: rgba(13, 22, 42, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.40);
+  box-shadow: 
+    0 22px 55px -8px rgba(0, 0, 0, 0.8),
+    0 6px 18px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.22);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-bar:hover {
+  border-color: rgba(255, 103, 31, 0.65);
+  box-shadow: 
+    0 24px 50px -6px rgba(255, 103, 31, 0.20),
+    0 8px 24px rgba(15, 23, 42, 0.12),
+    inset 0 2px 2px 0 #ffffff;
+}
+
+.dark .liquid-glass-bar:hover {
+  border-color: rgba(255, 103, 31, 0.75);
+  box-shadow: 
+    0 24px 55px -6px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(255, 103, 31, 0.3),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Liquid Glass Cards (Blood Group & Nearest Hospital cards) */
+.liquid-glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.84) 100%);
+  backdrop-filter: blur(24px) saturate(190%) brightness(102%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%) brightness(102%);
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 
+    0 14px 32px -6px rgba(15, 23, 42, 0.12),
+    0 4px 12px rgba(15, 23, 42, 0.05),
+    inset 0 1.5px 1.5px 0 #ffffff,
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.dark .liquid-glass-card {
+  background: rgba(18, 30, 56, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 
+    0 14px 32px -6px rgba(0, 0, 0, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Liquid Glass Circular Orbs (Theme toggle, GPS button, mic) */
+.liquid-glass-orb {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 250, 252, 0.86) 100%);
+  backdrop-filter: blur(24px) saturate(200%) brightness(102%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(102%);
+  border: 1px solid rgba(203, 213, 225, 0.90);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 
+    0 10px 24px -4px rgba(15, 23, 42, 0.15),
+    inset 0 1.5px 1.5px 0 #ffffff,
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dark .liquid-glass-orb {
+  background: rgba(16, 27, 50, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.42);
+  box-shadow: 
+    0 12px 30px -4px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Liquid Glass Micro-Pills (Badges, Change button, chips) */
+.liquid-glass-pill {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(203, 213, 225, 0.80);
+  border-top: 1px solid #ffffff;
+  box-shadow: 
+    0 4px 12px rgba(15, 23, 42, 0.08),
+    inset 0 1px 1px 0 #ffffff;
+}
+
+.dark .liquid-glass-pill {
+  background: rgba(24, 40, 72, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Liquid Action Buttons with Glowing Glass Surface */
+.liquid-btn-saffron {
+  background: linear-gradient(180deg, #FF7B32 0%, #F15609 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 8px 24px -4px rgba(255, 103, 31, 0.45),
+    0 2px 6px rgba(255, 103, 31, 0.3),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-btn-saffron:hover {
+  filter: brightness(1.05);
+  box-shadow: 
+    0 12px 28px -4px rgba(255, 103, 31, 0.55),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.65);
+  transform: translateY(-1px);
+}
+
+.liquid-btn-saffron:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.liquid-btn-green {
+  background: linear-gradient(180deg, #1DBA53 0%, #118206 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 8px 24px -4px rgba(19, 136, 8, 0.45),
+    0 2px 6px rgba(19, 136, 8, 0.3),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-btn-green:hover {
+  filter: brightness(1.05);
+  box-shadow: 
+    0 12px 28px -4px rgba(19, 136, 8, 0.55),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.65);
+  transform: translateY(-1px);
+}
+
+.liquid-btn-green:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Minimalist Tiranga Accent Ribbon (Saffron - White - Green) */
+.tiranga-stripe {
+  background: linear-gradient(90deg, #FF671F 0%, #FF671F 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%, #138808 100%);
+}
+
+.tiranga-glow-saffron {
+  border-color: #FF671F;
+  box-shadow: 0 0 20px -4px rgba(255, 103, 31, 0.25);
+}
+
+.tiranga-glow-green {
+  border-color: #16A34A;
+  box-shadow: 0 0 20px -4px rgba(22, 163, 74, 0.25);
+}
+
+/* Clean High-Contrast Glass Panels (Light Mode) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.glass-panel-heavy {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.12);
+}
+
+.glass-glow-cyan {
+  border-color: #FF671F;
+  box-shadow: 0 0 24px -4px rgba(255, 103, 31, 0.25);
+}
+
+.glass-glow-emerald {
+  border-color: #16A34A;
+  box-shadow: 0 0 24px -4px rgba(22, 163, 74, 0.25);
+}
+
+.glass-glow-crimson {
+  border-color: rgba(239, 68, 68, 0.55);
+  box-shadow: 0 0 24px -4px rgba(239, 68, 68, 0.25);
+}
+
+/* Button Keyframe Animations from Master System Prompt */
+@keyframes neon-shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-cyan-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(0, 240, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+  }
+}
+
+@keyframes pulse-crimson-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(244, 63, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+  }
+}
+
+@keyframes radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ecg-dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.1) 0%, rgba(0, 255, 135, 0.35) 50%, rgba(0, 240, 255, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: neon-shimmer-sweep 2.8s infinite linear;
+}
+
+.animate-pulse-cyan {
+  animation: pulse-cyan-ring 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.animate-pulse-crimson {
+  animation: pulse-crimson-ring 1.8s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Custom High-Contrast Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #070e1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF671F;
+}
+
+/* Custom Leaflet Map styling for High-Contrast Crisp Map Canvas */
+.leaflet-container {
+  background: #070e1e !important;
+  font-family: var(--font-body);
+  touch-action: none !important;
+  cursor: grab;
+}
+
+.leaflet-container:active,
+.leaflet-dragging .leaflet-container {
+  cursor: grabbing !important;
+}
+
+.osm-dark-tiles {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(92%) !important;
+}
+
+.osm-street-tiles {
+  filter: none !important;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12) !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+}
+
+/* Bold Typography Utility Helpers */
+.headline-display {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+.metric-number {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}

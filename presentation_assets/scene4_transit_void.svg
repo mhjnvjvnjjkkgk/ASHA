@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .skin-dadi { fill: #F0C4A4; }
+      .hair-dadi { fill: #94A3B8; }
+      .saree-maroon { fill: #800020; }
+      .skin-maa { fill: #E8BA96; }
+      .hair-maa { fill: #1E293B; }
+      .kurta-mustard { fill: #EAB308; }
+      .dupatta-teal { fill: #0D9488; }
+      .skin-riya { fill: #F0C4A4; }
+      .hoodie-teal { fill: #0D9488; }
+      .hair-riya { fill: #0F172A; }
+      .gurney { fill: #0F766E; }
+      .pillow { fill: #E2E8F0; stroke: #94A3B8; stroke-width: 2; }
+      .bubble-bg { fill: #FFFFFF; stroke: #0D9488; stroke-width: 2.5; filter: drop-shadow(0 4px 12px rgba(13,148,136,0.15)); }
+      .badge-ok { fill: #ECFDF5; stroke: #10B981; stroke-width: 1.5; }
+      .text-title { font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif; font-weight: 700; }
+      .text-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="1000" class="bg" />
+
+  <!-- Top Telemetry Pill -->
+  <g transform="translate(60, 45)">
+    <rect width="450" height="42" rx="21" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5" />
+    <circle cx="24" cy="21" r="7" fill="#16A34A" />
+    <text x="42" y="27" font-size="16" class="text-title" fill="#15803D">⏱️ 01:40 AM • T = 25:00 (TRANSIT STABILIZATION)</text>
+  </g>
+
+  <!-- Clinical Protocol Tag -->
+  <g transform="translate(60, 105)">
+    <rect width="320" height="28" rx="6" fill="#DCFCE7" />
+    <text x="12" y="19" font-size="13" class="text-title" fill="#166534">AIIMS / ERC SEMI-FOWLER 45° EN-ROUTE PROTOCOL</text>
+  </g>
+
+  <!-- Ambulance Gurney / Backrest at strict 45-degree angle -->
+  <g id="gurney_45deg" transform="translate(200, 360)">
+    <path d="M 0 380 L 220 160 L 250 190 L 30 410 Z" class="gurney" />
+    <path d="M 30 360 L 200 190 L 240 230 L 70 400 Z" class="pillow" />
+    <rect x="0" y="380" width="380" height="50" rx="10" fill="#14B8A6" />
+    <line x1="30" y1="430" x2="30" y2="520" stroke="#64748B" stroke-width="8" />
+    <line x1="340" y1="430" x2="340" y2="520" stroke="#64748B" stroke-width="8" />
+    <circle cx="30" cy="530" r="16" fill="#334155" />
+    <circle cx="340" cy="530" r="16" fill="#334155" />
+  </g>
+
+  <!-- Grandmother Reclined Upright at 45° Angle -->
+  <g id="grandmother_45" transform="translate(260, 340)">
+    <path d="M 40 280 L 140 160 L 190 200 L 90 320 Z" class="saree-maroon" />
+    <path d="M 90 320 L 320 320 L 320 380 L 90 380 Z" class="saree-maroon" />
+
+    <circle cx="175" cy="140" r="50" class="skin-dadi" />
+    <circle cx="130" cy="130" r="28" class="hair-dadi" />
+    <path d="M 140 100 Q 180 85 220 120" stroke="#94A3B8" stroke-width="12" fill="none" />
+    <circle cx="175" cy="115" r="4" fill="#800020" />
+
+    <path d="M 160 135 Q 170 142 180 135" stroke="#1E293B" stroke-width="3" fill="none" />
+    <path d="M 190 135 Q 200 142 210 135" stroke="#1E293B" stroke-width="3" fill="none" />
+    <path d="M 175 160 Q 185 168 195 160" stroke="#0F172A" stroke-width="2.5" fill="none" />
+
+    <g transform="translate(190, 80)">
+      <circle cx="30" cy="30" r="28" fill="#ECFDF5" stroke="#10B981" stroke-width="2" />
+      <text x="16" y="37" font-size="15" class="text-title" fill="#047857">45°</text>
+    </g>
+  </g>
+
+  <!-- Mother Ananya Supporting Grandmother's Shoulder with Care -->
+  <g id="mother_support" transform="translate(100, 340)">
+    <path d="M 80 200 Q 140 180 180 200 L 190 450 L 70 450 Z" class="kurta-mustard" />
+    <path d="M 75 200 Q 60 300 70 400" stroke="#0D9488" stroke-width="24" fill="none" />
+    <circle cx="130" cy="130" r="48" class="skin-maa" />
+    <path d="M 90 125 Q 110 70 170 85" stroke="#1E293B" stroke-width="16" fill="none" />
+    <circle cx="130" cy="110" r="4" fill="#E11D48" />
+
+    <path d="M 120 130 Q 130 135 140 130" stroke="#0F172A" stroke-width="2.5" fill="none" />
+    <path d="M 125 152 Q 135 160 145 152" stroke="#0F172A" stroke-width="2" fill="none" />
+
+    <path d="M 160 220 Q 230 200 270 230" stroke="#EAB308" stroke-width="26" stroke-linecap="round" fill="none" />
+    <circle cx="275" cy="235" r="14" class="skin-maa" />
+  </g>
+
+  <!-- Teen Granddaughter Riya Holding Telemetry GPS Phone -->
+  <g id="riya_transit" transform="translate(680, 240)">
+    <path d="M 60 220 Q 140 200 200 220 L 220 540 L 40 540 Z" class="hoodie-teal" />
+    <path d="M 160 100 Q 220 40 210 160" stroke="#0F172A" stroke-width="24" fill="none" />
+    <circle cx="120" cy="130" r="50" class="skin-riya" />
+    <rect x="90" y="115" width="26" height="20" rx="6" fill="none" stroke="#0F172A" stroke-width="2.5" />
+    <rect x="125" y="115" width="26" height="20" rx="6" fill="none" stroke="#0F172A" stroke-width="2.5" />
+
+    <path d="M 60 240 Q 20 300 0 350" stroke="#0D9488" stroke-width="24" stroke-linecap="round" fill="none" />
+
+    <g transform="translate(-110, 310)">
+      <rect width="130" height="210" rx="16" fill="#0A192F" stroke="#00F0FF" stroke-width="2.5" />
+      <circle cx="65" cy="45" r="22" fill="#064E3B" stroke="#10B981" stroke-width="2" />
+      <path d="M 55 45 L 63 53 L 75 37" stroke="#10B981" stroke-width="3" fill="none" />
+      <text x="25" y="85" font-size="11" class="text-title" fill="#67E8F9">GPS VECTOR</text>
+      <text x="18" y="105" font-size="12" class="text-title" fill="#34D399">TOWARD ER</text>
+      <rect x="15" y="125" width="100" height="24" rx="6" fill="#1E293B" />
+      <text x="22" y="142" font-size="10" class="text-title" fill="#FBBF24">TIMER PAUSED</text>
+      <text x="18" y="175" font-size="11" class="text-body" fill="#CBD5E1">ETA: 8 mins</text>
+      <text x="18" y="195" font-size="10" class="text-title" fill="#38BDF8">Speed: 38 km/h</text>
+    </g>
+  </g>
+
+  <!-- Simplified Emotionally Resonant Dialogue Bubble (Riya - Care) -->
+  <g transform="translate(480, 160)">
+    <path d="M 0,0 L 440,0 Q 460,0 460,20 L 460,110 Q 460,130 440,130 L 260,130 L 240,160 L 220,130 L 20,130 Q 0,130 0,110 Z" class="bubble-bg" />
+    <text x="24" y="38" font-size="17" class="text-title" fill="#0F172A">Riya (16):</text>
+    <text x="24" y="68" font-size="17" class="text-title" fill="#0D9488">"Keep Dadi sitting upright at 45°!</text>
+    <text x="24" y="94" font-size="17" class="text-title" fill="#0D9488"> The timer is paused because</text>
+    <text x="24" y="118" font-size="17" class="text-title" fill="#0D9488"> we're moving!"</text>
+  </g>
+
+  <!-- Bottom Context Banner -->
+  <g transform="translate(60, 920)">
+    <rect width="880" height="45" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" />
+    <text x="25" y="28" font-size="14" class="text-body" fill="#475569">
+      <tspan font-weight="700" fill="#0F172A">Scene 4 • The Transit Void Bridged:</tspan> Semi-Fowler 45° posture reduces preload by 22%. 10s GPS velocity heartbeat pauses countdown during transit.
+    </text>
+  </g>
+</svg>

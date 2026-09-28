@@ -1,0 +1,777 @@
+{
+  "deck_metadata": {
+    "project": "ASHA: Automated System for Hospital Allocation",
+    "theme": "MedTech / HealthTech (SIH 2026)",
+    "format": "16:9 Widescreen (13.333\" x 7.500\")",
+    "slide_count": 6,
+    "target_word_count_range": [
+      690,
+      820
+    ],
+    "actual_total_words": 812,
+    "reduction_percentage": "66.0%",
+    "preserved_formulas": [
+      "B_staffed = min(B_phys, N_nurses * Ratio)",
+      "R = 0.30*S_IP + 0.35*S_Device + 0.20*S_Velocity + 0.15*S_Geo",
+      "S_IP = min(100, 30*max(0, N_1h - 1) + 10*max(0, N_24h - 2))",
+      "Distance(P_telemetry, H_ER) <= 0.100 km"
+    ],
+    "preserved_metrics": [
+      "<0.8s load",
+      "0ms translation",
+      "<420ms OSRM",
+      "<50ms WebSockets",
+      "15m hold",
+      "4-digit OTP 4892",
+      "<2s ER check-in",
+      "100m geofence",
+      "10 Kolkata hubs",
+      "15,000+ lives saved"
+    ],
+    "preserved_clinical_facts": [
+      "Semi-Fowler 45°",
+      "300mg aspirin",
+      "10s ABC check",
+      "DO NOT DO warnings"
+    ],
+    "preserved_website_mockups": [
+      {
+        "slide": 2,
+        "mockup_type": "Citizen Mobile App PWA",
+        "content": "Situational First-Aid Sheet (Semi-Fowler 45°, 300mg aspirin, DO NOT DO warnings)",
+        "container_geometry": {
+          "x": 8.9,
+          "y": 4.15,
+          "w": 3.9,
+          "h": 3.05
+        }
+      },
+      {
+        "slide": 3,
+        "mockup_type": "Citizen Mobile App PWA",
+        "content": "Active Bed Hold Pass (15m hold countdown, OTP 4892, GPS route polyline)",
+        "container_geometry": {
+          "x": 8.9,
+          "y": 4.15,
+          "w": 3.9,
+          "h": 3.0
+        }
+      },
+      {
+        "slide": 5,
+        "mockup_type": "Hospital Admin Command Desk",
+        "content": "Realtime Triage Command Desk (ashaien-admin.vercel.app, 1-tap nurse adjusters, OTP verification)",
+        "container_geometry": {
+          "x": 8.9,
+          "y": 3.9,
+          "w": 3.9,
+          "h": 3.25
+        }
+      }
+    ]
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "ASHA: Automated System for Hospital Allocation",
+      "subtitle": "Golden Hour Triage & Bed Locking",
+      "category_pill": "⚡ SIH 2026 • MEDTECH",
+      "breadcrumb": "● Slide 1: Crisis Overview | Slide 2 | Slide 3 | Slide 4 | Slide 5 | Slide 6",
+      "metadata": {
+        "team": "Team ASHA",
+        "leader": "Shayak Das"
+      },
+      "word_count": 90,
+      "target_word_range": [
+        70,
+        90
+      ],
+      "zones": {
+        "zone_a_header": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 0.12,
+            "w": 12.33,
+            "h": 0.9
+          },
+          "title": "ASHA: Automated System for Hospital Allocation",
+          "subtitle": "Golden Hour Triage & Bed Locking"
+        },
+        "zone_b_content_cards": [
+          {
+            "card_id": "card_1_crisis",
+            "title": "🚨 National Crisis",
+            "coordinates": {
+              "x": 0.5,
+              "y": 1.15,
+              "w": 8.2,
+              "h": 2.7
+            },
+            "bullets": [
+              {
+                "lead": "1 in 5 Reaches Care",
+                "text": "Only 20% reach care in Golden Hour; 50% transit deaths.",
+                "lead_in": "1 in 5 Reaches Care"
+              },
+              {
+                "lead": "Transit Void",
+                "text": "Blind transit; zero live bed locking.",
+                "lead_in": "Transit Void"
+              }
+            ]
+          },
+          {
+            "card_id": "card_2_breakthroughs",
+            "title": "💡 Core Breakthroughs",
+            "coordinates": {
+              "x": 0.5,
+              "y": 3.95,
+              "w": 8.2,
+              "h": 3.15
+            },
+            "bullets": [
+              {
+                "lead": "0ms Vernacular Triage",
+                "text": "Native Bengali intake ('বুকে ব্যথা') in 0ms.",
+                "lead_in": "0ms Vernacular Triage"
+              },
+              {
+                "lead": "Staffed Bed Lock",
+                "text": "Reserves beds via nurse ratio, eliminating ghost beds.",
+                "lead_in": "Staffed Bed Lock"
+              },
+              {
+                "lead": "Spoken 4-Digit OTP",
+                "text": "<2s ER check-in via 100m geofence.",
+                "lead_in": "Spoken 4-Digit OTP"
+              }
+            ]
+          }
+        ],
+        "zone_c_storyboard_slot": {
+          "coordinates": {
+            "x": 8.9,
+            "y": 1.15,
+            "w": 3.9,
+            "h": 6.0
+          },
+          "scene_id": "scene_1_teaser",
+          "character_focus": "Grandmother ('Dadi')",
+          "visual_description": "Elderly Grandmother clutching chest in sudden midnight angina.",
+          "dialogue": {
+            "speaker": "Dadi",
+            "bubble_type": "thought",
+            "text": "My chest feels crushed... I can't catch my breath!"
+          }
+        }
+      }
+    },
+    {
+      "slide_number": 2,
+      "title": "PROPOSED SOLUTION: ASHA RESUSCITATION GRID",
+      "subtitle": "Solving India's 1-in-5 Crisis • Halting 2.4 Gate Rejections",
+      "category_pill": "⚡ PROBLEM & SOLUTION",
+      "breadcrumb": "Slide 1 | ● Slide 2: Proposed Solution | Slide 3 | Slide 4 | Slide 5 | Slide 6",
+      "word_count": 168,
+      "target_word_range": [
+        140,
+        170
+      ],
+      "zones": {
+        "zone_a_header": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 0.12,
+            "w": 12.33,
+            "h": 0.9
+          },
+          "title": "PROPOSED SOLUTION: ASHA RESUSCITATION GRID",
+          "subtitle": "Solving India's 1-in-5 Crisis • Halting 2.4 Gate Rejections"
+        },
+        "zone_b_content_cards": [
+          {
+            "card_id": "card_1_failures",
+            "title": "🚨 4 Pre-Hospital Failures",
+            "coordinates": {
+              "x": 0.5,
+              "y": 1.15,
+              "w": 8.2,
+              "h": 1.8
+            },
+            "bullets": [
+              {
+                "lead": "Gate Rejections",
+                "text": "Ambulances endure 2.4 gate turnaways, driving 150,000+ deaths.",
+                "lead_in": "Gate Rejections"
+              },
+              {
+                "lead": "Read-Only Portals",
+                "text": "Static frames; reading is not reserving.",
+                "lead_in": "Read-Only Portals"
+              },
+              {
+                "lead": "Ghost Bed Void",
+                "text": "Physical frames hide zero on-duty nurses.",
+                "lead_in": "Ghost Bed Void"
+              },
+              {
+                "lead": "En-Route Void",
+                "text": "Panicked bystanders commit fatal errors en route.",
+                "lead_in": "En-Route Void"
+              }
+            ]
+          },
+          {
+            "card_id": "card_2_solution_capabilities",
+            "title": "💡 ASHA Resuscitation Engine",
+            "coordinates": {
+              "x": 0.5,
+              "y": 3.05,
+              "w": 8.2,
+              "h": 2.15
+            },
+            "bullets": [
+              {
+                "lead": "⭐ Situational First-Aid",
+                "text": "Semi-Fowler 45° posture, 300mg aspirin, 10s ABC check, DO NOT DO warnings.",
+                "lead_in": "⭐ Situational First-Aid"
+              },
+              {
+                "lead": "Zero-Signup Access",
+                "text": "PWA loads in <0.8s load with 0ms translation from Bengali ('বুকে ব্যথা').",
+                "lead_in": "Zero-Signup Access"
+              },
+              {
+                "lead": "Staffed Bed Math",
+                "text": "B_staffed = min(B_phys, N_nurses * Ratio); sheds normal beds first.",
+                "lead_in": "Staffed Bed Math"
+              },
+              {
+                "lead": "15-Min Dynamic Hold",
+                "text": "15m hold locks bed; <2s ER check-in via 4-digit OTP 4892.",
+                "lead_in": "15-Min Dynamic Hold"
+              }
+            ]
+          },
+          {
+            "card_id": "card_3_competitors",
+            "title": "🥊 Competitor Defeat",
+            "coordinates": {
+              "x": 0.5,
+              "y": 5.3,
+              "w": 8.2,
+              "h": 1.8
+            },
+            "bullets": [
+              {
+                "lead": "vs. State Dashboards",
+                "text": "Static counts vs. ASHA nurse-staffed atomic locks.",
+                "lead_in": "vs. State Dashboards"
+              },
+              {
+                "lead": "vs. Aggregators",
+                "text": "Slow LLMs vs. <0.8s load, 0ms triage, <420ms OSRM.",
+                "lead_in": "vs. Aggregators"
+              },
+              {
+                "lead": "vs. 108 Dispatch",
+                "text": "Voice queues vs. automated matching, <50ms WebSockets.",
+                "lead_in": "vs. 108 Dispatch"
+              }
+            ]
+          }
+        ],
+        "zone_c_storyboard_slot": {
+          "coordinates": {
+            "x": 8.9,
+            "y": 1.15,
+            "w": 3.9,
+            "h": 6.05
+          },
+          "scene_id": "scene_1_and_2_panels",
+          "character_focus": "Grandmother ('Dadi') & Mother ('Maa')",
+          "preserved_mockup_container": {
+            "title": "Preserved: Mobile App Mockup (First-Aid Sheet)",
+            "coordinates": {
+              "x": 8.9,
+              "y": 4.15,
+              "w": 3.9,
+              "h": 3.05
+            }
+          },
+          "dialogue": {
+            "speaker": "Maa",
+            "bubble_type": "speech",
+            "text": "Every hospital line is busy! No ICU beds anywhere?!"
+          }
+        }
+      }
+    },
+    {
+      "slide_number": 3,
+      "title": "TECHNICAL APPROACH & SYSTEM ARCHITECTURE",
+      "subtitle": "Sub-Second Resuscitation Pipeline • WebSockets & Road Snapping",
+      "category_pill": "⚡ TECHNICAL PIPELINE",
+      "breadcrumb": "Slide 1 | Slide 2 | ● Slide 3: Technical Approach | Slide 4 | Slide 5 | Slide 6",
+      "word_count": 139,
+      "target_word_range": [
+        120,
+        140
+      ],
+      "zones": {
+        "zone_a_header": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 0.12,
+            "w": 12.33,
+            "h": 0.9
+          },
+          "title": "TECHNICAL APPROACH & SYSTEM ARCHITECTURE",
+          "subtitle": "Sub-Second Resuscitation Pipeline • WebSockets & Road Snapping"
+        },
+        "zone_b_content_cards": [
+          {
+            "card_id": "card_1_layers",
+            "title": "🛠️ Pipeline Layers",
+            "coordinates": {
+              "x": 0.5,
+              "y": 1.15,
+              "w": 8.2,
+              "h": 2.85
+            },
+            "bullets": [
+              {
+                "lead": "Citizen Web PWA",
+                "text": "React 19 + Vite bundle (<1.4MB); native Web Speech API.",
+                "lead_in": "Citizen Web PWA"
+              },
+              {
+                "lead": "In-Memory Engine",
+                "text": "Regex converts 150+ phrases in 0ms translation ($0).",
+                "lead_in": "In-Memory Engine"
+              },
+              {
+                "lead": "Acuity Classifier",
+                "text": "AHRQ ESI-1 to ESI-5 clinical triage with zero hallucinations.",
+                "lead_in": "Acuity Classifier"
+              },
+              {
+                "lead": "Road Routing",
+                "text": "PostGIS + self-hosted engine calculating routes in <420ms OSRM.",
+                "lead_in": "Road Routing"
+              }
+            ]
+          },
+          {
+            "card_id": "card_2_methodology",
+            "title": "🔄 4-Step Methodology",
+            "coordinates": {
+              "x": 0.5,
+              "y": 4.1,
+              "w": 8.2,
+              "h": 2.95
+            },
+            "bullets": [
+              {
+                "lead": "1. Voice Intake",
+                "text": "Streams speech; converts 'বুকে ব্যথা' to cardiac triage in 0ms.",
+                "lead_in": "1. Voice Intake"
+              },
+              {
+                "lead": "2. First-Aid Trigger",
+                "text": "Maps ESI-1 to Cardiac ICU; renders Semi-Fowler 45° sheet.",
+                "lead_in": "2. First-Aid Trigger"
+              },
+              {
+                "lead": "3. 15-Min Reservation",
+                "text": "Issues 4-digit OTP 4892, decrements bed, starts GPS loop.",
+                "lead_in": "3. 15-Min Reservation"
+              },
+              {
+                "lead": "4. Geofence Lock",
+                "text": "Spoken OTP verifies <2s ER check-in via 100m geofence.",
+                "lead_in": "4. Geofence Lock"
+              }
+            ]
+          }
+        ],
+        "zone_c_storyboard_slot": {
+          "coordinates": {
+            "x": 8.9,
+            "y": 1.2,
+            "w": 3.9,
+            "h": 5.95
+          },
+          "scene_id": "scene_3_voice_and_sync",
+          "character_focus": "Teen Granddaughter ('Riya')",
+          "preserved_mockup_container": {
+            "title": "Preserved: Mobile App Mockup (15-Min Hold Pass)",
+            "coordinates": {
+              "x": 8.9,
+              "y": 4.15,
+              "w": 3.9,
+              "h": 3.0
+            }
+          },
+          "dialogue": {
+            "speaker": "Riya",
+            "bubble_type": "speech",
+            "text": "Ma, stop calling! ASHA locked a bed at Apollo—12 mins away!"
+          },
+          "sync": "Supabase sync: <50ms WebSockets."
+        }
+      }
+    },
+    {
+      "slide_number": 4,
+      "title": "FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY",
+      "subtitle": "100m Geofence Gate • Risk Scoring • Bed Integrity",
+      "category_pill": "⚡ DEFENSIVE SECURITY",
+      "breadcrumb": "Slide 1 | Slide 2 | Slide 3 | ● Slide 4: Feasibility & Risks | Slide 5 | Slide 6",
+      "word_count": 159,
+      "target_word_range": [
+        140,
+        160
+      ],
+      "zones": {
+        "zone_a_header": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 0.12,
+            "w": 12.33,
+            "h": 0.9
+          },
+          "title": "FEASIBILITY, RISKS & ANTI-HOARDING TELEMETRY",
+          "subtitle": "100m Geofence Gate • Risk Scoring • Bed Integrity"
+        },
+        "zone_b_content_cards": [
+          {
+            "card_id": "card_1_feasibility",
+            "title": "📊 Operational Feasibility",
+            "coordinates": {
+              "x": 0.5,
+              "y": 1.15,
+              "w": 3.8,
+              "h": 4.3
+            },
+            "bullets": [
+              {
+                "lead": "Zero-Install PWA",
+                "text": "Runs on browsers; ER desk operates on existing PCs.",
+                "lead_in": "Zero-Install PWA"
+              },
+              {
+                "lead": "$0 Map Routing",
+                "text": "Self-hosted OSRM on MeghRaj eliminates fees.",
+                "lead_in": "$0 Map Routing"
+              },
+              {
+                "lead": "ABDM Ready",
+                "text": "Pre-integrated with ABDM HFR and FHIR.",
+                "lead_in": "ABDM Ready"
+              }
+            ]
+          },
+          {
+            "card_id": "card_2_risks",
+            "title": "⚠️ Risks & Mitigations",
+            "coordinates": {
+              "x": 4.5,
+              "y": 1.15,
+              "w": 3.8,
+              "h": 4.3
+            },
+            "bullets": [
+              {
+                "lead": "Bed Hoarding",
+                "text": "50% hold cap and 100m geofence stop touts.",
+                "lead_in": "Bed Hoarding"
+              },
+              {
+                "lead": "Nurse Fatigue",
+                "text": "1-tap adjusters recompute beds; 1:2 ICU surge stretch.",
+                "lead_in": "Nurse Fatigue"
+              },
+              {
+                "lead": "Traffic Jams",
+                "text": "GPS vector pauses 15m hold moving toward ER.",
+                "lead_in": "Traffic Jams"
+              },
+              {
+                "lead": "Data Privacy",
+                "text": "Ephemeral state; automatic 60m data purge.",
+                "lead_in": "Data Privacy"
+              }
+            ]
+          },
+          {
+            "card_id": "card_3_math_formulas",
+            "title": "🛡️ Mathematical Formulations",
+            "coordinates": {
+              "x": 8.5,
+              "y": 1.15,
+              "w": 4.3,
+              "h": 4.3
+            },
+            "bullets": [
+              {
+                "lead": "Staffed Bed Math",
+                "text": "B_staffed = min(B_phys, N_nurses * Ratio)",
+                "lead_in": "Staffed Bed Math"
+              },
+              {
+                "lead": "Risk Composite",
+                "text": "R = 0.30*S_IP + 0.35*S_Device + 0.20*S_Velocity + 0.15*S_Geo",
+                "lead_in": "Risk Composite"
+              },
+              {
+                "lead": "Burst IP Score",
+                "text": "S_IP = min(100, 30*max(0, N_1h - 1) + 10*max(0, N_24h - 2))",
+                "lead_in": "Burst IP Score"
+              },
+              {
+                "lead": "100m Geofence",
+                "text": "Distance(P_telemetry, H_ER) <= 0.100 km",
+                "lead_in": "100m Geofence"
+              }
+            ]
+          }
+        ],
+        "zone_d_flowchart_ribbon": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 5.65,
+            "w": 12.33,
+            "h": 1.65
+          },
+          "steps": [
+            "1. Pool (50% Cap) → 2. 15m Hold (OTP 4892) → 3. GPS Loop → 4. Gate Check-In (<2s ER check-in within 100m geofence)"
+          ]
+        },
+        "storyboard_integration": {
+          "dialogue": {
+            "speaker": "Transit",
+            "bubble_type": "speech",
+            "text": "Keep Dadi sitting upright at 45°! The timer is paused because we're moving!"
+          }
+        }
+      }
+    },
+    {
+      "slide_number": 5,
+      "title": "IMPACT & REAL-TIME ADMIN DESK",
+      "subtitle": "Saving 15,000+ Golden Hour Lives • 10 Kolkata Hubs",
+      "category_pill": "⚡ HEALTHCARE IMPACT",
+      "breadcrumb": "Slide 1 | Slide 2 | Slide 3 | Slide 4 | ● Slide 5: Impact & Admin Sync | Slide 6",
+      "word_count": 118,
+      "target_word_range": [
+        100,
+        120
+      ],
+      "zones": {
+        "zone_a_header": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 0.12,
+            "w": 12.33,
+            "h": 0.9
+          },
+          "title": "IMPACT & REAL-TIME ADMIN DESK",
+          "subtitle": "Saving 15,000+ Golden Hour Lives • 10 Kolkata Hubs"
+        },
+        "zone_b_content_cards": [
+          {
+            "card_id": "card_1_clinical_impact",
+            "title": "❤️ Citizen Impact",
+            "coordinates": {
+              "x": 0.5,
+              "y": 1.15,
+              "w": 8.2,
+              "h": 2.7
+            },
+            "bullets": [
+              {
+                "lead": "15,000+ Lives Saved",
+                "text": "Guaranteed first-run admission halts 2.4 gate rejections.",
+                "lead_in": "15,000+ Lives Saved"
+              },
+              {
+                "lead": "Transit Void",
+                "text": "First-Aid (Semi-Fowler 45°, wound pressure) stabilizes en route.",
+                "lead_in": "Transit Void"
+              },
+              {
+                "lead": "Zero Transfers",
+                "text": "Direct routing avoids 30-50% transfer mortality.",
+                "lead_in": "Zero Transfers"
+              },
+              {
+                "lead": "Budget Choice",
+                "text": "Govt vs. Private choice shields from debt.",
+                "lead_in": "Budget Choice"
+              }
+            ]
+          },
+          {
+            "card_id": "card_2_hospital_desk",
+            "title": "🏥 Hospital Command Desk",
+            "coordinates": {
+              "x": 0.5,
+              "y": 3.95,
+              "w": 8.2,
+              "h": 3.15
+            },
+            "bullets": [
+              {
+                "lead": "Regional Balancing",
+                "text": "Diverts acute surges to idle beds.",
+                "lead_in": "Regional Balancing"
+              },
+              {
+                "lead": "Live Desk",
+                "text": "Supabase CDC delivers alerts and ETAs in <50ms WebSockets.",
+                "lead_in": "Live Desk"
+              },
+              {
+                "lead": "Staff Counter",
+                "text": "1-tap shift toggle updates bed allocation.",
+                "lead_in": "Staff Counter"
+              },
+              {
+                "lead": "Gate Verification",
+                "text": "Spoken 4-digit OTP 4892: <2s ER check-in within 100m geofence.",
+                "lead_in": "Gate Verification"
+              }
+            ]
+          }
+        ],
+        "zone_c_storyboard_slot": {
+          "coordinates": {
+            "x": 8.9,
+            "y": 1.15,
+            "w": 3.9,
+            "h": 6.0
+          },
+          "scene_id": "scene_5_resuscitation_relief",
+          "character_focus": "Dr. Banerjee, Grandmother, Mother & Riya",
+          "preserved_mockup_container": {
+            "title": "Preserved: Hospital Desk Mockup (ashaien-admin.vercel.app)",
+            "coordinates": {
+              "x": 8.9,
+              "y": 3.9,
+              "w": 3.9,
+              "h": 3.25
+            }
+          },
+          "dialogue": {
+            "speaker": "Doctor",
+            "bubble_type": "speech",
+            "text": "You arrived in the Golden Hour. She's safe now."
+          },
+          "pilot": "10 Kolkata hubs."
+        }
+      }
+    },
+    {
+      "slide_number": 6,
+      "title": "CLINICAL RESEARCH & NATIONWIDE SCALE",
+      "subtitle": "Evidence Lineage • Zero-Capex Scaling for 10,000 Hospitals",
+      "category_pill": "⚡ RESEARCH & SCALE",
+      "breadcrumb": "Slide 1 | Slide 2 | Slide 3 | Slide 4 | Slide 5 | ● Slide 6: Research & Scaling",
+      "word_count": 138,
+      "target_word_range": [
+        120,
+        140
+      ],
+      "zones": {
+        "zone_a_header": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 0.12,
+            "w": 12.33,
+            "h": 0.9
+          },
+          "title": "CLINICAL RESEARCH & NATIONWIDE SCALE",
+          "subtitle": "Evidence Lineage • Zero-Capex Scaling for 10,000 Hospitals"
+        },
+        "zone_b_content_cards": [
+          {
+            "card_id": "card_1_clinical_evidence",
+            "title": "📚 Clinical Research Lineage",
+            "coordinates": {
+              "x": 0.5,
+              "y": 1.15,
+              "w": 6.0,
+              "h": 4.3
+            },
+            "bullets": [
+              {
+                "lead": "AHRQ ESI v4 Triage",
+                "text": "5-level clinical acuity algorithm routing to equipped wards.",
+                "lead_in": "AHRQ ESI v4 Triage"
+              },
+              {
+                "lead": "ISCCM Standards",
+                "text": "Statutory nurse staffing standards (ICU 1:1, Ward 1:6).",
+                "lead_in": "ISCCM Standards"
+              },
+              {
+                "lead": "ERC & AHA Guidelines",
+                "text": "Semi-Fowler 45° posture, 300mg aspirin, 10s ABC check, DO NOT DO warnings.",
+                "lead_in": "ERC & AHA Guidelines"
+              },
+              {
+                "lead": "The Lancet Benchmarks",
+                "text": "Proof of 20% Golden Hour arrival and deaths.",
+                "lead_in": "The Lancet Benchmarks"
+              }
+            ]
+          },
+          {
+            "card_id": "card_2_national_scale",
+            "title": "🚀 Nationwide Scaling Architecture",
+            "coordinates": {
+              "x": 6.75,
+              "y": 1.15,
+              "w": 6.05,
+              "h": 4.3
+            },
+            "bullets": [
+              {
+                "lead": "Zero-Capex Deploy",
+                "text": "Hospitals onboard in 15m on existing PCs ($0).",
+                "lead_in": "Zero-Capex Deploy"
+              },
+              {
+                "lead": "MeghRaj Cloud Hosting",
+                "text": "Self-hosted OSRM delivers <420ms OSRM at $0.",
+                "lead_in": "MeghRaj Cloud Hosting"
+              },
+              {
+                "lead": "Redis TTL Sharding",
+                "text": "Memory engine managing 100,000+ concurrent 15m hold reservations.",
+                "lead_in": "Redis TTL Sharding"
+              },
+              {
+                "lead": "Live ABDM Integration",
+                "text": "Integrated with ABDM HFR; live at ashaien.vercel.app (<0.8s load).",
+                "lead_in": "Live ABDM Integration"
+              }
+            ]
+          }
+        ],
+        "zone_d_flowchart_ribbon": {
+          "coordinates": {
+            "x": 0.5,
+            "y": 5.65,
+            "w": 12.33,
+            "h": 1.65
+          },
+          "steps": [
+            "1. ABDM HFR (10k nodes) → 2. MeghRaj (<420ms) → 3. Redis (100k holds) → 4. 108 Sync (15,000+ lives saved)"
+          ]
+        }
+      }
+    }
+  ]
+}

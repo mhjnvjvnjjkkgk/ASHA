@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .skin-doc { fill: #E8BA96; }
+      .labcoat-white { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 2.5; }
+      .scrubs-teal { fill: #14B8A6; }
+      .stethoscope { fill: none; stroke: #0F172A; stroke-width: 5; }
+      .bubble-bg { fill: #FFFFFF; stroke: #0D9488; stroke-width: 2.5; filter: drop-shadow(0 4px 12px rgba(13,148,136,0.15)); }
+      .badge-auth { fill: #F0FDFA; stroke: #0D9488; stroke-width: 1.5; }
+      .text-title { font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif; font-weight: 700; }
+      .text-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="1000" class="bg" />
+
+  <!-- Top Header Pill -->
+  <g transform="translate(60, 45)">
+    <rect width="480" height="42" rx="21" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.5" />
+    <circle cx="24" cy="21" r="7" fill="#0D9488" />
+    <text x="42" y="27" font-size="16" class="text-title" fill="#0F766E">⚡ CLINICAL RESEARCH DATA ORIGIN &amp; SCALABILITY</text>
+  </g>
+
+  <!-- Authority Badges Grid on Left -->
+  <g transform="translate(60, 120)">
+    <g transform="translate(0, 0)">
+      <rect width="260" height="60" rx="10" class="badge-auth" />
+      <text x="16" y="25" font-size="13" class="text-title" fill="#0F766E">AHRQ ESI v4 TRIAGE</text>
+      <text x="16" y="46" font-size="11" class="text-body" fill="#334155">Deterministic 5-Tier Acuity</text>
+    </g>
+    <g transform="translate(0, 75)">
+      <rect width="260" height="60" rx="10" class="badge-auth" />
+      <text x="16" y="25" font-size="13" class="text-title" fill="#0F766E">ISCCM NURSE RATIOS</text>
+      <text x="16" y="46" font-size="11" class="text-body" fill="#334155">1:1 ICU Staffed Bed Engine</text>
+    </g>
+    <g transform="translate(0, 150)">
+      <rect width="260" height="60" rx="10" class="badge-auth" />
+      <text x="16" y="25" font-size="13" class="text-title" fill="#0F766E">ERC / AIIMS PROTOCOLS</text>
+      <text x="16" y="46" font-size="11" class="text-body" fill="#334155">Semi-Fowler 45° &amp; Aspirin</text>
+    </g>
+    <g transform="translate(0, 225)">
+      <rect width="260" height="60" rx="10" class="badge-auth" />
+      <text x="16" y="25" font-size="13" class="text-title" fill="#0F766E">ABDM NATIONAL REGISTRY</text>
+      <text x="16" y="46" font-size="11" class="text-body" fill="#334155">10,000 Hospital Nodes</text>
+    </g>
+  </g>
+
+  <!-- Dr. Banerjee Standing Center-Right with National Tablet -->
+  <g id="doctor_scaled" transform="translate(360, 180)">
+    <path d="M 120 300 L 200 300 L 200 680 L 120 680 Z" class="scrubs-teal" />
+    <path d="M 120 300 L 160 350 L 200 300 Z" class="scrubs-teal" />
+
+    <path d="M 70 300 Q 160 270 250 300 L 270 700 L 50 700 Z" class="labcoat-white" />
+    <path d="M 70 300 L 130 420 L 90 420 Z" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M 250 300 L 190 420 L 230 420 Z" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2" />
+
+    <path d="M 110 280 Q 90 390 120 450 Q 140 500 155 510" class="stethoscope" />
+    <path d="M 210 280 Q 230 390 200 450" class="stethoscope" />
+    <circle cx="155" cy="515" r="14" fill="#334155" stroke="#64748B" stroke-width="3" />
+
+    <rect x="135" y="210" width="50" height="70" rx="12" class="skin-doc" />
+    <circle cx="160" cy="150" r="68" class="skin-doc" />
+    <path d="M 100 140 Q 110 70 195 80 Q 225 105 225 160 Q 195 110 135 120 Z" fill="#0F172A" />
+
+    <rect x="115" y="135" width="34" height="24" rx="6" fill="none" stroke="#334155" stroke-width="3" />
+    <rect x="171" y="135" width="34" height="24" rx="6" fill="none" stroke="#334155" stroke-width="3" />
+    <line x1="149" y1="145" x2="171" y2="145" stroke="#334155" stroke-width="3" />
+
+    <circle cx="132" cy="147" r="4.5" fill="#0F172A" />
+    <circle cx="188" cy="147" r="4.5" fill="#0F172A" />
+    <path d="M 140 185 Q 160 200 180 185" stroke="#0F172A" stroke-width="3.5" fill="none" stroke-linecap="round" />
+
+    <g transform="translate(190, 420)">
+      <rect width="160" height="220" rx="14" fill="#0F172A" stroke="#334155" stroke-width="3" />
+      <rect x="8" y="8" width="144" height="204" rx="8" fill="#064E3B" />
+      <path d="M 40 90 L 65 115 L 115 65" stroke="#34D399" stroke-width="7" fill="none" stroke-linecap="round" />
+      <text x="22" y="150" font-size="13" class="text-title" fill="#FFFFFF">ABDM VERIFIED</text>
+      <text x="20" y="172" font-size="11" class="text-title" fill="#6EE7B7">10,000 NODES</text>
+      <text x="24" y="194" font-size="10" class="text-body" fill="#A7F3D0">$0 API Capex</text>
+    </g>
+  </g>
+
+  <!-- Simplified Endorsement Speech Bubble -->
+  <g transform="translate(420, 60)">
+    <path d="M 0,0 L 500,0 Q 520,0 520,20 L 520,110 Q 520,130 500,130 L 140,130 L 110,160 L 120,130 L 20,130 Q 0,130 0,110 Z" class="bubble-bg" />
+    <text x="24" y="38" font-size="17" class="text-title" fill="#0F172A">Dr. Arindam Banerjee (National Clinical Lead):</text>
+    <text x="24" y="68" font-size="17" class="text-title" fill="#0D9488">"Evidence-based protocols saved her life—</text>
+    <text x="24" y="94" font-size="17" class="text-title" fill="#0D9488"> scalable across 10,000 hospitals</text>
+    <text x="24" y="118" font-size="17" class="text-title" fill="#0D9488"> nationwide."</text>
+  </g>
+
+  <!-- Bottom Context Banner -->
+  <g transform="translate(60, 920)">
+    <rect width="880" height="45" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" />
+    <text x="25" y="28" font-size="14" class="text-body" fill="#475569">
+      <tspan font-weight="700" fill="#0F172A">Slide 6 Authority Anchor:</tspan> Grounded in AHRQ ESI v4, ISCCM staffing standards, ERC guidelines, and ABDM national interoperability.
+    </text>
+  </g>
+</svg>

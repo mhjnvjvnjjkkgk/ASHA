@@ -1,27 +1,32 @@
-# Master Project Plan: PulseGrid Emergency Web App
+# Master Project Plan: ASHA Emergency Logistics Engine
 
-## Architecture
-- **Frontend**: Vanilla HTML5, CSS3, ES6 JavaScript (`public/index.html`, `public/hospital.html`, `public/js/api.js`, `public/js/triage.js`, `public/css/custom.css`), Google Maps JS API / Leaflet / OSRM mapping.
-- **Backend**: Flask 3.0 WSGI service (`app.py`, `database.py`, `triage_service.py`, `ttl_worker.py`), REST APIs with dual Supabase PostgreSQL DB / In-memory Mock fallback modes.
-- **Background Worker**: `ttl_worker.py` daemon thread running automatic TTL hold expiration release every 10s.
+> **Smart India Hackathon (SIH) 2026** | **Open Innovation Category**  
+> **Theme:** MedTech / BioTech / HealthTech  
+> **Team Name:** `TEAM ASHA` | **Team Leader:** `SHAYAK DAS`  
+> **Problem Statement Title:** *Mitigating Emergency Golden-Hour Fatalities Caused by In-Transit Bed Allocation Latency and Static Hospital Resource Visibility*  
 
-## Milestones
-| # | Name | Scope | Dependencies | Status |
-|---|------|-------|-------------|--------|
-| 1 | M1: Full-Screen Map & Unified Search UI | R1: 100% full-screen map canvas (`#map`), floating top navbar, slidable bottom drawer sheet matching native Google Maps UI (rounded top edges, drag handle, clean metrics), unified search bar (symptom + blood type parser regex + Hinglish/Benglish/English voice input), map route fitting and bounds auto-zoom. | None | DONE |
-| 2 | M2: Real-Time Soft/Hard-Lock Bed Reservation Engine | R2: 15-minute soft lock reserving 1 bed (bed count 30->29, OTP generation), backend endpoints (`/api/holds/create`, `/api/holds/redeem`, `/api/holds/location_update`, `/api/holds/cancel`), live GPS tracking vector loop (moving toward = live dynamic ETA + hide timer; stationary = countdown; moving away 2-3x = wrong direction alert & auto-cancel), hard-lock OTP verification. | M1 | DONE |
-| 3 | M3: Stabilized Routing, Polling & Post-Booking UX | R3: Fix ETA recalculation jitter (throttled OSRM fetches), eliminate background auto-scroll bug (`scrollIntoView` fix in `highlightCard`), remove all judge/demo buttons & hospital desk tabs, post-booking drawer UI transformation (single-tap Call Ambulance & Call Hospital quick-dial buttons). | M1, M2 | DONE |
-| 4 | M4: E2E Integration, Test Suite Pass & Hardening | Final Milestone: Pass 100% of E2E test suite (Tiers 1-4, 37 passing pytest cases), white-box coverage hardening, and Forensic Audit verification across all milestones. | M1, M2, M3, E2E Track | DONE |
+## Architecture Overview
+- **Citizen Web App (`v2/` & `public/`)**: React 18 + TypeScript + Vite, Tailwind CSS + Liquid Glassmorphism, Leaflet.js + OpenStreetMap, OSRM road snapping & routing, W3C Web Speech API (`bn-IN` / `en-IN`), internal clinical translation engine (`translateBengaliToEnglish`), Situational First-Aid sheet (`ClinicalProtocolSheet.tsx`).
+- **Hospital ER Desk (`hospital-admin-app/`)**: React 18 + TypeScript, Supabase Realtime WebSockets, 4-digit OTP patient check-in terminal, 1-tap shift nurse and ward capacity overrides, live blood stock inventory.
+- **Backend & Cloud Services**: Supabase PostgreSQL 15 cloud database with real-time replication (`active_holds`, `admitted_patients`, `hospital_overrides`), fallback Python Flask microservice, and HTML5 BroadcastChannel for zero-latency local inter-tab synchronization.
 
-## Interface Contracts
-### Frontend ↔ Backend REST API
-- `POST /api/search` / `POST /api/triage`: Accepts query payload `{ text: string, lat?: float, lng?: float, is_voice?: boolean }`. Returns category, triage level, recommended hospitals, and blood match info.
-- `POST /api/holds/create`: Accepts `{ hospital_id: string, user_id?: string, hold_type?: string }`. Returns `{ success: true, hold_id: string, otp_code: string, expires_at: string, bed_count: int }`.
-- `POST /api/holds/redeem`: Accepts `{ hold_id: string, otp_code: string }`. Returns `{ success: true, status: "REDEEMED", bed_count: int }`.
-- `POST /api/holds/location_update`: Accepts `{ hold_id: string, user_lat: float, user_lng: float, heading?: float, speed?: float }`. Returns `{ status: "ACTIVE"|"CANCELLED", movement_direction: "TOWARD"|"STATIONARY"|"AWAY", current_eta_minutes: float, wrong_direction_count: int }`.
-- `POST /api/holds/cancel`: Accepts `{ hold_id: string }`. Returns `{ success: true, status: "CANCELLED" }`.
+## Core Milestones
+| # | Milestone Name | Scope & Technical Implementation | Status |
+|---|----------------|----------------------------------|--------|
+| 1 | M1: Full-Screen Map & Unified Search UI | Full-screen Leaflet map canvas, floating search bar, slidable bottom drawer sheet, unified search supporting symptoms & blood groups, bounds auto-zoom. | DONE |
+| 2 | M2: Dynamic Soft-Lock & 4-Digit OTP Engine | 15-minute soft lock reserving 1 hospital bed, 4-digit OTP generation, live GPS directional vector loop (`TOWARD`, `STATIONARY`, `AWAY`), wrong-direction auto-cancellation, ER desk 4-digit OTP admission. | DONE |
+| 3 | M3: Native Bengali Speech Translation | Continuous speech-to-text in Bengali (`bn-IN`) and English (`en-IN`), internal `translateBengaliToEnglish()` converting native script (`বুকে ব্যথা`) into canonical clinical keywords, ESI v4 triage classification, Hinglish removal. | DONE |
+| 4 | M4: Live Situational First-Aid Protocols | **OUR BIGGEST PLUS POINT:** Immediate life-saving physical positioning (Semi-Fowler 45°, Recovery position, direct pressure tourniquets), 10-second ABC check, numbered clinical steps, DO NOT DO warnings, and calming scripts. | DONE |
+| 5 | M5: Staffed Bed Math & Zero-Friction Nurse Desk | Nurse-to-patient ratios ($1:1$ ICU, $1:2$ PICU, $1:6$ Ward), 1-tap bed/nurse incrementors, real-time WebSocket sync, instant patient discharge bed release. | DONE |
+| 6 | M6: Production Cloud Deployments | Deployed on Vercel Edge: Citizen App (`ashaien.vercel.app`), Admin Desk (`ashaien-admin.vercel.app`), SIH 2026 6-slide presentation completed. | DONE |
 
 ## Code Layout
-- Frontend: `public/index.html`, `public/hospital.html`, `public/js/api.js`, `public/js/triage.js`, `public/css/custom.css`.
-- Backend: `app.py`, `database.py`, `triage_service.py`, `ttl_worker.py`.
-- Tests: `tests/` directory (pytest backend API tests + E2E runner scripts).
+- `v2/`: Modern React + TypeScript production Citizen Resuscitation Web App.
+  - `src/components/ClinicalProtocolSheet.tsx`: Live Situational First-Aid & En-Route Action Protocols sheet.
+  - `src/components/VoiceTriageInput.tsx`: Microphone input with English & Bengali speech recognition.
+  - `src/utils/triageClassifier.ts`: ESI triage classifier + `translateBengaliToEnglish()`.
+  - `src/utils/distance.ts`: Haversine formula & OSRM road distance calibration.
+  - `src/data/protocols.ts`: 9 clinical first-aid protocol definitions.
+  - `src/data/hospitals.ts`: 30 verified Kolkata emergency hospitals dataset.
+- `hospital-admin-app/`: Hospital ER Command Desk Portal for nurses.
+- `docs/`: 9 comprehensive technical dossier blueprints covering architecture, triage, navigation, locks, cloud sync, clinical protocols, judge defense, business strategy, and interconnection.

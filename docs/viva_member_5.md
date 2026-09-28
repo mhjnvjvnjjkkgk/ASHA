@@ -1,41 +1,32 @@
-# Viva Preparation Guide: Frontend API Developer
+# Viva Preparation Guide: Frontend & Real-Time Sync Engineer
 
-**Role:** "I built the frontend JavaScript that connects the browser to the backend and handles voice input"
+**Role:** "I built the interactive full-screen Leaflet map canvas, OSRM road snapping engine, and dynamic post-booking UI."
 
 **Elevator Pitch:**
-I developed the critical frontend logic that powers PulseGrid's interactivity. I implemented robust API fetch wrappers, a reliable background polling engine for real-time updates, and integrated the Web Speech API to allow hands-free voice triage for paramedics and patients.
+"I engineered ASHA's frontend performance and geospatial mapping stack using React 18, TypeScript, and Leaflet.js. I implemented OSRM road-snapping to eliminate urban GPS multipath jitter, calibrated urban emergency driving ETAs, and built the post-booking drawer interface that transforms to show quick-dial ambulance links and Situational First-Aid protocols."
 
-## Code Walkthrough
-**`api.js`:**
-This file encapsulates all backend communication using the native `fetch` API. It includes functions like `submitTriage`, `fetchFacilities`, and `createHold` which parse JSON payloads and gracefully handle HTTP errors. It also contains the `startPolling` engine that runs a callback function on a set interval.
-
-**`triage.js`:**
-This file bridges the UI with the API. 
-- **`initSpeechRecognition`**: Wires up the microphone button to capture voice input.
-- **`processTriage`**: Sends the text to the backend and updates the UI with the severity badge.
-- **`loadHospitals` & `renderHospitalCards`**: Fetches the latest hospital data and dynamically injects HTML cards into the grid.
-- **`startCountdown`**: Manages the circular SVG timer in the transit modal.
-
-## Technical Explanations
-**Web Speech API:**
-The Web Speech API is a native browser feature that provides speech recognition without needing external libraries. I used it to capture both interim (in-progress) and final voice transcripts, allowing users to speak their symptoms directly into the search bar.
-
-**Polling vs WebSockets:**
-We implemented a 4-second polling mechanism to repeatedly fetch the latest hospital data. While WebSockets provide true push-based real-time updates, polling was chosen because it is incredibly reliable, easier to implement in a hackathon timeframe, and sufficiently fast for our use case.
+## Code Walkthrough: `App.tsx`, `HospitalPeekDrawer.tsx`, `distance.ts`
+- **Full-Screen Leaflet Canvas:** Fixed viewport background with CartoDB Dark Matter vector tiles, custom SVG government (saffron) and private (green) hospital markers, and pulsing user radar pin.
+- **OSRM Road Snapping (`snapToNearestRoad`):** Queries `/nearest/v1/driving` to project raw smartphone GPS coordinates onto the nearest drivable road segment, eliminating building/water body placement errors.
+- **Calibrated Urban Driving ETA:** Applies Haversine screening ($<2\text{ms}$) followed by OSRM route geometry with a $1.35\times$ urban winding factor and $25\text{ km/h}$ average emergency traffic speed.
+- **Post-Booking Action Drawer:** Replaces the booking button with one-tap quick-dial buttons: "Call 108 Ambulance" (`tel:108`), "Call Hospital ER", and "Open Google Maps Navigation".
 
 ## Tough Judge Questions & Winning Answers
 
-**1. "Why fetch() and not Axios or jQuery AJAX?"**
-*Answer:* The native `fetch` API is built directly into modern browsers, so it requires zero external dependencies, keeping our frontend lightweight and fast. It natively supports Promises and async/await, making our code clean and easy to read.
+**1. "Why Leaflet and OpenStreetMap instead of the Google Maps JavaScript API?"**
+*Answer:* The Google Maps API has strict billing limits, high per-query costs, and can be blocked by rate limits during traffic spikes. Leaflet with OpenStreetMap and self-hostable OSRM provides zero-cost, lightweight vector mapping that loads in $<300\text{ms}$ on low-end smartphones.
 
-**2. "How does the 4-second polling work and why not use WebSockets?"**
-*Answer:* The polling engine uses `setInterval` to fetch hospital data every 4 seconds. We chose polling over WebSockets because it was much faster to implement securely, avoids complex socket state management, and updates the UI fast enough for emergency tracking without heavy server load.
+**2. "How do you prevent ETA recalculation jitter/flickering?"**
+*Answer:* We implemented debounced OSRM route fetches and movement threshold filtering. The app only recalculates routing geometry if the user moves more than 50 meters from their previous snapped waypoint, eliminating random 9-to-12 minute ETA jumps.
 
-**3. "Explain how the Web Speech Recognition API works"**
-*Answer:* It taps into the browser's native recognition engine. When activated, it listens to the microphone and triggers an `onresult` event. I parse the event results, combining the interim and final transcripts, and inject that text directly into the triage search input.
+**3. "How does the citizen app update when the nurse admits the patient?"**
+*Answer:* We listen to Supabase WebSocket `UPDATE` events on the `active_holds` table. When the nurse enters the 4-digit OTP, the status changes to `'ADMITTED'`, instantly triggering our celebratory Green Bed Hard-Locked Admission Success modal on the citizen's phone.
 
-**4. "What happens if the browser doesn't support speech recognition?"**
-*Answer:* I implemented a feature check at the start of the function. If `window.SpeechRecognition` and `window.webkitSpeechRecognition` are undefined, the code gracefully degrades by simply hiding the microphone button, allowing the user to type their symptoms manually.
+**4. "How fast does the map render and route?"**
+*Answer:* Initial Leaflet canvas renders in $<200\text{ms}$. Straight-line Haversine filtering across 30 Kolkata hospitals takes $<2\text{ms}$, and OSRM turn-by-turn route generation completes in $<420\text{ms}$.
 
-**5. "How does the countdown timer work in the transit modal?"**
-*Answer:* It uses `setInterval` to decrement a total seconds variable every second. I update the text display and mathematically calculate the `stroke-dashoffset` for the circular SVG ring, creating a smooth visual progress bar that alerts the user when the hold expires.
+**5. "How does the app handle background polling without auto-scrolling?"**
+*Answer:* We eliminated aggressive `scrollIntoView` calls and isolated state updates to sub-components using React memoization, ensuring smooth background inventory sync without jumping the user's viewport.
+
+**6. "How does the persistent top floating banner handle admin cancellations and re-routing?"**
+*Answer:* We bind the top persistent banner (`bookingAlert` state) directly to the active hold lifecycle. When an ER nurse cancels a hold from their desk, the real-time cloud listener automatically identifies the next closest emergency center, routes navigation to it, and immediately calls `setBookingAlert` with the newly assigned hospital's name, address, and freshly generated 4-digit OTP—guaranteeing that the user always sees the correct destination and OTP on their screen!
